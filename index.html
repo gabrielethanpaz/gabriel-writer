@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Ethan Paz | Escritor, Poeta e Visionário</title>
+    <meta name="description" content="Obras, poemas e romances do autor Gabriel Ethan Paz. Uma jornada literária de Almada para o mundo.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           50+ VARIÁVEIS NATIVAS - SISTEMA DE DESIGN EXAUSTIVO
+           ========================================================================== */
+        :root {
+            /* Cores Base - Tema Claro (Default) */
+            --bg-primary: #faf8f5;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f0ece1;
+            --bg-press: #111111;
+            --text-main: #2d2d2d;
+            --text-muted: #666666;
+            --text-inverse: #ffffff;
+            --text-press-muted: #a0a0a0;
+            
+            /* Acentos Literários (Ouro/Bronze) */
+            --accent-primary: #9a7e5a;
+            --accent-hover: #7a6345;
+            --accent-light: #d4bc9a;
+            --accent-glow: rgba(154, 126, 90, 0.15);
+            
+            /* Feedback e Estados */
+            --success: #2e7d32;
+            --error: #d32f2f;
+            --warning: #ed6c02;
+            --info: #0288d1;
+            
+            /* Bordas e Sombras */
+            --border-light: rgba(0, 0, 0, 0.08);
+            --border-strong: rgba(0, 0, 0, 0.15);
+            --border-press: rgba(255, 255, 255, 0.1);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.08);
+            --shadow-glass: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            
+            /* Tipografia */
+            --font-serif: 'Georgia', serif;
+            --font-sans: 'Inter', sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-md: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 2rem;
+            --text-4xl: 3rem;
+            --text-5xl: 4.5rem;
+            --text-6xl: 6rem;
+            
+            /* Espaçamentos (Sistema 8pt) */
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 48px;
+            --space-6: 64px;
+            --space-7: 96px;
+            --space-8: 128px;
+            --space-9: 160px;
+            
+            /* Dimensões Estruturais */
+            --max-width: 1440px;
+            --header-height: 90px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            
+            /* Transições e Animações */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            
+            /* Z-Index Hierarchy */
+            --z-below: -1;
+            --z-normal: 1;
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-fixed: 300;
+            --z-modal: 400;
+            --z-loader: 9999;
+            
+            /* Glassmorphism Variables */
+            --glass-bg: rgba(250, 248, 245, 0.85);
+            --glass-caption: rgba(10, 10, 10, 0.75);
+            --glass-blur: blur(12px);
+        }
+
+        /* ==========================================================================
+           TEMA ESCURO (DARK MODE PERSISTENTE)
+           ========================================================================== */
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121212;
+            --bg-tertiary: #1a1a1a;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --border-light: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(10, 10, 10, 0.85);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.5);
+            --shadow-glass: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* ==========================================================================
+           RESET & GLOBAL STYLES SEMÂNTICOS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color var(--transition-slow), color var(--transition-slow);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-main);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        p { margin-bottom: var(--space-3); }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover { color: var(--accent-hover); }
+
+        /* ==========================================================================
+           CUSTOM CURSOR
+           ========================================================================== */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-primary);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10001;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            will-change: transform, width, height;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent-primary);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            will-change: transform, width, height;
+        }
+
+        body.hovering .cursor-dot {
+            width: 12px;
+            height: 12px;
+            background-color: transparent;
+        }
+        body.hovering .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-glow);
+            border-color: transparent;
+        }
+
+        /* ==========================================================================
+           LOADER ANIMADO
+           ========================================================================== */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: var(--z-loader);
+            transition: opacity 1s cubic-bezier(0.8, 0, 0.2, 1), visibility 1s;
+        }
+
+        .loader-wrapper.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loader-logo {
+            font-family: var(--font-sans);
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            letter-spacing: 8px;
+            color: var(--text-main);
+            margin-bottom: var(--space-4);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.2s;
+        }
+
+        .loader-line-container {
+            width: 250px;
+            height: 2px;
+            background-color: var(--border-light);
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-full);
+        }
+
+        .loader-line-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background-color: var(--accent-primary);
+            animation: progressWidth 2s cubic-bezier(0.77, 0, 0.175, 1) forwards 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes progressWidth {
+            0% { width: 0%; }
+            50% { width: 60%; }
+            100% { width: 100%; }
+        }
+
+        /* ==========================================================================
+           HEADER COMPLEXO & MEGA-MENU
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--space-6);
+            z-index: var(--z-fixed);
+            transition: background-color var(--transition-medium), backdrop-filter var(--transition-medium), box-shadow var(--transition-medium);
+        }
+
+        header.scrolled {
+            background-color: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header-logo {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: var(--text-3xl);
+            letter-spacing: -1px;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .header-logo-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        nav.main-nav > ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-5);
+            align-items: center;
+        }
+
+        nav.main-nav > ul > li {
+            position: relative;
+        }
+
+        nav.main-nav > ul > li > a {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            padding: var(--space-2) 0;
+            position: relative;
+        }
+
+        nav.main-nav > ul > li > a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-primary);
+            transition: width var(--transition-medium);
+        }
+
+        nav.main-nav > ul > li:hover > a { color: var(--text-main); }
+        nav.main-nav > ul > li:hover > a::after { width: 100%; }
+
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            width: 800px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-medium);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: var(--space-4);
+            gap: var(--space-4);
+            z-index: var(--z-dropdown);
+            pointer-events: none;
+        }
+
+        nav.main-nav > ul > li:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-featured {
+            background-color: var(--bg-tertiary);
+            padding: var(--space-3);
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mega-menu-featured h4 {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .mega-menu-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+        }
+
+        .mega-menu-column h5 {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            margin-bottom: var(--space-3);
+            color: var(--text-main);
+        }
+
+        .mega-menu-column ul { list-style: none; }
+        .mega-menu-column ul li { margin-bottom: var(--space-2); }
+        .mega-menu-column ul li a {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        .mega-menu-column ul li a:hover {
+            color: var(--accent-primary);
+            padding-left: var(--space-1);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-tertiary);
+            transition: background-color var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-light);
+            transform: scale(1.05);
+        }
+
+        /* ==========================================================================
+           HERO SECTION (ALINHAMENTO CENTRALIZADO)
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--header-height) + var(--space-6)) var(--space-6) var(--space-6);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .hero-bg-svg {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 60%;
+            height: auto;
+            opacity: 0.03;
+            pointer-events: none;
+            transform: rotate(15deg);
+            z-index: var(--z-below);
+        }
+
+        .hero-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-6);
+            width: 100%;
+            position: relative;
+            z-index: var(--z-normal);
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .badge-literary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: 8px 16px;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-4);
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--text-main);
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.5px;
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.4s;
+            transform: translateY(20px);
+            max-width: 900px;
+        }
+
+        .hero-title span {
+            font-style: italic;
+            color: var(--accent-primary);
+        }
+
+        .hero-description {
+            font-size: var(--text-xl);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: var(--space-5);
+            line-height: 1.8;
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.6s;
+            transform: translateY(20px);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-3);
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.8s;
+            transform: translateY(20px);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 20px 40px;
+            background-color: var(--accent-primary);
+            color: var(--text-inverse);
+            border-radius: var(--radius-sm);
+            border: none;
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--accent-hover);
+            transition: left var(--transition-medium);
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before { left: 0; }
+        .btn-primary:hover {
+            color: var(--text-inverse);
+            box-shadow: 0 15px 30px var(--accent-glow);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 18px 40px;
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--border-strong);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-medium);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 550px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards 2s;
+            margin-top: var(--space-4);
+        }
+
+        .book-3d-mockup {
+            width: 350px;
+            height: 500px;
+            border-radius: 4px 15px 15px 4px;
+            box-shadow: 
+                inset 4px 0 10px rgba(0,0,0,0.1),
+                inset -1px 0 2px rgba(255,255,255,0.3),
+                30px 40px 50px rgba(0,0,0,0.15);
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+            transition: transform var(--transition-slow);
+            border-left: 12px solid #e0dcd3;
+            background: url('https://i.ibb.co/YBvhGTTD/capa-de-redeas-soltas.jpg') center/cover no-repeat;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .book-3d-mockup:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-10px);
+            box-shadow: 
+                inset 4px 0 10px rgba(0,0,0,0.1),
+                inset -1px 0 2px rgba(255,255,255,0.3),
+                40px 50px 60px rgba(0,0,0,0.2);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================================================
+           FEATURES / ESTATÍSTICAS
+           ========================================================================== */
+        .section-stats {
+            padding: var(--space-6) var(--space-6);
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+        }
+
+        .stat-card {
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-right: 1px solid var(--border-light);
+            transition: transform var(--transition-medium);
+        }
+
+        .stat-card:last-child { border-right: none; }
+        .stat-card:hover { transform: translateY(-5px); }
+
+        .stat-number {
+            font-family: var(--font-sans);
+            font-size: var(--text-5xl);
+            font-weight: 300;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================================================
+           LOCAL 1: BIOGRAFIA DO AUTOR
+           ========================================================================== */
+        .section-bio {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-primary);
+        }
+
+        .bio-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 5fr 6fr;
+            gap: var(--space-8);
+            align-items: center;
+        }
+
+        .bio-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .bio-image-inner {
+            width: 100%;
+            height: 100%;
+            background: url('https://i.ibb.co/CpZrQSVb/Casal-2.jpg') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        .bio-decorative-box {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bio-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-tag {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-3);
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-primary);
+        }
+
+        .bio-title {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-4);
+            color: var(--text-main);
+        }
+
+        .bio-text-lead {
+            font-size: var(--text-xl);
+            color: var(--text-main);
+            font-style: italic;
+            margin-bottom: var(--space-4);
+            border-left: 4px solid var(--accent-primary);
+            padding-left: var(--space-3);
+        }
+
+        .bio-text-body {
+            color: var(--text-muted);
+            font-size: var(--text-md);
+            margin-bottom: var(--space-3);
+            text-align: justify;
+        }
+
+        /* ==========================================================================
+           LOCAL 2: ESCRITOS & POEMAS
+           ========================================================================== */
+        .section-poetry {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .poetry-grid {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-5);
+        }
+
+        .poetry-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+        }
+
+        .poetry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+
+        .poetry-card h3 {
+            font-size: var(--text-2xl);
+            color: var(--text-main);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: var(--space-2);
+        }
+
+        .text-scroll-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: var(--space-3);
+        }
+
+        .text-scroll-container::-webkit-scrollbar { width: 6px; }
+        .text-scroll-container::-webkit-scrollbar-track { background: var(--bg-tertiary); border-radius: var(--radius-full); }
+        .text-scroll-container::-webkit-scrollbar-thumb { background-color: var(--accent-light); border-radius: var(--radius-full); }
+        .text-scroll-container::-webkit-scrollbar-thumb:hover { background-color: var(--accent-primary); }
+
+        .text-scroll-container p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: var(--space-2);
+        }
+
+        /* ==========================================================================
+           LOCAL 3: PORTFÓLIO & SINOPSES
+           ========================================================================== */
+        .section-portfolio {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-primary);
+        }
+
+        .masonry-grid {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            column-count: 2; 
+            column-gap: var(--space-5);
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: var(--space-5);
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .masonry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        
+        .picture-wrapper {
+            width: 100%;
+            display: block;
+            margin-bottom: var(--space-4);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            position: relative;
+            background-color: var(--bg-tertiary);
+        }
+
+        .book-cover-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform var(--transition-slow);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .masonry-item:hover .book-cover-img {
+            transform: scale(1.02) translateZ(0);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            background-color: var(--text-main);
+            color: var(--bg-primary);
+            z-index: 20;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .book-category {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: var(--space-2);
+        }
+
+        .masonry-item h3 {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+            color: var(--accent-primary);
+        }
+
+        .masonry-item p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: var(--space-2);
+            text-align: justify;
+        }
+
+        .anthology-section {
+            margin-top: var(--space-8);
+            text-align: center;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: var(--space-5);
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+
+        .anthology-title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+            color: var(--text-main);
+        }
+
+        .anthology-list {
+            list-style: none;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+        }
+
+        .anthology-list li {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            padding: var(--space-3);
+            border-left: 2px solid var(--accent-primary);
+            background-color: var(--bg-primary);
+            transition: transform var(--transition-fast);
+        }
+
+        .anthology-list li:hover {
+            transform: translateX(5px);
+            color: var(--text-main);
+            border-left-width: 4px;
+        }
+
+        .anthology-list li strong {
+            color: var(--accent-primary);
+            display: block;
+            font-size: var(--text-md);
+            margin-bottom: 2px;
+        }
+
+        .anthology-list li small {
+            display: block;
+            margin-top: 4px;
+            opacity: 0.7;
+            font-size: 0.7rem;
+        }
+
+        /* ==========================================================================
+           GALERIA FOTOGRÁFICA
+           ========================================================================== */
+        .section-gallery {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-secondary);
+        }
+
+        .gallery-photo-grid {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-3);
+        }
+        
+        .gallery-photo-card {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+            background-color: var(--bg-tertiary);
+        }
+        
+        .gallery-photo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            z-index: 10;
+        }
+        
+        .gallery-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform var(--transition-slow);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+        
+        .gallery-photo-card:hover .gallery-photo-img {
+            transform: scale(1.08) translateZ(0);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--space-3);
+            background: linear-gradient(to top, var(--glass-caption), transparent);
+            color: var(--text-inverse);
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: translateY(100%);
+            transition: transform var(--transition-medium);
+            text-align: center;
+        }
+        
+        .gallery-photo-card:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           PRESS / MEDIA KIT
+           ========================================================================== */
+        .section-press {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-press);
+            color: var(--text-inverse);
+            border-top: 1px solid var(--border-press);
+        }
+
+        .press-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-8);
+        }
+        
+        .press-header { margin-bottom: var(--space-6); }
+        .press-title { font-size: var(--text-4xl); color: var(--text-inverse); margin-bottom: var(--space-2); }
+        .press-subtitle { font-family: var(--font-sans); font-size: var(--text-md); color: var(--text-press-muted); font-weight: 300; }
+        
+        .press-block { margin-bottom: var(--space-6); }
+        .press-block h4 {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-3);
+            border-bottom: 1px solid var(--border-press);
+            padding-bottom: var(--space-2);
+        }
+        
+        .press-block p {
+            color: var(--text-press-muted);
+            font-size: var(--text-sm);
+            text-align: justify;
+            margin-bottom: var(--space-3);
+            line-height: 1.8;
+        }
+        
+        .press-sidebar {
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-press);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            height: fit-content;
+        }
+        
+        .press-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: var(--space-4);
+            border: 2px solid var(--accent-primary);
+        }
+        
+        .press-list { list-style: none; }
+        .press-list li {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-press-muted);
+            margin-bottom: var(--space-2);
+            padding-left: var(--space-3);
+            position: relative;
+        }
+        .press-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        .press-contact a {
+            color: var(--text-press-muted);
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            display: block;
+            margin-bottom: var(--space-1);
+            transition: color var(--transition-fast);
+        }
+        
+        .press-contact a:hover { color: var(--accent-primary); }
+
+        /* ==========================================================================
+           FOOTER (3 COLUNAS - FOTO DO AUTOR REMOVIDA)
+           ========================================================================== */
+        footer {
+            background-color: #050505;
+            color: #ffffff;
+            padding: var(--space-8) var(--space-6) var(--space-4);
+        }
+
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            /* Recalculado para 3 colunas em vez de 4 */
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .footer-brand h2 {
+            font-family: var(--font-sans);
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: var(--space-3);
+            color: #ffffff;
+        }
+
+        .footer-brand p { color: #a0a0a0; font-size: var(--text-sm); max-width: 300px; line-height: 1.8; text-align: justify; }
+
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: var(--space-2); }
+        .footer-col ul li a {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: #a0a0a0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-col ul li a:hover { color: #ffffff; padding-left: 4px; }
+        
+        /* Redes Sociais com SVGs Inline */
+        .social-links {
+            display: flex;
+            gap: var(--space-3);
+            margin-top: var(--space-2);
+        }
+        
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #a0a0a0;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all var(--transition-fast);
+        }
+        
+        .social-link:hover svg {
+            stroke: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding-top: var(--space-4);
+            border-top: 1px solid #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy { font-family: var(--font-sans); font-size: var(--text-xs); color: #666666; }
+        .footer-credit { font-family: var(--font-sans); font-size: var(--text-xs); color: #444444; font-weight: 600; }
+
+        /* ==========================================================================
+           REVEAL ANIMATION CLASSES
+           ========================================================================== */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+        /* ==========================================================================
+           MEDIA QUERIES
+           ========================================================================== */
+        @media (max-width: 1200px) {
+            .bio-container { grid-template-columns: 1fr; }
+            .bio-image-wrapper { height: 500px; }
+            .poetry-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-photo-grid { grid-template-columns: repeat(2, 1fr); }
+            .press-container { grid-template-columns: 1fr; }
+            .anthology-list { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 992px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+            .stat-card { border-right: none; border-bottom: 1px solid var(--border-light); }
+            .masonry-grid { column-count: 1; }
+            .poetry-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav { display: none; }
+            .gallery-photo-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">GEP.</div>
+            <div class="loader-line-container">
+                <div class="loader-line-progress"></div>
+            </div>
+            <p style="margin-top: 16px; font-family: var(--font-sans); font-size: 10px; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase;">Iniciando Arquitetura Literária</p>
+        </div>
+    </div>
+
+    <header id="main-header">
+        <a href="#" class="header-logo">Gabriel Ethan Paz <span class="header-logo-dot"></span></a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#apresentacao" class="hover-target">Apresentação</a></li>
+                <li>
+                    <a href="#obras" class="hover-target">Universo Literário ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-featured">
+                            <h4>Destaque do Mês</h4>
+                            <h5 style="font-family: 'Georgia', serif; font-size: 18px; margin-bottom: 4px;">De Rédeas Soltas</h5>
+                            <p>Pensamento e poesia pura. A libertação através das palavras soltas ao vento.</p>
+                        </div>
+                        <div class="mega-menu-links">
+                            <div class="mega-menu-column">
+                                <h5>Romances</h5>
+                                <ul>
+                                    <li><a href="#obras" class="hover-target">Impedidos de Amar</a></li>
+                                    <li><a href="#obras" class="hover-target">Da Simplicidade de um Monte</a></li>
+                                    <li><a href="#obras" class="hover-target">A Última Transgressão</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h5>Escritos</h5>
+                                <ul>
+                                    <li><a href="#textos" class="hover-target">Faça-se Luz</a></li>
+                                    <li><a href="#textos" class="hover-target">Estas são as Noites</a></li>
+                                    <li><a href="#textos" class="hover-target">Escrever por Amor</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#biografia" class="hover-target">Biografia</a></li>
+                <li><a href="#galeria" class="hover-target">Galeria</a></li>
+                <li><a href="#press" class="hover-target">Press/Media</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-controls">
+            <button class="theme-toggle hover-target" id="theme-toggle" aria-label="Alternar Tema Escuro/Claro">
+                <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero" id="apresentacao">
+        <svg class="hero-bg-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.3,-46.3C90.8,-33.5,96.8,-18,97.2,-2.3C97.6,13.4,92.5,29.3,82.8,42.4C73.1,55.5,58.8,65.8,43.3,73.6C27.8,81.4,11.1,86.7,-4.8,83.9C-20.7,81.1,-35.8,70.2,-49.2,59.2C-62.6,48.2,-74.3,37.1,-81.1,23.3C-87.9,9.5,-89.8,-7,-85.4,-21.8C-81,-36.6,-70.3,-49.7,-57.4,-58.1C-44.5,-66.5,-29.4,-70.2,-14.9,-73.4C-0.4,-76.6,13.5,-79.3,27.3,-79.6C41.1,-79.9,54.8,-71.8,44.7,-76.4Z" transform="translate(100 100)" />
+        </svg>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-literary">Registo IGAC Nº 5/2025</div>
+                <h1 class="hero-title">A arquitetura da emoção nas <span>rédeas soltas</span> da vida.</h1>
+                <p class="hero-description">Gabriel Ethan Paz não apenas escreve — ele esculpe emoções em palavras. De Almada ao mundo, a sua jornada é um atlas de alma e memória, onde cada país visitado se converte em verso, conto ou romance que liberta o indizível. As suas obras não se leem: respiram, confessam, e redimem.</p>
+                
+                <div class="hero-actions">
+                    <a href="#obras" class="btn-primary hover-target">Explorar o Portfólio</a>
+                    <a href="#biografia" class="btn-secondary hover-target">A Minha Razão</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="book-3d-mockup hover-target" title="Capa: De Rédeas Soltas"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-stats">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-number">67</div>
+                <div class="stat-label">Países Visitados</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay: 0.1s;">
+                <div class="stat-number">128</div>
+                <div class="stat-label">Cidades Atravessadas</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay: 0.2s;">
+                <div class="stat-number">1584</div>
+                <div class="stat-label">Nº Sócio A.P. Escritores</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay: 0.3s;">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Obras e Antologias</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-bio" id="biografia">
+        <div class="bio-container">
+            <div class="bio-image-wrapper reveal-left">
+                <div class="bio-decorative-box"></div>
+                <div class="bio-image-inner"></div>
+            </div>
+            <div class="bio-content reveal-right">
+                <span class="section-tag">O Homem por trás do Pseudónimo</span>
+                <h2 class="bio-title">Biografia do Autor</h2>
+                
+                <p class="bio-text-lead">Os vocábulos deliram no papel, a mente folega mundo fora e os sentidos estão outorgados ao acaso. Daqui brotam construções gramaticais que almejam elucidar-me sobre desígnios. Podem ser apaziguadoras ou nefastas mas são puras e isentas. O intuito é libertar o poderio da minha voz calada e dos afetos abscônditos.</p>
+                
+                <p class="bio-text-body">Gabriel Ethan Paz é o pseudónimo de um cidadão português, nascido na cidade de Almada, que fez carreira profissional na Industria Farmacêutica. Desempenhou várias funções de marketing e vendas antes de rumar à carreira internacional onde foi Diretor Geral numa empresa sediada no Caribe.</p>
+                
+                <p class="bio-text-body">Licenciado em Gestão de Marketing pelo IPAM, com pós graduação obtida em Bruxelas em Marketing Estratégico, decidiu numa fase da sua vida mais recente não dar seguimento ao MBA, por cansaço académico e motivacional. Preferiu enveredar pela escrita de obras de diversos géneros literários e dedicar o seu tempo a hobbies que foram preteridos como a leitura e a música.</p>
+                
+                <p class="bio-text-body">Entusiasta ebuliente da inteligência emocional, não tem receio em expor os seus sentimentos e emoções da forma mais nua e genuína. É apaixonado por animais, pela natureza e pela praia, tendo no mar a sua principal fonte de inspiração e serenidade. Não vive sem a música e o piano o instrumento musical de eleição.</p>
+                
+                <p class="bio-text-body">Viajante pelos quatro continentes, deambulou por mais de 67 países e 128 cidades onde experimentou novas culturas e costumes que o converteram numa pessoa mais sábia, mais benévola e discernente do mundo que nos rodeia. E a sua viagem parece não ter ainda findado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-poetry" id="textos">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Extratos das Obras Literárias</span>
+            <h2 class="bio-title">Textos, Reflexões e Versos Livres.</h2>
+            <p style="color: var(--text-muted);">Mergulhe nos meus silêncios noturnos, onde a poesia expõe as fissuras da condição humana.</p>
+        </div>
+
+        <div class="poetry-grid">
+            <div class="poetry-card reveal">
+                <h3>Estas são as Noites</h3>
+                <div class="text-scroll-container">
+                    <p>No beirado da casa latejava uma chuva miudinha. Como notas desatadas e atemorizadas, que não se fazem ouvir, apenas enfeitiçam a pauta desprezada numa gaveta qualquer. A saudade enlaçava o cálice embusteiro, do licor sem nome, que jazia imóvel. Da lareira uma chama enfurecida inundava de calor a sala, onde num sofá estrategicamente colocado, relaxo o esqueleto defesso desta vida de labor. Não sei que pensava nem o que podia almejar. Apenas divagava por espaços temporais sem nexo. Arrependia-me de uns inusitados caminhos e adumbrava um sorriso perante decisões mais congruentes.</p>
+                    <p>É crucial perdermo-nos no tempo e no espaço, ponderarmos na vereda palmilhada e recalcada por passos tantas vezes dados sem razão, sem noção, sem ponderação. Um propósito de auto análise pestilenta que assessoria a correção de devaneios sorteados ao acaso. Que nada muda no passado mas inquire o futuro. Preciso de saber se fiz bem. Devo esse compromisso a mim próprio. O erro é humano mas eu não sou. Sou perfecionista e busco sempre o ponto mais garboso além-fronteiras. Não sei se valerá o sacrifício mas corre-me no sangue. E é esta fadiga que me consome. Me lapida a vontade e me furta o sono tranquilo.</p>
+                    <p>Duvido das incertezas e questiono as verdades que não domino. Revolvo todo o cenário e atento cada detalhe na esperança que me certifiquem que sim, agi bem. Não quero anuências de humanos, que tantas vezes são disfarçadas de armadilhas para enredar. De elogios envenenados ou enfeitiçados por desejos mórbidos ou coibitivos. Quero abraçar a paz. Quero o conforto de uma mente serena com cada gesto, cada decisão. Divago, questiono e vou bebendo o tal licor que desconheço. Sabe a algo esquivo mas é doce. Vai alimentando a sede das respostas. O crepitar da lenha convida a aconchegar-me no sofá. Fico na horizontal sem perder a vista do fogo. Aquece o lugar, a alma e o corpo. No cálice é visível o fluir do líquido pelo vidro fazendo lembrar a chuva que persiste no beiral.</p>
+                    <p>Invoco tudo nestas noites. O meu falecido pai, a minha irmã que habita no Altíssimo ou mesmo Deus lá no seu reino celestial. Não rogo por respostas apenas o discernimento certo. Preciso dessa certeza. Sim sou diferente. Não me contento em ser mais uma alucinada fotocópia de tantos outros sumptuosamente plantados na vida de alguém. Sou homem de virtude e de caracter. De liberdade e de paixão. De arrojo e luta sem senão. De humildade e amizade. De compaixão e ensinamento. Sou homem de trilhos complexos e ideias firmes. Nem melhor nem pior. Apenas eu. Com todas as dúvidas e certezas que me levam a noites esbanjadas num cenário esculpido pela necessidade de perfeição. A maior parte das vezes apaziguo sem dar conta. Durmo perdido nesta encruzilhada de emoções polvilhadas com uma dose prudente de ansiedade. Quase sempre desperto com as respostas que procuro. Como se viessem sorrateiramente empurradas pela brisa de um novo dia e se alojassem livremente na dormência do meu pernoitar. Esta é a forma. Estas são as noites. Este sou eu.</p>
+                </div>
+            </div>
+
+            <div class="poetry-card reveal" style="transition-delay: 0.1s;">
+                <h3>Faça-se Luz</h3>
+                <div class="text-scroll-container">
+                    <p>Faça-se luz.<br>
+                    Na negrura de tuas intrépidas palavras<br>
+                    Se melosas ou analogamente macabras<br>
+                    Na ambiguidade dos teus dúbios gestos<br>
+                    Dos passos com que singras e que são certos<br>
+                    Mas também dos que te infligem retrocesso<br>
+                    E são anelo de juízo profícuo ou adverso<br>
+                    Nas quimeras abscônditas e desprezadas<br>
+                    E nas usanças quais insanas cruzadas<br>
+                    Na efusão que cruelmente foi dilacerada<br>
+                    E sem ditame ergueu tal alma prostrada<br><br>
+                    Faça-se luz.<br>
+                    No açaimar dos sentimentos que calas<br>
+                    E desse temor que te emudece as falas<br>
+                    Do olhar túrbido focado em parte incerta<br>
+                    Pelo madracear numa vereda que é deserta<br>
+                    Nas pedras dispersas em nefasta direção<br>
+                    Que sem pudor te emantilha em solidão<br>
+                    E no vituperar de uma alma sem vontade<br>
+                    Alagada por eterna e mórbida saudade<br>
+                    Que reverte a vida para fábula deprimente<br>
+                    Onde figuras qual bonifrate decadente<br><br>
+                    Faça-se luz.<br>
+                    No abraço que almejas mas é foragido<br>
+                    Qual impostor que no plácito é fingido<br>
+                    E vai pungindo em sentença clemente<br>
+                    Num mundo apartado que é demente<br>
+                    Nesse amor singelo que não se encontra<br>
+                    Que no granjear da ventura é afronta<br>
+                    E do filho que nunca foi gerado em ventre<br>
+                    Por imposição de um corpo que doente<br>
+                    Subjuga qual gigante a um mero anão<br>
+                    Quebranta a vida sem verosímil razão<br><br>
+                    Faça-se luz.<br>
+                    Sobre o espertar de cada novel dia<br>
+                    O olhar indiligente que da face vigia<br>
+                    Nos dias que falecem por pura inação<br>
+                    Qual efeméride muda sem indigitada canção<br>
+                    Nos áridos prados outrora remanso repousante<br>
+                    Depredados pela acridez, sem cor verdejante<br>
+                    E sobre o frescor do singelo ato de folegar<br>
+                    Para que nova diegese possa então germinar<br>
+                    E um sorriso sedutor seja impregnado no vento<br>
+                    Para reempossar na alma o bendito alento</p>
+                </div>
+            </div>
+
+            <div class="poetry-card reveal" style="transition-delay: 0.2s;">
+                <h3>Escrever por Amor</h3>
+                <div class="text-scroll-container">
+                    <p>São linhas e linhas de palavras vertidas<br>
+                    Podem ser perversas mas nunca são fingidas<br>
+                    Escritas em clamor por audazes autores<br>
+                    Que narram temores ou os simples amores<br>
+                    Esboços tenazes de júbilo ou melancolia<br>
+                    Provas vivas de clemência ou pura tirania<br>
+                    São linhas e linhas de vocábulos compadecidos<br>
+                    Ditames mudos esperando ser lidos<br>
+                    Bramidos irados para iníqua comunidade<br>
+                    Que bajula o fútil e despreza a verdade<br>
+                    Se oculta do afetuoso e abraça o imoral<br>
+                    No logro edifica seu pecado capital<br>
+                    São linhas e linhas de sentimentos vividos<br>
+                    Transladados na íntegra sem filtros vendidos<br>
+                    Honrados juízos de imparcial fidalguia<br>
+                    Desprovidos de avareza ou simples mordomia<br>
+                    Brados eloquentes para clamar ponderação<br>
+                    Inquietas cautelas de tão justa prevenção<br>
+                    São linhas e linhas de amor voluntário<br>
+                    Na ambição de regenerar penoso fadário<br>
+                    Jorros de alento em almas baralhadas<br>
+                    Diligentes respostas nessas encruzilhadas<br>
+                    Abraços remotos de desvelo secreto<br>
+                    Quando estimada caneta nem sempre está perto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-portfolio" id="obras">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Obras Autorais</span>
+            <h2 class="bio-title">Sinopses do Universo Literário.</h2>
+        </div>
+
+        <div class="masonry-grid">
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">Publicado</span>
+                    <img src="https://i.ibb.co/YBvhGTTD/capa-de-redeas-soltas.jpg" alt="Capa do livro De Rédeas Soltas" class="book-cover-img" loading="lazy">
+                </picture>
+                <span class="book-category">Pensamento e Poesia</span>
+                <h3>De Rédeas Soltas</h3>
+                <p>Cada gesto é um solfejar de uma tecla. A mesma que assola a mente em cada fração de tempo em que sentado, tolero um fluir de sentimentos. O olhar permanece calmo e longínquo, perdido entre memórias e sonhos acalentados. A lareira fustiga calor e uma chama alaranjada sendo fiel companheiro duma noite em que as rédeas estão soltas. Cavalgo por planícies verdejantes sem confins ou fronteiras. Respiro proeza e expiro liberdade.</p>
+                <p>Não tenho regras nem pudores. Escrevo o que me murmuram as paredes, as cores da paisagem urdida ou dum estado de alma. Carrego cada tecla com o amor de quem não sabe mentir sobre o que sente. Sobre o que pensa ou tem ambição de realizar. O teclado segue as minhas ordens sem pestanejar. Escrevo porque me exulta a alma e me jovializa o espirito. Porque viajo por aqui e por ali sem requerer mapa. Porque navego em mundos patíveis ou inóspitos. Escrevo porque tenho a liberdade de eleger a vereda por onde pelejar.</p>
+            </div>
+
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">Em Edição</span>
+                    <img src="https://i.ibb.co/CppH5199/capa-da-simplicidade-de-um-monte.jpg" alt="Capa do livro Da simplicidade de um monte" class="book-cover-img" loading="lazy">
+                </picture>
+                <span class="book-category">Romance</span>
+                <h3>Da Simplicidade de um Monte</h3>
+                <p>“Da Simplicidade de um Monte” narra a vida de um homem e de uma mulher que nasceram numa aldeia recôndita, perdida no espaço e no tempo, onde o conhecimento chegava tarde e a vida ensinava cedo. Cresceram entre limitações, fome, míngua e um quotidiano áspero que moldou o carácter e feriu o espírito. A dureza do meio rural — a violência doméstica, o abandono, a impetuosidade dos dias — foi-lhes tatuando a pele e a alma, obrigando-os a viver intensamente o filme da própria existência. Unidos pelo matrimónio, enfrentaram um tumulto de acontecimentos que pôs à prova a sua resiliência, a sua fé, o seu amor e a sua capacidade de combate.</p>
+                <p>Criaram dois filhos, separados por sete anos, e ousaram transmitir-lhes os valores puros e sentidos de quem cresceu num monte inóspito, onde a dignidade era conquista diária. A união e a desunião caminharam lado a lado; a concórdia e a discórdia também. A violência e o divórcio chegaram a pernoitar juntos. Mesmo assim, nunca perderam de vista o sonho de ver os filhos erguerem-se com a dignidade que sempre almejaram. Enfrentaram contendas de toda a ordem — até doenças como o cancro — e resistiram com audácia e bravura, surpreendendo todos com a força que só quem conhece a dureza da terra sabe cultivar. Esta é a história de duas vidas que, embora nascidas num meio desprovido de requisitos, nunca aceitaram que isso fosse impedimento para aprender, ensinar e transmitir os valores mais nobres que podem nortear um ser humano. Uma obra que inspira, motiva e acende a chama de quem enfrenta batalhas semelhantes e procura vigor para continuar.</p>
+            </div>
+
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">Pré-lançamento</span>
+                    <img src="https://i.ibb.co/fzZJpVyX/capa-impedidos-de-amar.jpg" alt="Capa do livro Impedidos de Amar" class="book-cover-img" loading="lazy">
+                </picture>
+                <span class="book-category">Romance</span>
+                <h3>Impedidos de Amar</h3>
+                <p>Impedidos de Amar é um desfilar de emoções cruas, uma narrativa erguida sobre a história verídica da minha família — uma história que o destino decidiu trucidar com a violência de um diagnóstico de cancro, em pleno estado de emergência provocado pela pandemia de Covid‑19. Confinada e privada do amparo dos seus, viveu momentos que nenhum ser humano deveria suportar. O risco de contágio ergueu muros entre ela e o amor dos pais, do irmão, dos amigos. Estávamos tão perto… e, ainda assim, irremediavelmente longe. Sem o beijo. Sem o abraço. Impedidos de a amar.</p>
+                <p>Durante a quimioterapia, uma reação alérgica brutal obrigou-a ao internamento compulsivo, deixando marcas vigorosas, delapidadoras, que o tempo não ousará apagar. Das lágrimas derramadas, ninguém imagina a vastidão: foram flume de imensidão desaguado em oceano matreiro e mordaz, brotado de olhos plangentes e amantes. Da dor sentida, ninguém imagina o peso: trovão rugidor que rasgou a escuridão e iluminou, por instantes, uma luz que teimava em extinguir-se. Da saudade vivida, ninguém imagina a leveza cinzenta: cinza que esvoaça na aragem do tempo, como vozes escribas que insistem em dizer não, como segundos que se perdem em balbúrdia arredia.</p>
+                <p>A vida torna-se grosseiramente adulterada quando a realidade se revela penosa e impiedosa. Mudam-se os cursos de água, as nascentes, os capítulos da nossa obra. A peça ganha novo encenador, novo guião. Já não vivemos — sangramos. E cada dia é mais um morrer até sangrar. Quando o sofrimento nos mimoseia com rudeza tão severa e asfixiante, pernoitamos naquele patamar onde as perguntas se apagam, onde não há tempo para enredos divinos. A dor alcança tal magnitude que nos paralisa, e aceitamos, de braços caídos, a vereda que a vida impõe. As lágrimas tornam-se a única forma de eximir a dor. Os sorrisos, meros gestos de cortesia.</p>
+            </div>
+
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">Em Edição</span>
+                    <img src="https://i.ibb.co/8DrCPDwW/capa-a-ltima-transgress-o.jpg" alt="Capa do livro A última transgressão" class="book-cover-img" loading="lazy">
+                </picture>
+                <span class="book-category">Romance</span>
+                <h3>A Última Transgressão</h3>
+                <p>“A Última Transgressão” nasce da sombra inevitável da mortalidade — essa presença silenciosa que todos evitamos até ao dia em que ela se impõe com brutalidade. Quando um jovem brilhante vê o seu futuro estilhaçar-se sob o peso de uma doença terminal, inicia-se uma viagem íntima e devastadora ao limite da existência humana. Entre corredores estéreis de hospital, isolamento emocional e uma escrita que se torna refúgio e grito, ele confronta a fragilidade da vida, a injustiça do destino e a urgência de deixar uma marca antes que o tempo se esgote. Despojado das ilusões da juventude, o protagonista reinventa-se num território onde moralidade, desespero e liberdade se entrelaçam.</p>
+                <p>A doença transforma-se em catalisador de uma rebeldia feroz: um hacker improvável, um Robin dos Bosques digital que, perante a iminência da morte, decide subverter sistemas e redistribuir riqueza àqueles que o mundo esqueceu. O que para uns é crime, para outros é redenção — e o livro desafia o leitor a questionar onde termina a justiça e onde começa a transgressão. Esta não é apenas a história de um cibercrime, nem um drama médico. É uma meditação sobre identidade, finitude e propósito. Uma exploração das zonas cinzentas onde a dor se transforma em criação, onde o niilismo roça o altruísmo, onde a solidão se converte em força disruptiva. No seu ato final — audacioso, controverso e profundamente humano — o protagonista deixa um legado que ecoa para além da própria morte, obrigando-nos a repensar o que significa viver intensamente quando o fim já não é uma abstração, mas uma certeza iminente. “A Última Transgressão” é um convite à reflexão sobre mortalidade, justiça e legado. Uma história que incomoda, inspira e permanece — tal como o espírito indomável de quem, mesmo à beira do abismo, ousa reinventar o sentido da vida.</p>
+            </div>
+        </div>
+
+        <div class="anthology-section reveal">
+            <span class="section-tag" style="justify-content: center;">Co-autoria & Participações</span>
+            <h3 class="anthology-title">Antologias e Colaborações</h3>
+            <ul class="anthology-list">
+                <li>
+                    <strong>Antologia pela Paz</strong>
+                    VIII Evento Mundial de Poesia, 6 volumes; Fundação Amazoníca Produtiva, Poetas Intergalácticos.
+                    <small>ISBN: 9798266212992</small>
+                </li>
+                <li>
+                    <strong>Antologia Tema Livre</strong>
+                    IX Evento Mundial de Poesia – Fundación Amazoníca Productiva, Poetas Intergalácticos.
+                </li>
+                <li>
+                    <strong>Antologia Tema Livre</strong>
+                    X Evento Mundial de Poesia – Fundación Amazoníca Productiva, Poetas Intergalácticos.
+                </li>
+                <li>
+                    <strong>Antologia - Entre Linhas de Amor</strong>
+                    Metáfora Editora.
+                </li>
+                <li>
+                    <strong>Antologia - O canto das folhas</strong>
+                    Editora Reticências.
+                </li>
+                <li>
+                    <strong>Antologia - Do sono ao sonho</strong>
+                    Editora Chiado Books.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-gallery" id="galeria">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Reportagens Fotográficas</span>
+            <h2 class="bio-title">Galeria de Fotos</h2>
+            <p style="color: var(--text-muted);">Momentos eternizados do percurso autoral, contatos com a poesia livre e inspirações pelo mundo.</p>
+        </div>
+
+        <div class="gallery-photo-grid">
+            <div class="gallery-photo-card reveal">
+                <img src="https://i.ibb.co/tpHvgg8b/texto1.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Reportagem fotográfica</div>
+            </div>
+            <div class="gallery-photo-card reveal" style="transition-delay: 0.1s;">
+                <img src="https://i.ibb.co/Mywq0smj/homepage.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Reportagem fotográfica</div>
+            </div>
+            <div class="gallery-photo-card reveal" style="transition-delay: 0.2s;">
+                <img src="https://i.ibb.co/jmmgZxh/texto3.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Reportagem fotográfica</div>
+            </div>
+            <div class="gallery-photo-card reveal" style="transition-delay: 0.3s;">
+                <img src="https://i.ibb.co/PzYWp4VY/texto4.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Reportagem fotográfica</div>
+            </div>
+
+            <div class="gallery-photo-card reveal" style="transition-delay: 0.1s;">
+                <img src="https://i.ibb.co/WN5Lk1BY/evento1.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
+            </div>
+            <div class="gallery-photo-card reveal" style="transition-delay: 0.2s;">
+                <img src="https://i.ibb.co/LdYs8jg4/evento2.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
+            </div>
+            <div class="gallery-photo-card reveal" style="transition-delay: 0.3s;">
+                <img src="https://i.ibb.co/Y4fD0Fm6/evento3.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
+            </div>
+            <div class="gallery-photo-card reveal" style="transition-delay: 0.4s;">
+                <img src="https://i.ibb.co/XZSnHHg3/evento4.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-press" id="press">
+        <div class="press-container">
+            <div class="press-content reveal-left">
+                <div class="press-header">
+                    <span class="section-tag" style="color: var(--accent-light);">Comunicação Social</span>
+                    <h2 class="press-title">Media Kit Oficial</h2>
+                    <p class="press-subtitle">Material institucional completo para imprensa, eventos, entrevistas e divulgação.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>Missão Literária</h4>
+                    <p>A minha missão nasce do instante em que a alma se desgoverna e me deixa à mercê de emoções que me assaltam, me ferem ou me salvam. Há momentos em que tudo pára — o mundo, o corpo, o tempo — e apenas as minhas mãos continuam, entregues a um impulso que não controlo. É aí que as rédeas se soltam e eu me encontro.</p>
+                    <p>Escrevo porque não sei calar o que me atravessa. Porque as palavras, quando irrompem, são mais verdadeiras do que qualquer gesto. Elas deliram no papel, procuram sentido, procuram‑me a mim. São o meu modo de respirar quando o peito aperta, o meu modo de existir quando a vida pesa, o meu modo de amar quando o silêncio já não basta.</p>
+                    <p>Escrevo porque sim. Escrevo porque preciso. Escrevo porque, quando me abandono às palavras, reencontro a liberdade que tantas vezes me falta. Escrevo por amor — ao que sinto, ao que sou, ao que ainda procuro.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>Biografia Longa</h4>
+                    <p>Gabriel Ethan Paz é o pseudónimo de um cidadão português, nascido na cidade de Almada, que fez carreira profissional na Industria Farmacêutica. Desempenhou várias funções de marketing e vendas antes de rumar à carreira internacional onde foi Diretor Geral numa empresa sediada no Caribe.</p>
+                    <p>Licenciado em Gestão de Marketing pelo IPAM, com pós graduação obtida em Bruxelas em Marketing Estratégico, decidiu numa fase da sua vida mais recente não dar seguimento ao MBA, por cansaço académico e motivacional. Preferiu enveredar pela escrita de obras de diversos géneros literários e dedicar o seu tempo a hobbies que foram preteridos como a leitura e a música.</p>
+                    <p>Entusiasta ebuliente da inteligência emocional, não tem receio em expor os seus sentimentos e emoções da forma mais nua e genuína. É apaixonado por animais, pela natureza e pela praia, tendo no mar a sua principal fonte de inspiração e serenidade. Não vive sem a música e o piano o instrumento musical de eleição.</p>
+                    <p>Viajante pelos quatro continentes, deambulou por mais de 67 países e 128 cidades onde experimentou novas culturas e costumes que o converteram numa pessoa mais sábia, mais benévola e discernente do mundo que nos rodeia. E a sua viagem parece não ter ainda findado.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>Obras de sua Autoria (10 Obras Totais)</h4>
+                    <ul class="press-list">
+                        <li><strong>De Rédeas Soltas</strong> – 2ª Edição, Metáfora Editora – Poesia e Pensamento</li>
+                        <li><strong>Impedidos de Amar</strong> – Romance</li>
+                        <li><strong>Da Simplicidade de um Monte</strong> – Romance</li>
+                        <li><strong>A Última Transgressão</strong> – Romance</li>
+                        <li>Participação em 6 Antologias Nacionais e Internacionais (Detalhes no Portfólio).</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-style: italic; font-size: 0.8rem; color: var(--text-press-muted);">* Fotos das capas e sinopses disponíveis no portfólio deste site.</p>
+                </div>
+            </div>
+
+            <div class="press-sidebar reveal-right">
+                <img src="https://i.ibb.co/twNzWPDb/Autor.jpg" alt="Retrato Oficial Gabriel Ethan Paz" class="press-photo">
+                
+                <div class="press-block">
+                    <h4>Biografia Curta</h4>
+                    <p>Gabriel Ethan Paz é um escritor português nascido em Almada, com carreira internacional na Indústria Farmacêutica antes de se dedicar inteiramente à escrita. Licenciado em Gestão de Marketing e pós‑graduado em Marketing Estratégico, encontrou na literatura o espaço onde a emoção, a introspeção e a liberdade criativa se cruzam. Apaixonado pela natureza, pelos animais, pelo mar e pela música — especialmente o piano —, viajou por mais de 67 países, experiências que moldaram a sua visão sensível e humana do mundo.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>Press Highlights</h4>
+                    <ul class="press-list">
+                        <li>Eventos literários e apresentações públicas</li>
+                        <li>Entrevistas e conversas</li>
+                        <li>Artigos e menções em imprensa</li>
+                        <li>Participações futuras</li>
+                        <li>Citações selecionadas</li>
+                    </ul>
+                </div>
+
+                <div class="press-block press-contact">
+                    <h4>Contactos Oficiais</h4>
+                    <a href="mailto:gabriel.ethan.paz@protonmail.com" class="hover-target">gabriel.ethan.paz@protonmail.com</a>
+                    <a href="https://gabrielethanpaz.com" target="_blank" rel="noopener noreferrer" class="hover-target">gabrielethanpaz.com</a>
+                    <a href="https://gabrielethanpaz.substack.com" target="_blank" rel="noopener noreferrer" class="hover-target">Substack Newsletter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>Gabriel Ethan Paz.</h2>
+                <p>Escrever é o meu gesto de liberdade — o instante em que solto as rédeas da mente e deixo que a emoção, nua e indomada, encontre o papel.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#apresentacao" class="hover-target">Home</a></li>
+                    <li><a href="#biografia" class="hover-target">Biografia</a></li>
+                    <li><a href="#textos" class="hover-target">Textos e Poemas</a></li>
+                    <li><a href="#obras" class="hover-target">Sinopses e Portfólio</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/escritorgabrielethanpaz/" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571446910672" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabrielethanpaz/" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@gabrielethanpaz" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copy">
+                &copy; 2026 Gabriel Ethan Paz. Todos os direitos reservados.
+            </div>
+            <div class="footer-credit">
+                Engenharia Digital por Emerson
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* LOADER LOGIC */
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 1000);
+            }, 3000);
+
+            /* CUSTOM CURSOR LOGIC */
+            const cursorDot = document.getElementById('cursor-dot');
+            const cursorOutline = document.getElementById('cursor-outline');
+            const hoverTargets = document.querySelectorAll('.hover-target, a, button');
+
+            if (window.matchMedia("(pointer: fine)").matches) {
+                window.addEventListener('mousemove', (e) => {
+                    const posX = e.clientX;
+                    const posY = e.clientY;
+                    cursorDot.style.left = `${posX}px`;
+                    cursorDot.style.top = `${posY}px`;
+                    cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+                });
+
+                hoverTargets.forEach(target => {
+                    target.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+                    target.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+                });
+            } else {
+                cursorDot.style.display = 'none';
+                cursorOutline.style.display = 'none';
+                document.body.style.cursor = 'auto';
+                hoverTargets.forEach(target => target.style.cursor = 'pointer');
+            }
+
+            /* SCROLL HEADER E OBSERVER DE ANIMAÇÕES */
+            const header = document.getElementById('main-header');
+            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                revealOnScroll.observe(el);
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            }, { passive: true });
+
+            /* DARK / LIGHT MODE PERSISTENTE */
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+            
+            const iconMoon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            const iconSun = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+
+            const savedTheme = localStorage.getItem('gep-theme') || 'light';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeIcon.innerHTML = savedTheme === 'dark' ? iconSun : iconMoon;
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('gep-theme', newTheme);
+                
+                themeToggleBtn.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    themeIcon.innerHTML = newTheme === 'dark' ? iconSun : iconMoon;
+                    themeToggleBtn.style.transform = 'rotate(0deg)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
