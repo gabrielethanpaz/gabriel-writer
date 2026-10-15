@@ -127,7 +127,7 @@
             cursor: none;
         }
 
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
         body {
             background-color: var(--bg-primary);
@@ -306,6 +306,9 @@
             display: flex;
             align-items: center;
             gap: var(--space-2);
+            line-height: 1;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .header-logo-dot {
@@ -640,7 +643,7 @@
             transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
             transition: transform var(--transition-slow);
             border-left: 12px solid #e0dcd3;
-            background: url('https://i.ibb.co/YBvhGTTD/capa-de-redeas-soltas.jpg') center/cover no-repeat;
+            background: url('assets/images/impedidos-de-amar.jpg') center/cover no-repeat;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: high-quality;
             -webkit-backface-visibility: hidden;
@@ -675,7 +678,7 @@
             max-width: var(--max-width);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-4);
         }
 
@@ -742,7 +745,7 @@
         .bio-image-inner {
             width: 100%;
             height: 100%;
-            background: url('https://i.ibb.co/CpZrQSVb/Casal-2.jpg') center/cover no-repeat;
+            background: url('assets/images/bio-casal.jpg') center/cover no-repeat;
             position: relative;
             display: flex;
             justify-content: center;
@@ -1304,14 +1307,20 @@
         }
 
         @media (max-width: 992px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
-            .stat-card { border-right: none; border-bottom: 1px solid var(--border-light); }
+            .stats-grid { gap: var(--space-3); }
             .masonry-grid { column-count: 1; }
             .poetry-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
+        @media (max-width: 640px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-card { border-right: none; border-bottom: 1px solid var(--border-light); }
+            .stat-card:last-child { border-bottom: none; }
+        }
+
         @media (max-width: 768px) {
+            header { padding: 0 var(--space-3); }
             .main-nav { display: none; }
             .gallery-photo-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
@@ -1398,7 +1407,7 @@
             </div>
             
             <div class="hero-visual">
-                <div class="book-3d-mockup hover-target" title="Capa: De Rédeas Soltas"></div>
+                <div class="book-3d-mockup hover-target" title="Capa: Impedidos de Amar"></div>
             </div>
         </div>
     </section>
@@ -1411,13 +1420,9 @@
             </div>
             <div class="stat-card reveal" style="transition-delay: 0.1s;">
                 <div class="stat-number">128</div>
-                <div class="stat-label">Cidades Atravessadas</div>
+                <div class="stat-label">Cidades Exploradas</div>
             </div>
             <div class="stat-card reveal" style="transition-delay: 0.2s;">
-                <div class="stat-number">1584</div>
-                <div class="stat-label">Nº Sócio A.P. Escritores</div>
-            </div>
-            <div class="stat-card reveal" style="transition-delay: 0.3s;">
                 <div class="stat-number">10</div>
                 <div class="stat-label">Obras e Antologias</div>
             </div>
@@ -1557,7 +1562,7 @@
             <div class="masonry-item reveal">
                 <picture class="picture-wrapper">
                     <span class="status-badge">Publicado</span>
-                    <img src="https://i.ibb.co/YBvhGTTD/capa-de-redeas-soltas.jpg" alt="Capa do livro De Rédeas Soltas" class="book-cover-img" loading="lazy">
+                    <img src="assets/images/capa-de-redeas-soltas.jpg" alt="Capa do livro De Rédeas Soltas" class="book-cover-img" loading="lazy">
                 </picture>
                 <span class="book-category">Pensamento e Poesia</span>
                 <h3>De Rédeas Soltas</h3>
@@ -1568,7 +1573,7 @@
             <div class="masonry-item reveal">
                 <picture class="picture-wrapper">
                     <span class="status-badge">Em Edição</span>
-                    <img src="https://i.ibb.co/CppH5199/capa-da-simplicidade-de-um-monte.jpg" alt="Capa do livro Da simplicidade de um monte" class="book-cover-img" loading="lazy">
+                    <img src="assets/images/capa-da-simplicidade-de-um-monte.jpg" alt="Capa do livro Da simplicidade de um monte" class="book-cover-img" loading="lazy">
                 </picture>
                 <span class="book-category">Romance</span>
                 <h3>Da Simplicidade de um Monte</h3>
@@ -1579,7 +1584,7 @@
             <div class="masonry-item reveal">
                 <picture class="picture-wrapper">
                     <span class="status-badge">Pré-lançamento</span>
-                    <img src="https://i.ibb.co/fzZJpVyX/capa-impedidos-de-amar.jpg" alt="Capa do livro Impedidos de Amar" class="book-cover-img" loading="lazy">
+                    <img src="assets/images/impedidos-de-amar.jpg" alt="Capa do livro Impedidos de Amar" class="book-cover-img" loading="lazy">
                 </picture>
                 <span class="book-category">Romance</span>
                 <h3>Impedidos de Amar</h3>
@@ -1591,7 +1596,7 @@
             <div class="masonry-item reveal">
                 <picture class="picture-wrapper">
                     <span class="status-badge">Em Edição</span>
-                    <img src="https://i.ibb.co/8DrCPDwW/capa-a-ltima-transgress-o.jpg" alt="Capa do livro A última transgressão" class="book-cover-img" loading="lazy">
+                    <img src="assets/images/capa-a-ultima-transgressao.jpg" alt="Capa do livro A última transgressão" class="book-cover-img" loading="lazy">
                 </picture>
                 <span class="book-category">Romance</span>
                 <h3>A Última Transgressão</h3>
@@ -1642,36 +1647,36 @@
 
         <div class="gallery-photo-grid">
             <div class="gallery-photo-card reveal">
-                <img src="https://i.ibb.co/tpHvgg8b/texto1.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-reportagem-1.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Reportagem fotográfica</div>
             </div>
             <div class="gallery-photo-card reveal" style="transition-delay: 0.1s;">
-                <img src="https://i.ibb.co/Mywq0smj/homepage.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-reportagem-2.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Reportagem fotográfica</div>
             </div>
             <div class="gallery-photo-card reveal" style="transition-delay: 0.2s;">
-                <img src="https://i.ibb.co/jmmgZxh/texto3.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-reportagem-3.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Reportagem fotográfica</div>
             </div>
             <div class="gallery-photo-card reveal" style="transition-delay: 0.3s;">
-                <img src="https://i.ibb.co/PzYWp4VY/texto4.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-reportagem-4.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Reportagem fotográfica</div>
             </div>
 
             <div class="gallery-photo-card reveal" style="transition-delay: 0.1s;">
-                <img src="https://i.ibb.co/WN5Lk1BY/evento1.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-evento-1.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
             </div>
             <div class="gallery-photo-card reveal" style="transition-delay: 0.2s;">
-                <img src="https://i.ibb.co/LdYs8jg4/evento2.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-evento-2.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
             </div>
             <div class="gallery-photo-card reveal" style="transition-delay: 0.3s;">
-                <img src="https://i.ibb.co/Y4fD0Fm6/evento3.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-evento-3.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
             </div>
             <div class="gallery-photo-card reveal" style="transition-delay: 0.4s;">
-                <img src="https://i.ibb.co/XZSnHHg3/evento4.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
+                <img src="assets/images/galeria-evento-4.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
                 <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
             </div>
         </div>
@@ -1705,7 +1710,7 @@
                     <h4>Obras de sua Autoria (10 Obras Totais)</h4>
                     <ul class="press-list">
                         <li><strong>De Rédeas Soltas</strong> – 2ª Edição, Metáfora Editora – Poesia e Pensamento</li>
-                        <li><strong>Impedidos de Amar</strong> – Romance</li>
+                        <li><strong>Impedidos de Amar</strong> – In-Finita Editorial, Romance</li>
                         <li><strong>Da Simplicidade de um Monte</strong> – Romance</li>
                         <li><strong>A Última Transgressão</strong> – Romance</li>
                         <li>Participação em 6 Antologias Nacionais e Internacionais (Detalhes no Portfólio).</li>
@@ -1715,7 +1720,7 @@
             </div>
 
             <div class="press-sidebar reveal-right">
-                <img src="https://i.ibb.co/twNzWPDb/Autor.jpg" alt="Retrato Oficial Gabriel Ethan Paz" class="press-photo">
+                <img src="assets/images/gabriel-autor.jpg" alt="Retrato Oficial Gabriel Ethan Paz" class="press-photo">
                 
                 <div class="press-block">
                     <h4>Biografia Curta</h4>
