@@ -338,6 +338,7 @@
             color: var(--text-muted);
             padding: var(--space-2) 0;
             position: relative;
+            white-space: nowrap;
         }
 
         nav.main-nav > ul > li > a::after {
@@ -931,6 +932,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--accent-primary);
+            white-space: nowrap;
         }
 
         .poetry-card {
@@ -1547,8 +1549,14 @@
            ========================================================================== */
         @media (max-width: 1200px) {
             .bio-container { grid-template-columns: 1fr; }
-            .bio-image-wrapper { height: 500px; }
+            .bio-image-wrapper { height: 560px; max-width: 420px; margin: 0 auto; }
             .poetry-grid { grid-template-columns: repeat(2, 1fr); }
+            .poetry-book { grid-template-columns: 1fr; }
+            .poetry-book .poetry-grid { grid-template-columns: repeat(3, 1fr); }
+            .poetry-book-cover { position: static; width: 160px; margin: 0 auto; }
+            nav.main-nav > ul { gap: var(--space-3); }
+            nav.main-nav > ul > li > a { font-size: var(--text-xs); letter-spacing: 1px; }
+            .header-logo { font-size: var(--text-2xl); }
             .gallery-photo-card { flex-basis: calc((100% - 2 * var(--space-3)) / 3); }
             .press-container { grid-template-columns: 1fr; }
             .anthology-list { grid-template-columns: 1fr; }
@@ -1557,13 +1565,19 @@
         @media (max-width: 992px) {
             .hero-intro { grid-template-columns: 1fr; gap: var(--space-4); }
             .hero-media-col { width: 100%; max-width: 360px; margin: 0 auto; }
-            .poetry-book { grid-template-columns: 1fr; }
+            .poetry-book .poetry-grid { grid-template-columns: 1fr; }
+            nav.main-nav > ul { gap: var(--space-2); }
+            nav.main-nav > ul > li > a { letter-spacing: 0.5px; }
+            header { padding: 0 var(--space-4); }
             .video-grid, .interview-grid { grid-template-columns: 1fr; }
-            .poetry-book-cover { position: static; width: 160px; margin: 0 auto; }
             .stats-grid { gap: var(--space-3); }
             .masonry-grid { column-count: 1; }
             .poetry-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 900px) {
+            .main-nav { display: none; }
         }
 
         @media (max-width: 640px) {
