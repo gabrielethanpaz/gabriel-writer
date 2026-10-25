@@ -493,6 +493,49 @@
             text-align: center;
         }
 
+        .hero-intro {
+            display: grid;
+            grid-template-columns: minmax(240px, 360px) 1fr;
+            gap: var(--space-6);
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-media-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+            transform: translateY(20px);
+        }
+
+        .hero-media {
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            background-color: var(--bg-tertiary);
+            margin-bottom: var(--space-3);
+        }
+
+        .hero-media img,
+        .hero-media video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-media img { aspect-ratio: 1 / 1; object-fit: cover; }
+
+        .hero-media iframe {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+        }
+
         .hero-content {
             display: flex;
             flex-direction: column;
@@ -552,7 +595,7 @@
             display: flex;
             gap: var(--space-3);
             opacity: 0;
-            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.8s;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 2.2s;
             transform: translateY(20px);
         }
 
@@ -618,45 +661,60 @@
             transform: translateY(-3px);
         }
 
-        .hero-visual {
-            position: relative;
-            height: 550px;
-            width: 100%;
+        .hero-media-col .badge-literary { margin-bottom: 0; }
+
+        .hero-launch {
             display: flex;
-            justify-content: center;
             align-items: center;
+            gap: var(--space-3);
+            width: 100%;
+            max-width: 720px;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent-primary);
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.8s;
+            transform: translateY(20px);
+        }
+
+        .hero-launch::before,
+        .hero-launch::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--accent-primary);
+            opacity: 0.5;
+        }
+
+        .hero-launch span {
+            padding: 12px 28px;
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-sm);
+            background-color: var(--accent-glow);
+            text-align: center;
+        }
+
+        .hero-visual {
+            width: 100%;
+            max-width: 1000px;
             opacity: 0;
             animation: fadeIn 1.5s ease forwards 2s;
-            margin-top: var(--space-4);
         }
 
-        .book-3d-mockup {
-            width: 350px;
-            height: 500px;
-            border-radius: 4px 15px 15px 4px;
-            box-shadow: 
-                inset 4px 0 10px rgba(0,0,0,0.1),
-                inset -1px 0 2px rgba(255,255,255,0.3),
-                30px 40px 50px rgba(0,0,0,0.15);
-            position: relative;
-            transform-style: preserve-3d;
-            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+        .hero-cover-full {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 2400 / 1039;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
             transition: transform var(--transition-slow);
-            border-left: 12px solid #e0dcd3;
-            background: url('assets/images/impedidos-de-amar.jpg') center/cover no-repeat;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: high-quality;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
         }
 
-        .book-3d-mockup:hover {
-            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-10px);
-            box-shadow: 
-                inset 4px 0 10px rgba(0,0,0,0.1),
-                inset -1px 0 2px rgba(255,255,255,0.3),
-                40px 50px 60px rgba(0,0,0,0.2);
-        }
+        .hero-cover-full:hover { transform: translateY(-6px); }
 
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
@@ -1307,6 +1365,8 @@
         }
 
         @media (max-width: 992px) {
+            .hero-intro { grid-template-columns: 1fr; gap: var(--space-4); }
+            .hero-media-col { width: 100%; max-width: 360px; margin: 0 auto; }
             .stats-grid { gap: var(--space-3); }
             .masonry-grid { column-count: 1; }
             .poetry-grid { grid-template-columns: 1fr; }
@@ -1314,6 +1374,12 @@
         }
 
         @media (max-width: 640px) {
+            .hero { padding-left: var(--space-3); padding-right: var(--space-3); }
+            .hero-launch { font-size: var(--text-xs); letter-spacing: 2px; }
+            .hero-launch::before, .hero-launch::after { display: none; }
+            .hero-launch span { width: 100%; padding: 12px 16px; }
+            .hero-container { gap: var(--space-4); }
+            .hero-actions { flex-direction: column; width: 100%; }
             .stats-grid { grid-template-columns: 1fr; }
             .stat-card { border-right: none; border-bottom: 1px solid var(--border-light); }
             .stat-card:last-child { border-bottom: none; }
@@ -1353,8 +1419,8 @@
                     <div class="mega-menu">
                         <div class="mega-menu-featured">
                             <h4>Destaque do Mês</h4>
-                            <h5 style="font-family: 'Georgia', serif; font-size: 18px; margin-bottom: 4px;">De Rédeas Soltas</h5>
-                            <p>Pensamento e poesia pura. A libertação através das palavras soltas ao vento.</p>
+                            <h5 style="font-family: 'Georgia', serif; font-size: 18px; margin-bottom: 4px;">Impedidos de Amar</h5>
+                            <p>Uma história verídica de amor e perda. Brevemente disponível no mercado.</p>
                         </div>
                         <div class="mega-menu-links">
                             <div class="mega-menu-column">
@@ -1395,19 +1461,29 @@
         </svg>
 
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="badge-literary">Sócio da AP Escritores Nº 1584</div>
-                <h1 class="hero-title">A arquitetura da emoção nas <span>rédeas soltas</span> da vida.</h1>
-                <p class="hero-description">Gabriel Ethan Paz não apenas escreve — ele esculpe emoções em palavras. De Almada ao mundo, a sua jornada é um atlas de alma e memória, onde cada país visitado se converte em verso, conto ou romance que liberta o indizível. As suas obras não se leem: respiram, confessam, e redimem.</p>
-                
-                <div class="hero-actions">
-                    <a href="#obras" class="btn-primary hover-target">Explorar o Portfólio</a>
-                    <a href="#biografia" class="btn-secondary hover-target">A Minha Razão</a>
+            <div class="hero-intro">
+                <div class="hero-media-col">
+                    <div class="hero-media">
+                        <img src="assets/images/gabriel-autor.jpg" alt="Retrato Oficial Gabriel Ethan Paz" width="1254" height="1254">
+                    </div>
+                    <div class="badge-literary">Sócio da AP Escritores Nº 1584</div>
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="hero-title">A arquitetura da emoção nas <span>rédeas soltas</span> da vida.</h1>
+                    <p class="hero-description">Gabriel Ethan Paz não apenas escreve — ele esculpe emoções em palavras. De Almada ao mundo, a sua jornada é um atlas de alma e memória, onde cada país visitado se converte em verso, conto ou romance que liberta o indizível. As suas obras não se leem: respiram, confessam, e redimem.</p>
                 </div>
             </div>
-            
+
+            <p class="hero-launch"><span>Brevemente disponível no mercado</span></p>
+
             <div class="hero-visual">
-                <div class="book-3d-mockup hover-target" title="Capa: Impedidos de Amar"></div>
+                <img src="assets/images/impedidos-de-amar-capa-completa.jpg" alt="Capa completa do livro Impedidos de Amar, de Gabriel Ethan Paz" class="hero-cover-full hover-target" width="2400" height="1039">
+            </div>
+
+            <div class="hero-actions">
+                <a href="#obras" class="btn-primary hover-target">Explorar o Portfólio</a>
+                <a href="#biografia" class="btn-secondary hover-target">A Minha Razão</a>
             </div>
         </div>
     </section>
@@ -1441,13 +1517,11 @@
                 
                 <p class="bio-text-lead">Os vocábulos deliram no papel, a mente folega mundo fora e os sentidos estão outorgados ao acaso. Daqui brotam construções gramaticais que almejam elucidar-me sobre desígnios. Podem ser apaziguadoras ou nefastas mas são puras e isentas. O intuito é libertar o poderio da minha voz calada e dos afetos abscônditos.</p>
                 
-                <p class="bio-text-body">Gabriel Ethan Paz é o pseudónimo de um cidadão português, nascido na cidade de Almada, que fez carreira profissional na Industria Farmacêutica. Desempenhou várias funções de marketing e vendas antes de rumar à carreira internacional onde foi Diretor Geral numa empresa sediada no Caribe.</p>
-                
-                <p class="bio-text-body">Licenciado em Gestão de Marketing pelo IPAM, com pós graduação obtida em Bruxelas em Marketing Estratégico, decidiu numa fase da sua vida mais recente não dar seguimento ao MBA, por cansaço académico e motivacional. Preferiu enveredar pela escrita de obras de diversos géneros literários e dedicar o seu tempo a hobbies que foram preteridos como a leitura e a música.</p>
-                
-                <p class="bio-text-body">Entusiasta ebuliente da inteligência emocional, não tem receio em expor os seus sentimentos e emoções da forma mais nua e genuína. É apaixonado por animais, pela natureza e pela praia, tendo no mar a sua principal fonte de inspiração e serenidade. Não vive sem a música e o piano o instrumento musical de eleição.</p>
-                
-                <p class="bio-text-body">Viajante pelos quatro continentes, deambulou por mais de 67 países e 128 cidades onde experimentou novas culturas e costumes que o converteram numa pessoa mais sábia, mais benévola e discernente do mundo que nos rodeia. E a sua viagem parece não ter ainda findado.</p>
+                <p class="bio-text-body"><strong>Gabriel Ethan Paz</strong> é o pseudónimo de um português nascido em Almada, que fez carreira na Indústria Farmacêutica até à Direção Geral no Caribe. Licenciado em Marketing pelo IPAM e pós-graduado em Bruxelas, trocou o MBA por um caderno.</p>
+
+                <p class="bio-text-body">Não escreve, esculpe emoções. Escrita nua, visceral, profundamente humana. Cada frase é um aceno na calçada, cada capítulo um lenço que não é para si.</p>
+
+                <p class="bio-text-body">Tem no mar a inspiração e no piano o refúgio. Viajou 67 países e 128 cidades. De Corroios ao mundo, a sua obra é um atlas de alma onde o indizível encontra voz e a viagem interior ainda não findou.</p>
             </div>
         </div>
     </section>
@@ -1700,10 +1774,9 @@
 
                 <div class="press-block">
                     <h4>Biografia Longa</h4>
-                    <p>Gabriel Ethan Paz é o pseudónimo de um cidadão português, nascido na cidade de Almada, que fez carreira profissional na Industria Farmacêutica. Desempenhou várias funções de marketing e vendas antes de rumar à carreira internacional onde foi Diretor Geral numa empresa sediada no Caribe.</p>
-                    <p>Licenciado em Gestão de Marketing pelo IPAM, com pós graduação obtida em Bruxelas em Marketing Estratégico, decidiu numa fase da sua vida mais recente não dar seguimento ao MBA, por cansaço académico e motivacional. Preferiu enveredar pela escrita de obras de diversos géneros literários e dedicar o seu tempo a hobbies que foram preteridos como a leitura e a música.</p>
-                    <p>Entusiasta ebuliente da inteligência emocional, não tem receio em expor os seus sentimentos e emoções da forma mais nua e genuína. É apaixonado por animais, pela natureza e pela praia, tendo no mar a sua principal fonte de inspiração e serenidade. Não vive sem a música e o piano o instrumento musical de eleição.</p>
-                    <p>Viajante pelos quatro continentes, deambulou por mais de 67 países e 128 cidades onde experimentou novas culturas e costumes que o converteram numa pessoa mais sábia, mais benévola e discernente do mundo que nos rodeia. E a sua viagem parece não ter ainda findado.</p>
+                    <p>Gabriel Ethan Paz é o pseudónimo de um português nascido em Almada, que fez carreira na Indústria Farmacêutica até à Direção Geral no Caribe. Licenciado em Marketing pelo IPAM e pós-graduado em Bruxelas, trocou o MBA por um caderno.</p>
+                    <p>Não escreve, esculpe emoções. Escrita nua, visceral, profundamente humana. Cada frase é um aceno na calçada, cada capítulo um lenço que não é para si.</p>
+                    <p>Tem no mar a inspiração e no piano o refúgio. Viajou 67 países e 128 cidades. De Corroios ao mundo, a sua obra é um atlas de alma onde o indizível encontra voz e a viagem interior ainda não findou.</p>
                 </div>
 
                 <div class="press-block">
