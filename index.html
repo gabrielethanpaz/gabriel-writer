@@ -892,6 +892,47 @@
             gap: var(--space-5);
         }
 
+        .poetry-book {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: var(--space-5);
+            align-items: start;
+        }
+
+        .poetry-book + .poetry-book {
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .poetry-book .poetry-grid { margin: 0; max-width: none; }
+
+        .poetry-book-cover {
+            position: sticky;
+            top: calc(var(--header-height) + var(--space-3));
+            text-align: center;
+        }
+
+        .poetry-book-cover img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+
+        .poetry-book-cover figcaption {
+            margin-top: var(--space-2);
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+        }
+
         .poetry-card {
             background-color: var(--bg-primary);
             border: 1px solid var(--border-light);
@@ -1104,17 +1145,67 @@
             background-color: var(--bg-secondary);
         }
 
-        .gallery-photo-grid {
+        .gallery-carousels {
             max-width: var(--max-width);
             margin: var(--space-6) auto 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-3);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
         }
-        
+
+        .carousel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
+        }
+
+        .carousel-title {
+            font-size: var(--text-2xl);
+            color: var(--text-main);
+        }
+
+        .carousel-controls { display: flex; gap: var(--space-1); }
+
+        .carousel-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border-strong);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-size: var(--text-lg);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .carousel-btn:hover:not(:disabled) {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .carousel-btn:disabled { opacity: 0.35; cursor: default; }
+
+        .carousel-track {
+            display: flex;
+            gap: var(--space-3);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: var(--space-2) 2px var(--space-3);
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-light) transparent;
+        }
+
+        .carousel-track::-webkit-scrollbar { height: 6px; }
+        .carousel-track::-webkit-scrollbar-thumb { background-color: var(--accent-light); border-radius: var(--radius-full); }
+
         .gallery-photo-card {
             position: relative;
-            width: 100%;
+            flex: 0 0 calc((100% - 3 * var(--space-3)) / 4);
+            margin: 0;
+            scroll-snap-align: start;
             height: 350px;
             border-radius: var(--radius-sm);
             overflow: hidden;
@@ -1167,6 +1258,105 @@
         .gallery-photo-card:hover .gallery-caption {
             transform: translateY(0);
         }
+
+        /* ==========================================================================
+           VÍDEOS
+           ========================================================================== */
+        .section-videos {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-primary);
+        }
+
+        .video-showcase {
+            max-width: 1000px;
+            margin: var(--space-6) auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+        }
+
+        .video-item { margin: 0; }
+
+        .video-item figcaption {
+            margin-top: var(--space-2);
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .video-frame {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================================================
+           ENTREVISTAS
+           ========================================================================== */
+        .section-interviews {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-secondary);
+        }
+
+        .interview-grid {
+            max-width: 1000px;
+            margin: var(--space-6) auto 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-4);
+        }
+
+        .interview-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--space-2);
+        }
+
+        .interview-card h3 { font-size: var(--text-2xl); color: var(--text-main); line-height: 1.3; }
+        .interview-card p { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.7; }
+        .interview-card .btn-secondary { margin-top: var(--space-2); }
+
+        .interview-type {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+        }
+
+        .interview-source {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--text-main) !important;
+        }
+
+        .interview-card--soon { border-left-color: var(--border-strong); }
 
         /* ==========================================================================
            PRESS / MEDIA KIT
@@ -1359,7 +1549,7 @@
             .bio-container { grid-template-columns: 1fr; }
             .bio-image-wrapper { height: 500px; }
             .poetry-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-photo-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-photo-card { flex-basis: calc((100% - 2 * var(--space-3)) / 3); }
             .press-container { grid-template-columns: 1fr; }
             .anthology-list { grid-template-columns: 1fr; }
         }
@@ -1367,6 +1557,9 @@
         @media (max-width: 992px) {
             .hero-intro { grid-template-columns: 1fr; gap: var(--space-4); }
             .hero-media-col { width: 100%; max-width: 360px; margin: 0 auto; }
+            .poetry-book { grid-template-columns: 1fr; }
+            .video-grid, .interview-grid { grid-template-columns: 1fr; }
+            .poetry-book-cover { position: static; width: 160px; margin: 0 auto; }
             .stats-grid { gap: var(--space-3); }
             .masonry-grid { column-count: 1; }
             .poetry-grid { grid-template-columns: 1fr; }
@@ -1374,7 +1567,9 @@
         }
 
         @media (max-width: 640px) {
-            .hero { padding-left: var(--space-3); padding-right: var(--space-3); }
+            .hero, .section-stats, .section-bio, .section-poetry, .section-portfolio,
+            .section-gallery, .section-videos, .section-interviews, .section-press { padding-left: var(--space-3); padding-right: var(--space-3); }
+            .interview-card { padding: var(--space-4) var(--space-3); }
             .hero-launch { font-size: var(--text-xs); letter-spacing: 2px; }
             .hero-launch::before, .hero-launch::after { display: none; }
             .hero-launch span { width: 100%; padding: 12px 16px; }
@@ -1388,7 +1583,7 @@
         @media (max-width: 768px) {
             header { padding: 0 var(--space-3); }
             .main-nav { display: none; }
-            .gallery-photo-grid { grid-template-columns: 1fr; }
+            .gallery-photo-card { flex-basis: 80%; height: 320px; }
             .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -1533,6 +1728,49 @@
             <p style="color: var(--text-muted);">Mergulhe nos meus silêncios noturnos, onde a poesia expõe as fissuras da condição humana.</p>
         </div>
 
+        <div class="poetry-book">
+            <figure class="poetry-book-cover reveal">
+                <img src="assets/images/impedidos-de-amar.jpg" alt="Capa do livro Impedidos de Amar" loading="lazy" width="565" height="850">
+                <figcaption>Impedidos de Amar</figcaption>
+            </figure>
+
+            <div class="poetry-grid">
+                <div class="poetry-card reveal">
+                    <h3>Texto 1</h3>
+                    <div class="text-scroll-container">
+                        <p>A face da Elisabete espelhava alegria. Queria muito rever a sua praia e apartar-se da rotina do hospital e duma camuflada prisão domiciliária. Por isso, despertou cedo no primeiro dia e colocou toda a gente em alvoraço. Requeria o confecionar do pequeno-almoço e a partida para a praia. Mal comeu, tal a ânsia de pisar a areia fina. Dentro da viatura e durante o percurso, ninguém conseguiu soletrar palavra tal o assoberbar da sua voz animada.</p>
+                        <p>Hesitava entre discutir a cor da bandeira do estado do mar e se existia mudança de cenários. No acercar do parqueamento era evidente o seu reluzente olhar. Finalmente, a sua praia estava ali. Defronte dos seus olhos emocionados.</p>
+                    </div>
+                </div>
+
+                <div class="poetry-card reveal" style="transition-delay: 0.1s;">
+                    <h3>Texto 2</h3>
+                    <div class="text-scroll-container">
+                        <p>Os dias são meros contadores de minutos, filas de espera sem objetivo fundamentado. Rotinas baralhadas onde subtraímos o ócio e o prazer, dividimos a incumbência e a carência ou privação. São frações sem incógnita e equações impossíveis. Pararam os relógios e os calendários permanecem fixos no mesmo dia e no mesmo mês. São baladas de piano triste e sem assonância.</p>
+                        <p>Aceitamos o palpitar do vento e a transparência da chuva e resguardamo-nos da luz do sol. O orvalho passa a fazer parte do quotidiano do nosso jardim mal-amanhado. Sim, comemos. O que está á mão e pronto a degustar. Contraem teias de aranha os livros de receitas e a vontade de caprichar. O banho é um mero jorrar de água para suavizar a consciência de que a conspurcação do corpo se vai dissolvendo vagarosamente.</p>
+                    </div>
+                </div>
+
+                <div class="poetry-card reveal" style="transition-delay: 0.2s;">
+                    <h3>Texto 3</h3>
+                    <div class="text-scroll-container">
+                        <p>Este livro é isso: a prova de que o amor resiste ao tempo, à doença, à distância, ao destino. A prova de que uma vida pode ser tão intensa que permanece a pulsar mesmo depois do último fôlego.</p>
+                        <p>A prova de que a morte não nos despoja de tudo — porque o que é verdadeiro permanece.</p>
+                        <p>E assim termina esta história: não com silêncio, mas com eternidade.<br>
+                        Não com fim, mas com memória. Não com perda, mas com legado.</p>
+                        <p>Elisabete vive — nas páginas, na família, nos gestos, na coragem, na saudade. Vive porque quem ama desta forma nunca parte por inteiro. Vive porque quem inspira desta forma nunca deixa de iluminar. Vive porque quem luta desta forma nunca deixa de ensinar.</p>
+                        <p>Este é o resumo. Este é o fecho. Este é o pano que cai — mas a luz que cintila.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="poetry-book">
+            <figure class="poetry-book-cover reveal">
+                <img src="assets/images/capa-de-redeas-soltas.jpg" alt="Capa do livro De Rédeas Soltas" loading="lazy" width="610" height="952">
+                <figcaption>De Rédeas Soltas</figcaption>
+            </figure>
+
         <div class="poetry-grid">
             <div class="poetry-card reveal">
                 <h3>Estas são as Noites</h3>
@@ -1624,6 +1862,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <section class="section-portfolio" id="obras">
@@ -1662,9 +1901,11 @@
                 </picture>
                 <span class="book-category">Romance</span>
                 <h3>Impedidos de Amar</h3>
-                <p>Impedidos de Amar é um desfilar de emoções cruas, uma narrativa erguida sobre a história verídica da minha família — uma história que o destino decidiu trucidar com a violência de um diagnóstico de cancro, em pleno estado de emergência provocado pela pandemia de Covid‑19. Confinada e privada do amparo dos seus, viveu momentos que nenhum ser humano deveria suportar. O risco de contágio ergueu muros entre ela e o amor dos pais, do irmão, dos amigos. Estávamos tão perto… e, ainda assim, irremediavelmente longe. Sem o beijo. Sem o abraço. Impedidos de a amar.</p>
-                <p>Durante a quimioterapia, uma reação alérgica brutal obrigou-a ao internamento compulsivo, deixando marcas vigorosas, delapidadoras, que o tempo não ousará apagar. Das lágrimas derramadas, ninguém imagina a vastidão: foram flume de imensidão desaguado em oceano matreiro e mordaz, brotado de olhos plangentes e amantes. Da dor sentida, ninguém imagina o peso: trovão rugidor que rasgou a escuridão e iluminou, por instantes, uma luz que teimava em extinguir-se. Da saudade vivida, ninguém imagina a leveza cinzenta: cinza que esvoaça na aragem do tempo, como vozes escribas que insistem em dizer não, como segundos que se perdem em balbúrdia arredia.</p>
-                <p>A vida torna-se grosseiramente adulterada quando a realidade se revela penosa e impiedosa. Mudam-se os cursos de água, as nascentes, os capítulos da nossa obra. A peça ganha novo encenador, novo guião. Já não vivemos — sangramos. E cada dia é mais um morrer até sangrar. Quando o sofrimento nos mimoseia com rudeza tão severa e asfixiante, pernoitamos naquele patamar onde as perguntas se apagam, onde não há tempo para enredos divinos. A dor alcança tal magnitude que nos paralisa, e aceitamos, de braços caídos, a vereda que a vida impõe. As lágrimas tornam-se a única forma de eximir a dor. Os sorrisos, meros gestos de cortesia.</p>
+                <p>“Impedidos de Amar” é um desfilar de emoções cruas, erguido sobre a história verídica da minha família.</p>
+                <p>Março de 2020. O país fecha. As ruas esvaziam. É nesse estado de emergência que a minha irmã Elisabete recebe um diagnóstico de cancro.</p>
+                <p>Confinada e privada do amparo dos seus, viveu o que nenhum ser humano deveria suportar. O risco de contágio ergueu muros entre ela e o amor dos pais, do irmão, do filho. Estávamos tão perto... e irremediavelmente longe. Sem o beijo. Sem o abraço. Impedidos de amar.</p>
+                <p>Da janela, que se tornou o nosso altar de adoração, acenávamos da calçada. Da cabeceira, as fotos do filho eram o seu único alento. Durante a quimioterapia, uma reação alérgica brutal obrigou-a a 11 dias de internamento compulsivo, que deixariam marcas que o tempo não ousará apagar.</p>
+                <p>Este não é um livro sobre cancro. É um livro sobre o que o amor foi capaz de fazer quando foi impedido de tocar. E sobre a frase que nunca esqueci: “Eu estarei sempre bem desde que te saiba viva”.</p>
             </div>
 
             <div class="masonry-item reveal">
@@ -1719,39 +1960,154 @@
             <p style="color: var(--text-muted);">Momentos eternizados do percurso autoral, contatos com a poesia livre e inspirações pelo mundo.</p>
         </div>
 
-        <div class="gallery-photo-grid">
-            <div class="gallery-photo-card reveal">
-                <img src="assets/images/galeria-reportagem-1.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Reportagem fotográfica</div>
-            </div>
-            <div class="gallery-photo-card reveal" style="transition-delay: 0.1s;">
-                <img src="assets/images/galeria-reportagem-2.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Reportagem fotográfica</div>
-            </div>
-            <div class="gallery-photo-card reveal" style="transition-delay: 0.2s;">
-                <img src="assets/images/galeria-reportagem-3.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Reportagem fotográfica</div>
-            </div>
-            <div class="gallery-photo-card reveal" style="transition-delay: 0.3s;">
-                <img src="assets/images/galeria-reportagem-4.jpg" alt="Reportagem Fotográfica" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Reportagem fotográfica</div>
+        <div class="gallery-carousels">
+            <div class="gallery-carousel reveal">
+                <div class="carousel-header">
+                    <h3 class="carousel-title" id="galeria-momentos">Momentos do Autor</h3>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-btn hover-target" data-dir="-1" aria-label="Fotografias anteriores">&#8592;</button>
+                        <button type="button" class="carousel-btn hover-target" data-dir="1" aria-label="Fotografias seguintes">&#8594;</button>
+                    </div>
+                </div>
+                <div class="carousel-track" tabindex="0" aria-labelledby="galeria-momentos">
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-01.jpg" alt="Gabriel Ethan Paz a cavalo na praia ao pôr do sol" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">A cavalo</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-02.jpg" alt="Gabriel Ethan Paz na praia com um livro aberto ao vento" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Livro ao vento</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-03.jpg" alt="Gabriel Ethan Paz a caminhar na praia" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Caminhando</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-04.jpg" alt="Gabriel Ethan Paz de costas, frente ao mar ao pôr do sol" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">De costas</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-05.jpg" alt="Gabriel Ethan Paz sentado numa cadeira frente ao mar" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Sentado no mar</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-06.jpg" alt="Gabriel Ethan Paz sentado na praia a contemplar o horizonte" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Contemplando</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-07.jpg" alt="Gabriel Ethan Paz de pé frente ao mar" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Frente ao mar</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-08.jpg" alt="Silhueta de Gabriel Ethan Paz com a esposa na praia ao pôr do sol" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Casal</figcaption>
+                    </figure>
+                </div>
             </div>
 
-            <div class="gallery-photo-card reveal" style="transition-delay: 0.1s;">
-                <img src="assets/images/galeria-evento-1.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
+            <div class="gallery-carousel reveal">
+                <div class="carousel-header">
+                    <h3 class="carousel-title" id="galeria-eventos">Eventos Literários</h3>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-btn hover-target" data-dir="-1" aria-label="Fotografias anteriores">&#8592;</button>
+                        <button type="button" class="carousel-btn hover-target" data-dir="1" aria-label="Fotografias seguintes">&#8594;</button>
+                    </div>
+                </div>
+                <div class="carousel-track" tabindex="0" aria-labelledby="galeria-eventos">
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-01.jpg" alt="Leitura durante a apresentação de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-02.jpg" alt="Gabriel Ethan Paz com convidadas e o livro De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-03.jpg" alt="Sessão de autógrafos de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-04.jpg" alt="Convívio após o evento literário" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-05.jpg" alt="Gabriel Ethan Paz em conversa com convidados" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-06.jpg" alt="Gabriel Ethan Paz entre convidados no evento literário" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-07.jpg" alt="Fotografia de grupo no evento literário" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                </div>
             </div>
-            <div class="gallery-photo-card reveal" style="transition-delay: 0.2s;">
-                <img src="assets/images/galeria-evento-2.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
+
+            <div class="gallery-carousel reveal">
+                <div class="carousel-header">
+                    <h3 class="carousel-title" id="galeria-apresentacoes">Apresentações Literárias</h3>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-btn hover-target" data-dir="-1" aria-label="Fotografias anteriores">&#8592;</button>
+                        <button type="button" class="carousel-btn hover-target" data-dir="1" aria-label="Fotografias seguintes">&#8594;</button>
+                    </div>
+                </div>
+                <div class="carousel-track" tabindex="0" aria-labelledby="galeria-apresentacoes">
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-01.jpg" alt="Mesa de oradores no lançamento da 2.ª edição de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-02.jpg" alt="Oradores durante a apresentação literária" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-03.jpg" alt="Gabriel Ethan Paz com os oradores no lançamento" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-04.jpg" alt="Leitura de um texto perante a mesa de oradores" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-05.jpg" alt="Público durante a apresentação literária" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-06.jpg" alt="Leitura de um texto na apresentação de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-07.jpg" alt="Gabriel Ethan Paz com os oradores e o livro De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-apresentacoes-08.jpg" alt="Sala do lançamento da 2.ª edição de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Apresentações literárias</figcaption>
+                    </figure>
+                </div>
             </div>
-            <div class="gallery-photo-card reveal" style="transition-delay: 0.3s;">
-                <img src="assets/images/galeria-evento-3.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
-            </div>
-            <div class="gallery-photo-card reveal" style="transition-delay: 0.4s;">
-                <img src="assets/images/galeria-evento-4.jpg" alt="Lançamento e Tertúlia" class="gallery-photo-img" loading="lazy">
-                <div class="gallery-caption">Lançamento da 2ª edição de De Rédeas Soltas e Tertúlia Poética</div>
+        </div>
+    </section>
+
+    <section class="section-videos" id="videos">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Vídeos</span>
+            <h2 class="bio-title">Imagens em Movimento</h2>
+            <p style="color: var(--text-muted);">Apresentações, leituras e momentos do percurso literário em vídeo.</p>
+        </div>
+
+        <div class="video-showcase">
+            <div class="video-grid">
+                <figure class="video-item reveal">
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/wE30NUvef1g" title="Anúncio da 2.ª edição do livro De Rédeas Soltas" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Anúncio da 2.ª edição do livro De Rédeas Soltas</figcaption>
+                </figure>
+                <figure class="video-item reveal" style="transition-delay: 0.1s;">
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/eRRFDNKwa7M" title="Oferta a instituições de apoio a doentes oncológicos" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Oferta a instituições de apoio a doentes oncológicos</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -1821,6 +2177,29 @@
         </div>
     </section>
 
+    <section class="section-interviews" id="entrevistas">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Na Imprensa</span>
+            <h2 class="bio-title">Entrevistas</h2>
+            <p style="color: var(--text-muted);">Conversas sobre a escrita, as obras e o percurso do autor.</p>
+        </div>
+
+        <div class="interview-grid">
+            <article class="interview-card reveal">
+                <span class="interview-type">Entrevista escrita</span>
+                <h3>Entrevista com Gabriel Ethan Paz, autor do livro Impedidos de Amar</h3>
+                <p class="interview-source">Revista Conexão Literatura</p>
+                <p>Uma conversa sobre a história verídica que deu origem a Impedidos de Amar, o impacto da pandemia nas famílias, a escrita como forma de libertar a voz e os próximos projetos literários.</p>
+                <a href="https://revistaconexaoliteratura.com.br/entrevista-com-gabriel-ethan-paz-autor-do-livro-impedidos-de-amar/" target="_blank" rel="noopener noreferrer" class="btn-secondary hover-target">Ler entrevista completa</a>
+            </article>
+            <article class="interview-card interview-card--soon reveal" style="transition-delay: 0.1s;">
+                <span class="interview-type">Entrevistas em áudio</span>
+                <h3>Brevemente</h3>
+                <p>As entrevistas em áudio, incluindo participações na rádio, serão disponibilizadas neste espaço.</p>
+            </article>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
@@ -1835,6 +2214,9 @@
                     <li><a href="#biografia" class="hover-target">Biografia</a></li>
                     <li><a href="#textos" class="hover-target">Textos e Poemas</a></li>
                     <li><a href="#obras" class="hover-target">Sinopses e Portfólio</a></li>
+                    <li><a href="#galeria" class="hover-target">Galeria</a></li>
+                    <li><a href="#videos" class="hover-target">Vídeos</a></li>
+                    <li><a href="#entrevistas" class="hover-target">Entrevistas</a></li>
                 </ul>
             </div>
             
@@ -1919,6 +2301,23 @@
 
             document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
                 revealOnScroll.observe(el);
+            });
+
+            /* CARROSSÉIS DA GALERIA */
+            document.querySelectorAll('.gallery-carousel').forEach(carousel => {
+                const track = carousel.querySelector('.carousel-track');
+                const buttons = carousel.querySelectorAll('.carousel-btn');
+                const updateButtons = () => {
+                    const maxScroll = track.scrollWidth - track.clientWidth - 2;
+                    buttons[0].disabled = track.scrollLeft <= 2;
+                    buttons[1].disabled = track.scrollLeft >= maxScroll;
+                };
+                buttons.forEach(btn => btn.addEventListener('click', () => {
+                    track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth, behavior: 'smooth' });
+                }));
+                track.addEventListener('scroll', updateButtons, { passive: true });
+                window.addEventListener('resize', updateButtons);
+                updateButtons();
             });
 
             window.addEventListener('scroll', () => {
