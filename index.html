@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Ethan Paz | Escritor, Poeta e Visionário</title>
+    <title>Gabriel Ethan Paz | Escritor</title>
     <meta name="description" content="Obras, poemas e romances do autor Gabriel Ethan Paz. Uma jornada literária de Almada para o mundo.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:url" content="https://gabrielethanpaz.com/">
+    <meta property="og:site_name" content="Gabriel Ethan Paz">
+    <meta property="og:title" content="Gabriel Ethan Paz | Escritor">
+    <meta property="og:description" content="Obras, poemas e romances do autor Gabriel Ethan Paz. Uma jornada literária de Almada para o mundo.">
+    <meta property="og:image" content="https://gabrielethanpaz.com/assets/images/og-impedidos-de-amar.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Capa do livro Impedidos de Amar, de Gabriel Ethan Paz">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gabriel Ethan Paz | Escritor">
+    <meta name="twitter:description" content="Obras, poemas e romances do autor Gabriel Ethan Paz. Uma jornada literária de Almada para o mundo.">
+    <meta name="twitter:image" content="https://gabrielethanpaz.com/assets/images/og-impedidos-de-amar.jpg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -556,6 +570,7 @@
 
         .hero-media {
             width: 100%;
+            max-width: 280px;
             border-radius: var(--radius-md);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
@@ -564,19 +579,10 @@
             margin-bottom: var(--space-3);
         }
 
-        .hero-media img,
-        .hero-media video {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .hero-media img { aspect-ratio: 1 / 1; object-fit: cover; }
-
         .hero-media iframe {
             display: block;
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 9 / 16;
             border: 0;
         }
 
@@ -832,7 +838,7 @@
             display: grid;
             grid-template-columns: 5fr 6fr;
             gap: var(--space-8);
-            align-items: center;
+            align-items: start;
         }
 
         .bio-image-wrapper {
@@ -1322,8 +1328,9 @@
 
         .video-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-4);
+            grid-template-columns: repeat(2, minmax(0, 320px));
+            justify-content: center;
+            gap: var(--space-5);
         }
 
         .video-item { margin: 0; }
@@ -1338,7 +1345,7 @@
 
         .video-frame {
             position: relative;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 9 / 16;
             border-radius: var(--radius-md);
             overflow: hidden;
             background-color: var(--bg-tertiary);
@@ -1612,7 +1619,7 @@
             nav.main-nav > ul { gap: var(--space-2); }
             nav.main-nav > ul > li > a { letter-spacing: 0.5px; }
             header { padding: 0 var(--space-4); }
-            .video-grid, .interview-grid { grid-template-columns: 1fr; }
+            .interview-grid { grid-template-columns: 1fr; }
             .stats-grid { gap: var(--space-3); }
             .masonry-grid { column-count: 1; }
             .poetry-grid { grid-template-columns: 1fr; }
@@ -1634,6 +1641,7 @@
         @media (max-width: 640px) {
             .hero, .section-stats, .section-bio, .section-poetry, .section-portfolio,
             .section-gallery, .section-videos, .section-interviews, .section-press { padding-left: var(--space-3); padding-right: var(--space-3); }
+            .video-grid { grid-template-columns: minmax(0, 320px); }
             .interview-card { padding: var(--space-4) var(--space-3); }
             .interview-card .btn-secondary { width: 100%; padding: 16px; }
             .section-bio, .section-poetry, .section-portfolio, .section-gallery,
@@ -1748,7 +1756,7 @@
             <div class="hero-intro">
                 <div class="hero-media-col">
                     <div class="hero-media">
-                        <img src="assets/images/gabriel-autor.jpg" alt="Retrato Oficial Gabriel Ethan Paz" width="1254" height="1254">
+                        <iframe src="https://www.youtube-nocookie.com/embed/Nvy7UJRRy20" title="Trailer — Gabriel Ethan Paz" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="badge-literary">Sócio da AP Escritores Nº 1584</div>
                 </div>
@@ -1801,11 +1809,17 @@
                 
                 <p class="bio-text-lead">Os vocábulos deliram no papel, a mente folega mundo fora e os sentidos estão outorgados ao acaso. Daqui brotam construções gramaticais que almejam elucidar-me sobre desígnios. Podem ser apaziguadoras ou nefastas mas são puras e isentas. O intuito é libertar o poderio da minha voz calada e dos afetos abscônditos.</p>
                 
-                <p class="bio-text-body"><strong>Gabriel Ethan Paz</strong> é o pseudónimo de um português nascido em Almada, que fez carreira na Indústria Farmacêutica até à Direção Geral no Caribe. Licenciado em Marketing pelo IPAM e pós-graduado em Bruxelas, trocou o MBA por um caderno.</p>
+                <p class="bio-text-body"><strong>Gabriel Ethan Paz</strong> é o pseudónimo de um cidadão português, nascido em Almada, que fez carreira na Indústria Farmacêutica até à Direção Geral de uma empresa sediada no Caribe.</p>
 
-                <p class="bio-text-body">Não escreve, esculpe emoções. Escrita nua, visceral, profundamente humana. Cada frase é um aceno na calçada, cada capítulo um lenço que não é para si.</p>
+                <p class="bio-text-body">Licenciado em Gestão de Marketing pelo IPAM, com pós-graduação em Marketing Estratégico em Bruxelas, trocou o MBA por um caderno para se dedicar à escrita.</p>
 
-                <p class="bio-text-body">Tem no mar a inspiração e no piano o refúgio. Viajou 67 países e 128 cidades. De Corroios ao mundo, a sua obra é um atlas de alma onde o indizível encontra voz e a viagem interior ainda não findou.</p>
+                <p class="bio-text-body">Gabriel Ethan Paz não escreve. Esculpe. Transforma emoção em palavra, silêncio em frase. A sua escrita é nua, visceral, humana. Não narra histórias - confessa-as. Não inventa personagens - respira-as. E redime-as. Cada linha é um aceno na calçada. Cada capítulo, um lenço que não guarda para si. De Almada para o mundo, a sua obra é um atlas de alma e memória, onde finalmente o indizível aprende a dizer-se.</p>
+
+                <p class="bio-text-body">Cultiva a inteligência emocional e expõe os sentimentos com genuinidade. Ama animais, ama a natureza, ama a praia - e tem no mar a sua bússola, a sua inspiração e a sua serenidade. O piano, o seu instrumento de eleição, é onde o que não cabe nas palavras, cabe em música.</p>
+
+                <p class="bio-text-body">Romancista, poeta e ensaísta, reparte a sua voz por várias antologias, em Portugal e no mundo. É membro da Associação Portuguesa de Escritores, da Associação Portuguesa de Poetas e do NALAP.</p>
+
+                <p class="bio-text-body">Deambulou pelos quatro continentes, por mais de 67 países e 128 cidades. Viu mundos, viveu culturas, guardou gentes. Cada lugar tornou-o mais sábio. Mais benévolo. Mais discernente. E a sua viagem parece não ter ainda findado.</p>
             </div>
         </div>
     </section>
@@ -1825,7 +1839,7 @@
 
             <div class="poetry-grid">
                 <div class="poetry-card reveal">
-                    <h3>Texto 1</h3>
+                    <h3>Na praia...</h3>
                     <div class="text-scroll-container">
                         <p>A face da Elisabete espelhava alegria. Queria muito rever a sua praia e apartar-se da rotina do hospital e duma camuflada prisão domiciliária. Por isso, despertou cedo no primeiro dia e colocou toda a gente em alvoraço. Requeria o confecionar do pequeno-almoço e a partida para a praia. Mal comeu, tal a ânsia de pisar a areia fina. Dentro da viatura e durante o percurso, ninguém conseguiu soletrar palavra tal o assoberbar da sua voz animada.</p>
                         <p>Hesitava entre discutir a cor da bandeira do estado do mar e se existia mudança de cenários. No acercar do parqueamento era evidente o seu reluzente olhar. Finalmente, a sua praia estava ali. Defronte dos seus olhos emocionados.</p>
@@ -1833,15 +1847,15 @@
                 </div>
 
                 <div class="poetry-card reveal" style="transition-delay: 0.1s;">
-                    <h3>Texto 2</h3>
+                    <h3>O desencanto</h3>
                     <div class="text-scroll-container">
                         <p>Os dias são meros contadores de minutos, filas de espera sem objetivo fundamentado. Rotinas baralhadas onde subtraímos o ócio e o prazer, dividimos a incumbência e a carência ou privação. São frações sem incógnita e equações impossíveis. Pararam os relógios e os calendários permanecem fixos no mesmo dia e no mesmo mês. São baladas de piano triste e sem assonância.</p>
-                        <p>Aceitamos o palpitar do vento e a transparência da chuva e resguardamo-nos da luz do sol. O orvalho passa a fazer parte do quotidiano do nosso jardim mal-amanhado. Sim, comemos. O que está á mão e pronto a degustar. Contraem teias de aranha os livros de receitas e a vontade de caprichar. O banho é um mero jorrar de água para suavizar a consciência de que a conspurcação do corpo se vai dissolvendo vagarosamente.</p>
+                        <p>Aceitamos o palpitar do vento e a transparência da chuva e resguardamo-nos da luz do sol. O orvalho passa a fazer parte do quotidiano do nosso jardim mal-amanhado. Sim, comemos. O que está à mão e pronto a degustar. Contraem teias de aranha os livros de receitas e a vontade de caprichar. O banho é um mero jorrar de água para suavizar a consciência de que a conspurcação do corpo se vai dissolvendo vagarosamente.</p>
                     </div>
                 </div>
 
                 <div class="poetry-card reveal" style="transition-delay: 0.2s;">
-                    <h3>Texto 3</h3>
+                    <h3>O livro</h3>
                     <div class="text-scroll-container">
                         <p>Este livro é isso: a prova de que o amor resiste ao tempo, à doença, à distância, ao destino. A prova de que uma vida pode ser tão intensa que permanece a pulsar mesmo depois do último fôlego.</p>
                         <p>A prova de que a morte não nos despoja de tudo — porque o que é verdadeiro permanece.</p>
@@ -1968,8 +1982,15 @@
                 </picture>
                 <span class="book-category">Pensamento e Poesia</span>
                 <h3>De Rédeas Soltas</h3>
-                <p>Cada gesto é um solfejar de uma tecla. A mesma que assola a mente em cada fração de tempo em que sentado, tolero um fluir de sentimentos. O olhar permanece calmo e longínquo, perdido entre memórias e sonhos acalentados. A lareira fustiga calor e uma chama alaranjada sendo fiel companheiro duma noite em que as rédeas estão soltas. Cavalgo por planícies verdejantes sem confins ou fronteiras. Respiro proeza e expiro liberdade.</p>
-                <p>Não tenho regras nem pudores. Escrevo o que me murmuram as paredes, as cores da paisagem urdida ou dum estado de alma. Carrego cada tecla com o amor de quem não sabe mentir sobre o que sente. Sobre o que pensa ou tem ambição de realizar. O teclado segue as minhas ordens sem pestanejar. Escrevo porque me exulta a alma e me jovializa o espirito. Porque viajo por aqui e por ali sem requerer mapa. Porque navego em mundos patíveis ou inóspitos. Escrevo porque tenho a liberdade de eleger a vereda por onde pelejar.</p>
+                <p>Vivemos de rédeas curtas.</p>
+                <p>Presos à pecúnia que veneramos como deus, às máscaras douradas que usamos para sermos aceites, aos likes que pedimos como esmola, aos amores que nos castram em vez de nos libertarem.</p>
+                <p>Neste livro de prosa poética filosófica, Gabriel Ethan Paz cavalga sem pedir licença por tudo o que nos aprisiona: o dinheiro, a hipocrisia social, o medo, o amor que não se cumpre.</p>
+                <p>E mostra o que essa prisão nos custa.</p>
+                <p>Custa a saudade que não se explica. O sacrifício de uma vida inteira no mar que já ninguém quer fazer. O peso de ser pai e ter de educar num mundo sem valores. A tentação que nos ronda, a ilusão do amor que nos vende, os amores de verão que ficam na pele e o amor findado que deixa sentença. Custa o mar que já não é altar, mas estrada. A invernia que já ninguém respeita. O desgosto engolido, as memórias que vigiam, o tempo que foge, o abraço que falta, a fome, a fadiga, a morte banalizada e a guerra normalizada.</p>
+                <p>Porque os valores em falta na sociedade não são um tema distante — são o ar que respiramos. E cada texto deste livro é o retrato do que respiramos hoje.</p>
+                <p>Do bosque onde se refugia à beira-mar onde reencontra a paz, do retrato cruel dos Seres Humanos à denúncia da Pecúnia Venerada, cada texto é um ato de libertação.</p>
+                <p>Escrevo porque tenho a liberdade de eleger a vereda por onde pelejar.</p>
+                <p>E este livro é um convite: solta as tuas rédeas também.</p>
             </div>
 
             <div class="masonry-item reveal">
@@ -2184,18 +2205,18 @@
         <div style="text-align: center; max-width: 800px; margin: 0 auto;">
             <span class="section-tag" style="justify-content: center;">Vídeos</span>
             <h2 class="bio-title">Imagens em Movimento</h2>
-            <p style="color: var(--text-muted);">Apresentações, leituras e momentos do percurso literário em vídeo.</p>
+            <p style="color: var(--text-muted);">Os trailers das obras de Gabriel Ethan Paz.</p>
         </div>
 
         <div class="video-showcase">
             <div class="video-grid">
                 <figure class="video-item reveal">
-                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/wE30NUvef1g" title="Anúncio da 2.ª edição do livro De Rédeas Soltas" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-                    <figcaption>Anúncio da 2.ª edição do livro De Rédeas Soltas</figcaption>
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/nr5YSl_LyeQ" title="Trailer De Rédeas Soltas" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Trailer De Rédeas Soltas</figcaption>
                 </figure>
                 <figure class="video-item reveal" style="transition-delay: 0.1s;">
-                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/eRRFDNKwa7M" title="Oferta a instituições de apoio a doentes oncológicos" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-                    <figcaption>Oferta a instituições de apoio a doentes oncológicos</figcaption>
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/J3xnRTjEbvk" title="Trailer Impedidos de Amar" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Trailer Impedidos de Amar</figcaption>
                 </figure>
             </div>
         </div>
@@ -2219,9 +2240,12 @@
 
                 <div class="press-block">
                     <h4>Biografia Longa</h4>
-                    <p>Gabriel Ethan Paz é o pseudónimo de um português nascido em Almada, que fez carreira na Indústria Farmacêutica até à Direção Geral no Caribe. Licenciado em Marketing pelo IPAM e pós-graduado em Bruxelas, trocou o MBA por um caderno.</p>
-                    <p>Não escreve, esculpe emoções. Escrita nua, visceral, profundamente humana. Cada frase é um aceno na calçada, cada capítulo um lenço que não é para si.</p>
-                    <p>Tem no mar a inspiração e no piano o refúgio. Viajou 67 países e 128 cidades. De Corroios ao mundo, a sua obra é um atlas de alma onde o indizível encontra voz e a viagem interior ainda não findou.</p>
+                    <p>Gabriel Ethan Paz é o pseudónimo de um cidadão português, nascido em Almada, que fez carreira na Indústria Farmacêutica até à Direção Geral de uma empresa sediada no Caribe.</p>
+                    <p>Licenciado em Gestão de Marketing pelo IPAM, com pós-graduação em Marketing Estratégico em Bruxelas, trocou o MBA por um caderno para se dedicar à escrita.</p>
+                    <p>Gabriel Ethan Paz não escreve. Esculpe. Transforma emoção em palavra, silêncio em frase. A sua escrita é nua, visceral, humana. Não narra histórias - confessa-as. Não inventa personagens - respira-as. E redime-as. Cada linha é um aceno na calçada. Cada capítulo, um lenço que não guarda para si. De Almada para o mundo, a sua obra é um atlas de alma e memória, onde finalmente o indizível aprende a dizer-se.</p>
+                    <p>Cultiva a inteligência emocional e expõe os sentimentos com genuinidade. Ama animais, ama a natureza, ama a praia - e tem no mar a sua bússola, a sua inspiração e a sua serenidade. O piano, o seu instrumento de eleição, é onde o que não cabe nas palavras, cabe em música.</p>
+                    <p>Romancista, poeta e ensaísta, reparte a sua voz por várias antologias, em Portugal e no mundo. É membro da Associação Portuguesa de Escritores, da Associação Portuguesa de Poetas e do NALAP.</p>
+                    <p>Deambulou pelos quatro continentes, por mais de 67 países e 128 cidades. Viu mundos, viveu culturas, guardou gentes. Cada lugar tornou-o mais sábio. Mais benévolo. Mais discernente. E a sua viagem parece não ter ainda findado.</p>
                 </div>
 
                 <div class="press-block">
@@ -2242,7 +2266,10 @@
                 
                 <div class="press-block">
                     <h4>Biografia Curta</h4>
-                    <p>Gabriel Ethan Paz é um escritor português nascido em Almada, com carreira internacional na Indústria Farmacêutica antes de se dedicar inteiramente à escrita. Licenciado em Gestão de Marketing e pós‑graduado em Marketing Estratégico, encontrou na literatura o espaço onde a emoção, a introspeção e a liberdade criativa se cruzam. Apaixonado pela natureza, pelos animais, pelo mar e pela música — especialmente o piano —, viajou por mais de 67 países, experiências que moldaram a sua visão sensível e humana do mundo.</p>
+                    <p>Gabriel Ethan Paz, pseudónimo de cidadão português nascido em Almada, fez carreira na Indústria Farmacêutica até à Direção Geral no Caribe.</p>
+                    <p>Licenciado em Marketing pelo IPAM, pós-graduado em Bruxelas, trocou o MBA por um caderno. Não escreve, esculpe: escrita nua, visceral, humana.</p>
+                    <p>Não narra histórias - confessa-as. Não inventa personagens - respira-as. E redime-as. Cada linha um aceno na calçada, cada capítulo um lenço.</p>
+                    <p>Romancista, poeta e ensaísta, membro da APE, AP Poetas e NALAP. Deambulou por 67 países e 128 cidades. Viu mundos, viveu culturas, guardou gentes. A sua viagem não findou.</p>
                 </div>
 
                 <div class="press-block">
