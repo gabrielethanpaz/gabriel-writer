@@ -1271,6 +1271,8 @@
             z-index: 10;
         }
         
+        .gallery-photo-card.gallery-photo-wide { flex-basis: calc((100% - 3 * var(--space-3)) / 2 + var(--space-3)); }
+
         .gallery-photo-img {
             width: 100%;
             height: 100%;
@@ -1608,6 +1610,7 @@
             nav.main-nav > ul > li > a { font-size: var(--text-xs); letter-spacing: 1px; }
             .header-logo { font-size: var(--text-2xl); }
             .gallery-photo-card { flex-basis: calc((100% - 2 * var(--space-3)) / 3); }
+            .gallery-photo-card.gallery-photo-wide { flex-basis: calc((100% - 2 * var(--space-3)) * 2 / 3 + var(--space-3)); }
             .press-container { grid-template-columns: 1fr; }
             .anthology-list { grid-template-columns: 1fr; }
         }
@@ -1667,6 +1670,8 @@
             header { padding: 0 var(--space-3); }
             .main-nav { display: none; }
             .gallery-photo-card { flex-basis: 80%; height: 320px; }
+            .gallery-photo-card.gallery-photo-wide { flex-basis: 100%; }
+            .gallery-photo-wide .gallery-photo-img { object-fit: contain; }
             .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -2081,36 +2086,36 @@
                 </div>
                 <div class="carousel-track" tabindex="0" aria-labelledby="galeria-momentos">
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-01.jpg" alt="Gabriel Ethan Paz a cavalo na praia ao pôr do sol" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-momentos-01.jpg" alt="Gabriel Ethan Paz a cavalo na praia ao pôr do sol" class="gallery-photo-img" style="object-position: left center;" loading="lazy">
                         <figcaption class="gallery-caption">A cavalo</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-02.jpg" alt="Gabriel Ethan Paz na praia com um livro aberto ao vento" class="gallery-photo-img" loading="lazy">
-                        <figcaption class="gallery-caption">Livro ao vento</figcaption>
-                    </figure>
-                    <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-03.jpg" alt="Gabriel Ethan Paz a caminhar na praia" class="gallery-photo-img" loading="lazy">
-                        <figcaption class="gallery-caption">Caminhando</figcaption>
-                    </figure>
-                    <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-04.jpg" alt="Gabriel Ethan Paz de costas, frente ao mar ao pôr do sol" class="gallery-photo-img" loading="lazy">
-                        <figcaption class="gallery-caption">De costas</figcaption>
-                    </figure>
-                    <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-05.jpg" alt="Gabriel Ethan Paz sentado numa cadeira frente ao mar" class="gallery-photo-img" loading="lazy">
-                        <figcaption class="gallery-caption">Sentado no mar</figcaption>
-                    </figure>
-                    <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-06.jpg" alt="Gabriel Ethan Paz sentado na praia a contemplar o horizonte" class="gallery-photo-img" loading="lazy">
-                        <figcaption class="gallery-caption">Contemplando</figcaption>
-                    </figure>
-                    <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-07.jpg" alt="Gabriel Ethan Paz de pé frente ao mar" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-momentos-02.jpg" alt="Gabriel Ethan Paz de costas, sentado numa cadeira frente ao mar ao pôr do sol" class="gallery-photo-img" style="object-position: center 80%;" loading="lazy">
                         <figcaption class="gallery-caption">Frente ao mar</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-momentos-08.jpg" alt="Silhueta de Gabriel Ethan Paz com a esposa na praia ao pôr do sol" class="gallery-photo-img" loading="lazy">
-                        <figcaption class="gallery-caption">Casal</figcaption>
+                        <img src="assets/images/galeria-momentos-03.jpg" alt="Gabriel Ethan Paz a caminhar na praia" class="gallery-photo-img" style="object-position: center bottom;" loading="lazy">
+                        <figcaption class="gallery-caption">Caminhando</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-04.jpg" alt="Gabriel Ethan Paz de pé na areia, de perfil, frente ao mar" class="gallery-photo-img" style="object-position: 30% center;" loading="lazy">
+                        <figcaption class="gallery-caption">À beira-mar</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-05.jpg" alt="Silhueta de Gabriel Ethan Paz com um livro aberto ao vento, frente ao mar" class="gallery-photo-img" style="object-position: 30% center;" loading="lazy">
+                        <figcaption class="gallery-caption">Livro ao vento</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-06.jpg" alt="Mãos de Gabriel Ethan Paz a escrever num livro aberto, junto a um computador portátil" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">A escrever</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-07.jpg" alt="Gabriel Ethan Paz de pé na praia, a contemplar o mar" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Contemplando</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-momentos-08.jpg" alt="Gabriel Ethan Paz sentado numa cadeira na praia, a contemplar o horizonte" class="gallery-photo-img" style="object-position: 80% center;" loading="lazy">
+                        <figcaption class="gallery-caption">Sentado na praia</figcaption>
                     </figure>
                 </div>
             </div>
@@ -2125,19 +2130,19 @@
                 </div>
                 <div class="carousel-track" tabindex="0" aria-labelledby="galeria-eventos">
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-eventos-01.jpg" alt="Leitura durante a apresentação de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-eventos-01.jpg" alt="Gabriel Ethan Paz com duas convidadas e o livro De Rédeas Soltas" class="gallery-photo-img" style="object-position: center 70%;" loading="lazy">
                         <figcaption class="gallery-caption">Eventos literários</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-eventos-02.jpg" alt="Gabriel Ethan Paz com convidadas e o livro De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-eventos-02.jpg" alt="Convidados em conversa, um deles com um livro na mão" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
                         <figcaption class="gallery-caption">Eventos literários</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-eventos-03.jpg" alt="Sessão de autógrafos de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-eventos-03.jpg" alt="Convidados a conversar e a sorrir na sala de exposição" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Eventos literários</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-eventos-04.jpg" alt="Convívio após o evento literário" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-eventos-04.jpg" alt="Gabriel Ethan Paz a conversar com convidados, entre sorrisos" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Eventos literários</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
@@ -2145,11 +2150,15 @@
                         <figcaption class="gallery-caption">Eventos literários</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-eventos-06.jpg" alt="Gabriel Ethan Paz entre convidados no evento literário" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-eventos-06.jpg" alt="Vista da sala com convidados em convívio junto a uma mesa" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Eventos literários</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-eventos-07.jpg" alt="Fotografia de grupo no evento literário" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-eventos-07.jpg" alt="Gabriel Ethan Paz a abraçar uma convidada de casaco verde" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
+                        <figcaption class="gallery-caption">Eventos literários</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="assets/images/galeria-eventos-08.jpg" alt="Gabriel Ethan Paz com convidados junto à mesa do convívio" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
                         <figcaption class="gallery-caption">Eventos literários</figcaption>
                     </figure>
                 </div>
@@ -2164,36 +2173,36 @@
                     </div>
                 </div>
                 <div class="carousel-track" tabindex="0" aria-labelledby="galeria-apresentacoes">
-                    <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-01.jpg" alt="Mesa de oradores no lançamento da 2.ª edição de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                    <figure class="gallery-photo-card gallery-photo-wide">
+                        <img src="assets/images/galeria-apresentacoes-01.jpg" alt="Mesa com quatro oradores numa apresentação literária de Gabriel Ethan Paz" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-02.jpg" alt="Oradores durante a apresentação literária" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-apresentacoes-02.jpg" alt="Gabriel Ethan Paz perante o público, com o diapositivo «Escrever Por Amor» no ecrã" class="gallery-photo-img" style="object-position: 80% center;" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-03.jpg" alt="Gabriel Ethan Paz com os oradores no lançamento" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-apresentacoes-03.jpg" alt="Público a assistir a uma apresentação literária, com o livro De Rédeas Soltas ao fundo" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-04.jpg" alt="Leitura de um texto perante a mesa de oradores" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-apresentacoes-04.jpg" alt="Leitura de um texto perante a mesa de oradores no lançamento da 2.ª edição de De Rédeas Soltas" class="gallery-photo-img" style="object-position: left center;" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-05.jpg" alt="Público durante a apresentação literária" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-apresentacoes-05.jpg" alt="Leitura de um texto ao lado de Gabriel Ethan Paz, junto ao cartaz e ao livro De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-06.jpg" alt="Leitura de um texto na apresentação de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-apresentacoes-06.jpg" alt="Gabriel Ethan Paz a falar ao público, com o diapositivo «Seres Humanos» no ecrã" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-07.jpg" alt="Gabriel Ethan Paz com os oradores e o livro De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-apresentacoes-07.jpg" alt="Duas convidadas sentadas a consultar um texto, com um homem a fotografar ao fundo" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                     <figure class="gallery-photo-card">
-                        <img src="assets/images/galeria-apresentacoes-08.jpg" alt="Sala do lançamento da 2.ª edição de De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <img src="assets/images/galeria-apresentacoes-08.jpg" alt="Gabriel Ethan Paz a autografar um livro junto a um leitor de boina preta" class="gallery-photo-img" loading="lazy">
                         <figcaption class="gallery-caption">Apresentações literárias</figcaption>
                     </figure>
                 </div>
