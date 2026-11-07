@@ -7,6 +7,7 @@
     <meta name="description" content="Obras, poemas e romances do autor Gabriel Ethan Paz. Uma jornada literária de Almada para o mundo.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_PT">
+    <meta property="og:locale:alternate" content="en_GB">
     <meta property="og:url" content="https://gabrielethanpaz.com/">
     <meta property="og:site_name" content="Gabriel Ethan Paz">
     <meta property="og:title" content="Gabriel Ethan Paz | Escritor">
@@ -19,6 +20,10 @@
     <meta name="twitter:title" content="Gabriel Ethan Paz | Escritor">
     <meta name="twitter:description" content="Obras, poemas e romances do autor Gabriel Ethan Paz. Uma jornada literária de Almada para o mundo.">
     <meta name="twitter:image" content="https://gabrielethanpaz.com/assets/images/og-impedidos-de-amar.jpg">
+    <link rel="canonical" href="https://gabrielethanpaz.com/">
+    <link rel="alternate" hreflang="pt-PT" href="https://gabrielethanpaz.com/">
+    <link rel="alternate" hreflang="en" href="https://gabrielethanpaz.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://gabrielethanpaz.com/">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -446,7 +451,7 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: var(--space-4);
+            gap: var(--space-1);
         }
 
         .theme-toggle {
@@ -464,6 +469,27 @@
         }
 
         .theme-toggle:hover {
+            background-color: var(--border-light);
+            transform: scale(1.05);
+        }
+
+        .lang-switch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-tertiary);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .lang-switch:hover {
             background-color: var(--border-light);
             transform: scale(1.05);
         }
@@ -510,6 +536,7 @@
         }
 
         .mobile-nav a:last-child { border-bottom: none; }
+        .mobile-nav .mobile-nav-lang { color: var(--accent-primary); }
 
         /* ==========================================================================
            HERO SECTION (ALINHAMENTO CENTRALIZADO)
@@ -1599,6 +1626,12 @@
         /* ==========================================================================
            MEDIA QUERIES
            ========================================================================== */
+        @media (max-width: 1340px) {
+            nav.main-nav > ul { gap: var(--space-3); }
+            nav.main-nav > ul > li > a { font-size: var(--text-xs); letter-spacing: 1px; }
+            .header-logo { font-size: var(--text-2xl); }
+        }
+
         @media (max-width: 1200px) {
             .bio-container { grid-template-columns: 1fr; }
             .bio-image-wrapper { height: 560px; max-width: 420px; margin: 0 auto; }
@@ -1613,6 +1646,11 @@
             .gallery-photo-card.gallery-photo-wide { flex-basis: calc((100% - 2 * var(--space-3)) * 2 / 3 + var(--space-3)); }
             .press-container { grid-template-columns: 1fr; }
             .anthology-list { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 1100px) {
+            .main-nav { display: none; }
+            .menu-toggle { display: flex; }
         }
 
         @media (max-width: 992px) {
@@ -1662,6 +1700,7 @@
             .hero-container { gap: var(--space-4); }
             .hero-actions { flex-direction: column; width: 100%; }
             .stats-grid { grid-template-columns: 1fr; }
+            .header-controls .lang-switch { display: none; }
             .stat-card { border-right: none; border-bottom: 1px solid var(--border-light); }
             .stat-card:last-child { border-bottom: none; }
         }
@@ -1673,6 +1712,10 @@
             .gallery-photo-card.gallery-photo-wide { flex-basis: 100%; }
             .gallery-photo-wide .gallery-photo-img { object-fit: contain; }
             .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 360px) {
+            .header-logo { font-size: var(--text-xl); }
         }
     </style>
 </head>
@@ -1732,6 +1775,7 @@
         </nav>
 
         <div class="header-controls">
+            <a href="en/" class="lang-switch hover-target" lang="en" hreflang="en" aria-label="Read in English" title="Read in English">EN</a>
             <button class="theme-toggle hover-target" id="theme-toggle" aria-label="Alternar Tema Escuro/Claro">
                 <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             </button>
@@ -1749,6 +1793,7 @@
             <a href="#videos">Vídeos</a>
             <a href="#press">Media Kit</a>
             <a href="#entrevistas">Entrevistas</a>
+            <a href="en/" lang="en" hreflang="en" class="mobile-nav-lang">English</a>
         </nav>
     </header>
 

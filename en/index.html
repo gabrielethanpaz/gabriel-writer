@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Ethan Paz | Writer</title>
+    <meta name="description" content="Works, poems and novels by the author Gabriel Ethan Paz. A literary journey from Almada to the world.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:locale:alternate" content="pt_PT">
+    <meta property="og:url" content="https://gabrielethanpaz.com/en/">
+    <meta property="og:site_name" content="Gabriel Ethan Paz">
+    <meta property="og:title" content="Gabriel Ethan Paz | Writer">
+    <meta property="og:description" content="Works, poems and novels by the author Gabriel Ethan Paz. A literary journey from Almada to the world.">
+    <meta property="og:image" content="https://gabrielethanpaz.com/assets/images/og-impedidos-de-amar.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cover of the book Impedidos de Amar by Gabriel Ethan Paz">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gabriel Ethan Paz | Writer">
+    <meta name="twitter:description" content="Works, poems and novels by the author Gabriel Ethan Paz. A literary journey from Almada to the world.">
+    <meta name="twitter:image" content="https://gabrielethanpaz.com/assets/images/og-impedidos-de-amar.jpg">
+    <link rel="canonical" href="https://gabrielethanpaz.com/en/">
+    <link rel="alternate" hreflang="pt-PT" href="https://gabrielethanpaz.com/">
+    <link rel="alternate" hreflang="en" href="https://gabrielethanpaz.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://gabrielethanpaz.com/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           50+ VARIÁVEIS NATIVAS - SISTEMA DE DESIGN EXAUSTIVO
+           ========================================================================== */
+        :root {
+            /* Cores Base - Tema Claro (Default) */
+            --bg-primary: #faf8f5;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f0ece1;
+            --bg-press: #111111;
+            --text-main: #2d2d2d;
+            --text-muted: #666666;
+            --text-inverse: #ffffff;
+            --text-press-muted: #a0a0a0;
+            
+            /* Acentos Literários (Ouro/Bronze) */
+            --accent-primary: #9a7e5a;
+            --accent-hover: #7a6345;
+            --accent-light: #d4bc9a;
+            --accent-glow: rgba(154, 126, 90, 0.15);
+            
+            /* Feedback e Estados */
+            --success: #2e7d32;
+            --error: #d32f2f;
+            --warning: #ed6c02;
+            --info: #0288d1;
+            
+            /* Bordas e Sombras */
+            --border-light: rgba(0, 0, 0, 0.08);
+            --border-strong: rgba(0, 0, 0, 0.15);
+            --border-press: rgba(255, 255, 255, 0.1);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.08);
+            --shadow-glass: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            
+            /* Tipografia */
+            --font-serif: 'Georgia', serif;
+            --font-sans: 'Inter', sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-md: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 2rem;
+            --text-4xl: 3rem;
+            --text-5xl: 4.5rem;
+            --text-6xl: 6rem;
+            
+            /* Espaçamentos (Sistema 8pt) */
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 48px;
+            --space-6: 64px;
+            --space-7: 96px;
+            --space-8: 128px;
+            --space-9: 160px;
+            
+            /* Dimensões Estruturais */
+            --max-width: 1440px;
+            --header-height: 90px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            
+            /* Transições e Animações */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            
+            /* Z-Index Hierarchy */
+            --z-below: -1;
+            --z-normal: 1;
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-fixed: 300;
+            --z-modal: 400;
+            --z-loader: 9999;
+            
+            /* Glassmorphism Variables */
+            --glass-bg: rgba(250, 248, 245, 0.85);
+            --glass-caption: rgba(10, 10, 10, 0.75);
+            --glass-blur: blur(12px);
+        }
+
+        /* ==========================================================================
+           TEMA ESCURO (DARK MODE PERSISTENTE)
+           ========================================================================== */
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121212;
+            --bg-tertiary: #1a1a1a;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --border-light: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.15);
+            --glass-bg: rgba(10, 10, 10, 0.85);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.5);
+            --shadow-glass: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* ==========================================================================
+           RESET & GLOBAL STYLES SEMÂNTICOS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color var(--transition-slow), color var(--transition-slow);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-main);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        p { margin-bottom: var(--space-3); }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover { color: var(--accent-hover); }
+
+        /* ==========================================================================
+           CUSTOM CURSOR
+           ========================================================================== */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-primary);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10001;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            will-change: transform, width, height;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent-primary);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            will-change: transform, width, height;
+        }
+
+        body.hovering .cursor-dot {
+            width: 12px;
+            height: 12px;
+            background-color: transparent;
+        }
+        body.hovering .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-glow);
+            border-color: transparent;
+        }
+
+        /* ==========================================================================
+           LOADER ANIMADO
+           ========================================================================== */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: var(--z-loader);
+            transition: opacity 1s cubic-bezier(0.8, 0, 0.2, 1), visibility 1s;
+        }
+
+        .loader-wrapper.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loader-logo {
+            font-family: var(--font-sans);
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            letter-spacing: 8px;
+            color: var(--text-main);
+            margin-bottom: var(--space-4);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.2s;
+        }
+
+        .loader-line-container {
+            width: 250px;
+            height: 2px;
+            background-color: var(--border-light);
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-full);
+        }
+
+        .loader-line-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background-color: var(--accent-primary);
+            animation: progressWidth 2s cubic-bezier(0.77, 0, 0.175, 1) forwards 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes progressWidth {
+            0% { width: 0%; }
+            50% { width: 60%; }
+            100% { width: 100%; }
+        }
+
+        /* ==========================================================================
+           HEADER COMPLEXO & MEGA-MENU
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--space-6);
+            z-index: var(--z-fixed);
+            transition: background-color var(--transition-medium), backdrop-filter var(--transition-medium), box-shadow var(--transition-medium);
+        }
+
+        header.scrolled {
+            background-color: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header-logo {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: var(--text-3xl);
+            letter-spacing: -1px;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            line-height: 1;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .header-logo-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        nav.main-nav > ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-5);
+            align-items: center;
+        }
+
+        nav.main-nav > ul > li {
+            position: relative;
+        }
+
+        nav.main-nav > ul > li > a {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            padding: var(--space-2) 0;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        nav.main-nav > ul > li > a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-primary);
+            transition: width var(--transition-medium);
+        }
+
+        nav.main-nav > ul > li:hover > a { color: var(--text-main); }
+        nav.main-nav > ul > li:hover > a::after { width: 100%; }
+
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            width: 800px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-medium);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: var(--space-4);
+            gap: var(--space-4);
+            z-index: var(--z-dropdown);
+            pointer-events: none;
+        }
+
+        nav.main-nav > ul > li:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-featured {
+            background-color: var(--bg-tertiary);
+            padding: var(--space-3);
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mega-menu-featured h4 {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .mega-menu-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+        }
+
+        .mega-menu-column h5 {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            margin-bottom: var(--space-3);
+            color: var(--text-main);
+        }
+
+        .mega-menu-column ul { list-style: none; }
+        .mega-menu-column ul li { margin-bottom: var(--space-2); }
+        .mega-menu-column ul li a {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        .mega-menu-column ul li a:hover {
+            color: var(--accent-primary);
+            padding-left: var(--space-1);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-tertiary);
+            transition: background-color var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-light);
+            transform: scale(1.05);
+        }
+
+        .lang-switch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-tertiary);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .lang-switch:hover {
+            background-color: var(--border-light);
+            transform: scale(1.05);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--bg-tertiary);
+            color: var(--text-main);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: var(--shadow-lg);
+            padding: var(--space-2) var(--space-3) var(--space-3);
+            max-height: calc(100vh - var(--header-height));
+            overflow-y: auto;
+        }
+
+        .mobile-nav.open { display: block; }
+
+        .mobile-nav a {
+            display: block;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+        }
+
+        .mobile-nav a:last-child { border-bottom: none; }
+        .mobile-nav .mobile-nav-lang { color: var(--accent-primary); }
+
+        /* ==========================================================================
+           HERO SECTION (ALINHAMENTO CENTRALIZADO)
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--header-height) + var(--space-6)) var(--space-6) var(--space-6);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .hero-bg-svg {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 60%;
+            height: auto;
+            opacity: 0.03;
+            pointer-events: none;
+            transform: rotate(15deg);
+            z-index: var(--z-below);
+        }
+
+        .hero-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-6);
+            width: 100%;
+            position: relative;
+            z-index: var(--z-normal);
+            text-align: center;
+        }
+
+        .hero-intro {
+            display: grid;
+            grid-template-columns: minmax(240px, 360px) 1fr;
+            gap: var(--space-6);
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-media-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+            transform: translateY(20px);
+        }
+
+        .hero-media {
+            width: 100%;
+            max-width: 280px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            background-color: var(--bg-tertiary);
+            margin-bottom: var(--space-3);
+        }
+
+        .hero-media iframe {
+            display: block;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border: 0;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .badge-literary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: 8px 16px;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-4);
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--text-main);
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.5px;
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.4s;
+            transform: translateY(20px);
+            max-width: 900px;
+        }
+
+        .hero-title span {
+            font-style: italic;
+            color: var(--accent-primary);
+        }
+
+        .hero-description {
+            font-size: var(--text-xl);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: var(--space-5);
+            line-height: 1.8;
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.6s;
+            transform: translateY(20px);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-3);
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 2.2s;
+            transform: translateY(20px);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 20px 40px;
+            background-color: var(--accent-primary);
+            color: var(--text-inverse);
+            border-radius: var(--radius-sm);
+            border: none;
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--accent-hover);
+            transition: left var(--transition-medium);
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before { left: 0; }
+        .btn-primary:hover {
+            color: var(--text-inverse);
+            box-shadow: 0 15px 30px var(--accent-glow);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 18px 40px;
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--border-strong);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-medium);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-media-col .badge-literary { margin-bottom: 0; }
+
+        .hero-launch {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            width: 100%;
+            max-width: 720px;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent-primary);
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.8s;
+            transform: translateY(20px);
+        }
+
+        .hero-launch::before,
+        .hero-launch::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--accent-primary);
+            opacity: 0.5;
+        }
+
+        .hero-launch span {
+            padding: 12px 28px;
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-sm);
+            background-color: var(--accent-glow);
+            text-align: center;
+        }
+
+        .hero-visual {
+            width: 100%;
+            max-width: 1000px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards 2s;
+        }
+
+        .hero-cover-full {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 2400 / 1039;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+            transition: transform var(--transition-slow);
+        }
+
+        .hero-cover-full:hover { transform: translateY(-6px); }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================================================
+           FEATURES / ESTATÍSTICAS
+           ========================================================================== */
+        .section-stats {
+            padding: var(--space-6) var(--space-6);
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+        }
+
+        .stat-card {
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-right: 1px solid var(--border-light);
+            transition: transform var(--transition-medium);
+        }
+
+        .stat-card:last-child { border-right: none; }
+        .stat-card:hover { transform: translateY(-5px); }
+
+        .stat-number {
+            font-family: var(--font-sans);
+            font-size: var(--text-5xl);
+            font-weight: 300;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================================================
+           LOCAL 1: BIOGRAFIA DO AUTOR
+           ========================================================================== */
+        .section-bio {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-primary);
+        }
+
+        .bio-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 5fr 6fr;
+            gap: var(--space-8);
+            align-items: start;
+        }
+
+        .bio-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .bio-image-inner {
+            width: 100%;
+            height: 100%;
+            background: url('../assets/images/bio-casal.jpg') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        .bio-decorative-box {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bio-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-tag {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            margin-bottom: var(--space-3);
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-primary);
+        }
+
+        .bio-title {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-4);
+            color: var(--text-main);
+        }
+
+        .bio-text-lead {
+            font-size: var(--text-xl);
+            color: var(--text-main);
+            font-style: italic;
+            margin-bottom: var(--space-4);
+            border-left: 4px solid var(--accent-primary);
+            padding-left: var(--space-3);
+        }
+
+        .bio-text-body {
+            color: var(--text-muted);
+            font-size: var(--text-md);
+            margin-bottom: var(--space-3);
+            text-align: justify;
+        }
+
+        /* ==========================================================================
+           LOCAL 2: ESCRITOS & POEMAS
+           ========================================================================== */
+        .section-poetry {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .poetry-grid {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-5);
+        }
+
+        .poetry-book {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: var(--space-5);
+            align-items: start;
+        }
+
+        .poetry-book + .poetry-book {
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .poetry-book .poetry-grid { margin: 0; max-width: none; }
+
+        .poetry-book-cover {
+            position: sticky;
+            top: calc(var(--header-height) + var(--space-3));
+            text-align: center;
+        }
+
+        .poetry-book-cover img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+
+        .poetry-book-cover figcaption {
+            margin-top: var(--space-2);
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            white-space: nowrap;
+        }
+
+        .poetry-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+        }
+
+        .poetry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+
+        .poetry-card h3 {
+            font-size: var(--text-2xl);
+            color: var(--text-main);
+            margin-bottom: var(--space-4);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: var(--space-2);
+        }
+
+        .text-scroll-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: var(--space-3);
+        }
+
+        .text-scroll-container::-webkit-scrollbar { width: 6px; }
+        .text-scroll-container::-webkit-scrollbar-track { background: var(--bg-tertiary); border-radius: var(--radius-full); }
+        .text-scroll-container::-webkit-scrollbar-thumb { background-color: var(--accent-light); border-radius: var(--radius-full); }
+        .text-scroll-container::-webkit-scrollbar-thumb:hover { background-color: var(--accent-primary); }
+
+        .text-scroll-container p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: var(--space-2);
+        }
+
+        /* ==========================================================================
+           LOCAL 3: PORTFÓLIO & SINOPSES
+           ========================================================================== */
+        .section-portfolio {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-primary);
+        }
+
+        .masonry-grid {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            column-count: 2; 
+            column-gap: var(--space-5);
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: var(--space-5);
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .masonry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        
+        .picture-wrapper {
+            width: 100%;
+            display: block;
+            margin-bottom: var(--space-4);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            position: relative;
+            background-color: var(--bg-tertiary);
+        }
+
+        .book-cover-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform var(--transition-slow);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .masonry-item:hover .book-cover-img {
+            transform: scale(1.02) translateZ(0);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            background-color: var(--text-main);
+            color: var(--bg-primary);
+            z-index: 20;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .book-category {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: var(--space-2);
+        }
+
+        .masonry-item h3 {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+            color: var(--accent-primary);
+        }
+
+        .masonry-item p {
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: var(--space-2);
+            text-align: justify;
+        }
+
+        .anthology-section {
+            margin-top: var(--space-8);
+            text-align: center;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: var(--space-5);
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+
+        .anthology-title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+            color: var(--text-main);
+        }
+
+        .anthology-list {
+            list-style: none;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3);
+        }
+
+        .anthology-list li {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-muted);
+            padding: var(--space-3);
+            border-left: 2px solid var(--accent-primary);
+            background-color: var(--bg-primary);
+            transition: transform var(--transition-fast);
+        }
+
+        .anthology-list li:hover {
+            transform: translateX(5px);
+            color: var(--text-main);
+            border-left-width: 4px;
+        }
+
+        .anthology-list li strong {
+            color: var(--accent-primary);
+            display: block;
+            font-size: var(--text-md);
+            margin-bottom: 2px;
+        }
+
+        .anthology-list li small {
+            display: block;
+            margin-top: 4px;
+            opacity: 0.7;
+            font-size: 0.7rem;
+        }
+
+        /* ==========================================================================
+           GALERIA FOTOGRÁFICA
+           ========================================================================== */
+        .section-gallery {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-secondary);
+        }
+
+        .gallery-carousels {
+            max-width: var(--max-width);
+            margin: var(--space-6) auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .carousel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
+        }
+
+        .carousel-title {
+            font-size: var(--text-2xl);
+            color: var(--text-main);
+        }
+
+        .carousel-controls { display: flex; gap: var(--space-1); }
+
+        .carousel-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border-strong);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-size: var(--text-lg);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .carousel-btn:hover:not(:disabled) {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .carousel-btn:disabled { opacity: 0.35; cursor: default; }
+
+        .carousel-track {
+            display: flex;
+            gap: var(--space-3);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: var(--space-2) 2px var(--space-3);
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-light) transparent;
+        }
+
+        .carousel-track::-webkit-scrollbar { height: 6px; }
+        .carousel-track::-webkit-scrollbar-thumb { background-color: var(--accent-light); border-radius: var(--radius-full); }
+
+        .gallery-photo-card {
+            position: relative;
+            flex: 0 0 calc((100% - 3 * var(--space-3)) / 4);
+            margin: 0;
+            scroll-snap-align: start;
+            height: 350px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+            background-color: var(--bg-tertiary);
+        }
+        
+        .gallery-photo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            z-index: 10;
+        }
+        
+        .gallery-photo-card.gallery-photo-wide { flex-basis: calc((100% - 3 * var(--space-3)) / 2 + var(--space-3)); }
+
+        .gallery-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform var(--transition-slow);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+        
+        .gallery-photo-card:hover .gallery-photo-img {
+            transform: scale(1.08) translateZ(0);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--space-3);
+            background: linear-gradient(to top, var(--glass-caption), transparent);
+            color: var(--text-inverse);
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: translateY(100%);
+            transition: transform var(--transition-medium);
+            text-align: center;
+        }
+        
+        .gallery-photo-card:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           VÍDEOS
+           ========================================================================== */
+        .section-videos {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-primary);
+        }
+
+        .video-showcase {
+            max-width: 1000px;
+            margin: var(--space-6) auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 320px));
+            justify-content: center;
+            gap: var(--space-5);
+        }
+
+        .video-item { margin: 0; }
+
+        .video-item figcaption {
+            margin-top: var(--space-2);
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .video-frame {
+            position: relative;
+            aspect-ratio: 9 / 16;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================================================
+           ENTREVISTAS
+           ========================================================================== */
+        .section-interviews {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-secondary);
+        }
+
+        .interview-grid {
+            max-width: 1000px;
+            margin: var(--space-6) auto 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-4);
+        }
+
+        .interview-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--accent-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--space-2);
+        }
+
+        .interview-card h3 { font-size: var(--text-2xl); color: var(--text-main); line-height: 1.3; }
+        .interview-card p { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.7; }
+        .interview-card .btn-secondary { margin-top: var(--space-2); }
+
+        .interview-type {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+        }
+
+        .interview-source {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--text-main) !important;
+        }
+
+        .interview-card--soon { border-left-color: var(--border-strong); }
+
+        /* ==========================================================================
+           PRESS / MEDIA KIT
+           ========================================================================== */
+        .section-press {
+            padding: var(--space-9) var(--space-6);
+            background-color: var(--bg-press);
+            color: var(--text-inverse);
+            border-top: 1px solid var(--border-press);
+        }
+
+        .press-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-8);
+        }
+        
+        .press-header { margin-bottom: var(--space-6); }
+        .press-title { font-size: var(--text-4xl); color: var(--text-inverse); margin-bottom: var(--space-2); }
+        .press-subtitle { font-family: var(--font-sans); font-size: var(--text-md); color: var(--text-press-muted); font-weight: 300; }
+        
+        .press-block { margin-bottom: var(--space-6); }
+        .press-block h4 {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-3);
+            border-bottom: 1px solid var(--border-press);
+            padding-bottom: var(--space-2);
+        }
+        
+        .press-block p {
+            color: var(--text-press-muted);
+            font-size: var(--text-sm);
+            text-align: justify;
+            margin-bottom: var(--space-3);
+            line-height: 1.8;
+        }
+        
+        .press-sidebar {
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-press);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            height: fit-content;
+        }
+        
+        .press-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: var(--space-4);
+            border: 2px solid var(--accent-primary);
+        }
+        
+        .press-list { list-style: none; }
+        .press-list li {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-press-muted);
+            margin-bottom: var(--space-2);
+            padding-left: var(--space-3);
+            position: relative;
+        }
+        .press-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        .press-contact a {
+            color: var(--text-press-muted);
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            display: block;
+            margin-bottom: var(--space-1);
+            transition: color var(--transition-fast);
+        }
+        
+        .press-contact a:hover { color: var(--accent-primary); }
+
+        /* ==========================================================================
+           FOOTER (3 COLUNAS - FOTO DO AUTOR REMOVIDA)
+           ========================================================================== */
+        footer {
+            background-color: #050505;
+            color: #ffffff;
+            padding: var(--space-8) var(--space-6) var(--space-4);
+        }
+
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            /* Recalculado para 3 colunas em vez de 4 */
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .footer-brand h2 {
+            font-family: var(--font-sans);
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: var(--space-3);
+            color: #ffffff;
+        }
+
+        .footer-brand p { color: #a0a0a0; font-size: var(--text-sm); max-width: 300px; line-height: 1.8; text-align: justify; }
+
+        .footer-col h4 {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: var(--space-2); }
+        .footer-col ul li a {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: #a0a0a0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-col ul li a:hover { color: #ffffff; padding-left: 4px; }
+        
+        /* Redes Sociais com SVGs Inline */
+        .social-links {
+            display: flex;
+            gap: var(--space-3);
+            margin-top: var(--space-2);
+        }
+        
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #a0a0a0;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all var(--transition-fast);
+        }
+        
+        .social-link:hover svg {
+            stroke: var(--accent-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding-top: var(--space-4);
+            border-top: 1px solid #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy { font-family: var(--font-sans); font-size: var(--text-xs); color: #666666; }
+        .footer-credit { font-family: var(--font-sans); font-size: var(--text-xs); color: #444444; font-weight: 600; }
+
+        /* ==========================================================================
+           REVEAL ANIMATION CLASSES
+           ========================================================================== */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+        /* ==========================================================================
+           MEDIA QUERIES
+           ========================================================================== */
+        @media (max-width: 1340px) {
+            nav.main-nav > ul { gap: var(--space-3); }
+            nav.main-nav > ul > li > a { font-size: var(--text-xs); letter-spacing: 1px; }
+            .header-logo { font-size: var(--text-2xl); }
+        }
+
+        @media (max-width: 1200px) {
+            .bio-container { grid-template-columns: 1fr; }
+            .bio-image-wrapper { height: 560px; max-width: 420px; margin: 0 auto; }
+            .poetry-grid { grid-template-columns: repeat(2, 1fr); }
+            .poetry-book { grid-template-columns: 1fr; }
+            .poetry-book .poetry-grid { grid-template-columns: repeat(3, 1fr); }
+            .poetry-book-cover { position: static; width: 160px; margin: 0 auto; }
+            nav.main-nav > ul { gap: var(--space-3); }
+            nav.main-nav > ul > li > a { font-size: var(--text-xs); letter-spacing: 1px; }
+            .header-logo { font-size: var(--text-2xl); }
+            .gallery-photo-card { flex-basis: calc((100% - 2 * var(--space-3)) / 3); }
+            .gallery-photo-card.gallery-photo-wide { flex-basis: calc((100% - 2 * var(--space-3)) * 2 / 3 + var(--space-3)); }
+            .press-container { grid-template-columns: 1fr; }
+            .anthology-list { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 1100px) {
+            .main-nav { display: none; }
+            .menu-toggle { display: flex; }
+        }
+
+        @media (max-width: 992px) {
+            .hero-intro { grid-template-columns: 1fr; gap: var(--space-4); }
+            .hero-media-col { width: 100%; max-width: 360px; margin: 0 auto; }
+            .poetry-book .poetry-grid { grid-template-columns: 1fr; }
+            nav.main-nav > ul { gap: var(--space-2); }
+            nav.main-nav > ul > li > a { letter-spacing: 0.5px; }
+            header { padding: 0 var(--space-4); }
+            .interview-grid { grid-template-columns: 1fr; }
+            .stats-grid { gap: var(--space-3); }
+            .masonry-grid { column-count: 1; }
+            .poetry-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 900px) {
+            .main-nav { display: none; }
+            .menu-toggle { display: flex; }
+            .header-controls { gap: var(--space-1); }
+            .poetry-book .poetry-grid { display: flex; gap: var(--space-2); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-2); }
+            .poetry-book .poetry-card { flex: 0 0 min(85%, 420px); scroll-snap-align: start; }
+            .poetry-card:hover { transform: none; }
+            .poetry-book .poetry-card.reveal { opacity: 1; transform: none; }
+            .section-bio, .section-poetry, .section-portfolio, .section-gallery,
+            .section-videos, .section-interviews, .section-press { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+        }
+
+        @media (max-width: 640px) {
+            .hero, .section-stats, .section-bio, .section-poetry, .section-portfolio,
+            .section-gallery, .section-videos, .section-interviews, .section-press { padding-left: var(--space-3); padding-right: var(--space-3); }
+            .video-grid { grid-template-columns: minmax(0, 320px); }
+            .interview-card { padding: var(--space-4) var(--space-3); }
+            .interview-card .btn-secondary { width: 100%; padding: 16px; }
+            .section-bio, .section-poetry, .section-portfolio, .section-gallery,
+            .section-videos, .section-interviews, .section-press { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+            .section-tag { letter-spacing: 2px; justify-content: center; text-align: center; }
+            .poetry-card, .masonry-item, .anthology-section { padding: var(--space-3); }
+            .poetry-card h3 { margin-bottom: var(--space-2); }
+            .text-scroll-container { max-height: 360px; padding-right: var(--space-2); }
+            .masonry-item p, .bio-text-body, .press-block p { text-align: left; }
+            .poetry-book { gap: var(--space-3); }
+            .poetry-book-cover { width: 120px; }
+            .hero-launch { font-size: var(--text-xs); letter-spacing: 2px; }
+            .hero-launch::before, .hero-launch::after { display: none; }
+            .hero-launch span { width: 100%; padding: 12px 16px; }
+            .hero-container { gap: var(--space-4); }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .header-controls .lang-switch { display: none; }
+            .stat-card { border-right: none; border-bottom: 1px solid var(--border-light); }
+            .stat-card:last-child { border-bottom: none; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0 var(--space-3); }
+            .main-nav { display: none; }
+            .gallery-photo-card { flex-basis: 80%; height: 320px; }
+            .gallery-photo-card.gallery-photo-wide { flex-basis: 100%; }
+            .gallery-photo-wide .gallery-photo-img { object-fit: contain; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 360px) {
+            .header-logo { font-size: var(--text-xl); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">GEP.</div>
+            <div class="loader-line-container">
+                <div class="loader-line-progress"></div>
+            </div>
+            <p style="margin-top: 16px; font-family: var(--font-sans); font-size: 10px; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase;">Opening the Literary Architecture</p>
+        </div>
+    </div>
+
+    <header id="main-header">
+        <a href="#" class="header-logo">Gabriel Ethan Paz <span class="header-logo-dot"></span></a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#apresentacao" class="hover-target">Introduction</a></li>
+                <li>
+                    <a href="#obras" class="hover-target">Literary Universe ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-featured">
+                            <h4>Featured This Month</h4>
+                            <h5 style="font-family: 'Georgia', serif; font-size: 18px; margin-bottom: 4px;">Impedidos de Amar</h5>
+                            <p>A true story of love and loss. Coming soon to bookshops.</p>
+                        </div>
+                        <div class="mega-menu-links">
+                            <div class="mega-menu-column">
+                                <h5>Novels</h5>
+                                <ul>
+                                    <li><a href="#obras" class="hover-target">Impedidos de Amar</a></li>
+                                    <li><a href="#obras" class="hover-target">Da Simplicidade de um Monte</a></li>
+                                    <li><a href="#obras" class="hover-target">A Última Transgressão</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h5>Writings</h5>
+                                <ul>
+                                    <li><a href="#textos" class="hover-target">Let There Be Light</a></li>
+                                    <li><a href="#textos" class="hover-target">These Are the Nights</a></li>
+                                    <li><a href="#textos" class="hover-target">Writing for Love</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#biografia" class="hover-target">Biography</a></li>
+                <li><a href="#galeria" class="hover-target">Gallery</a></li>
+                <li><a href="#press" class="hover-target">Press/Media</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-controls">
+            <a href="../" class="lang-switch hover-target" lang="pt-PT" hreflang="pt-PT" aria-label="Ler em português" title="Ler em português">PT</a>
+            <button class="theme-toggle hover-target" id="theme-toggle" aria-label="Toggle dark or light theme">
+                <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="menu-toggle hover-target" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Main menu">
+            <a href="#apresentacao">Introduction</a>
+            <a href="#biografia">Biography</a>
+            <a href="#textos">Texts</a>
+            <a href="#obras">Works and Synopses</a>
+            <a href="#galeria">Gallery</a>
+            <a href="#videos">Videos</a>
+            <a href="#press">Media Kit</a>
+            <a href="#entrevistas">Interviews</a>
+            <a href="../" lang="pt-PT" hreflang="pt-PT" class="mobile-nav-lang">Português</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="apresentacao">
+        <svg class="hero-bg-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.3,-46.3C90.8,-33.5,96.8,-18,97.2,-2.3C97.6,13.4,92.5,29.3,82.8,42.4C73.1,55.5,58.8,65.8,43.3,73.6C27.8,81.4,11.1,86.7,-4.8,83.9C-20.7,81.1,-35.8,70.2,-49.2,59.2C-62.6,48.2,-74.3,37.1,-81.1,23.3C-87.9,9.5,-89.8,-7,-85.4,-21.8C-81,-36.6,-70.3,-49.7,-57.4,-58.1C-44.5,-66.5,-29.4,-70.2,-14.9,-73.4C-0.4,-76.6,13.5,-79.3,27.3,-79.6C41.1,-79.9,54.8,-71.8,44.7,-76.4Z" transform="translate(100 100)" />
+        </svg>
+
+        <div class="hero-container">
+            <div class="hero-intro">
+                <div class="hero-media-col">
+                    <div class="hero-media">
+                        <iframe src="https://www.youtube-nocookie.com/embed/Nvy7UJRRy20" title="Trailer — Gabriel Ethan Paz" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="badge-literary">Member No. 1584, Portuguese Writers’ Association</div>
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="hero-title">The architecture of emotion, with life’s <span>reins let loose</span>.</h1>
+                    <p class="hero-description">Gabriel Ethan Paz does not merely write — he sculpts emotions into words. From Almada to the world, his journey is an atlas of soul and memory, where every country visited becomes verse, story or novel that sets the unspeakable free. His works are not simply read: they breathe, they confess, they redeem.</p>
+                </div>
+            </div>
+
+            <p class="hero-launch"><span>Coming soon to bookshops</span></p>
+
+            <div class="hero-visual">
+                <img src="../assets/images/impedidos-de-amar-capa-completa.jpg" alt="Full cover of the book Impedidos de Amar by Gabriel Ethan Paz" class="hero-cover-full hover-target" width="2400" height="1039">
+            </div>
+
+            <div class="hero-actions">
+                <a href="#obras" class="btn-primary hover-target">Explore the Portfolio</a>
+                <a href="#biografia" class="btn-secondary hover-target">My Reason</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-stats">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-number">67</div>
+                <div class="stat-label">Countries Visited</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay: 0.1s;">
+                <div class="stat-number">128</div>
+                <div class="stat-label">Cities Explored</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay: 0.2s;">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Works and Anthologies</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-bio" id="biografia">
+        <div class="bio-container">
+            <div class="bio-image-wrapper reveal-left">
+                <div class="bio-decorative-box"></div>
+                <div class="bio-image-inner"></div>
+            </div>
+            <div class="bio-content reveal-right">
+                <span class="section-tag">The Man Behind the Pen Name</span>
+                <h2 class="bio-title">About the Author</h2>
+                
+                <p class="bio-text-lead">Words run wild on the page, the mind breathes its way across the world and the senses are handed over to chance. From here spring sentences that seek to enlighten me about purpose. They may soothe or they may wound, but they are pure and impartial. The aim is to set free the power of my silenced voice and of my hidden affections.</p>
+                
+                <p class="bio-text-body"><strong>Gabriel Ethan Paz</strong> is the pen name of a Portuguese citizen, born in Almada, who built a career in the pharmaceutical industry, rising to General Manager of a company based in the Caribbean.</p>
+
+                <p class="bio-text-body">A graduate in Marketing Management from IPAM, with a postgraduate degree in Strategic Marketing in Brussels, he traded the MBA for a notebook to devote himself to writing.</p>
+
+                <p class="bio-text-body">Gabriel Ethan Paz does not write. He sculpts. He turns emotion into words, silence into sentences. His writing is bare, visceral, human. He does not tell stories - he confesses them. He does not invent characters - he breathes them. And redeems them. Every line is a wave from the pavement. Every chapter, a handkerchief he does not keep for himself. From Almada to the world, his work is an atlas of soul and memory, where the unspeakable finally learns to speak.</p>
+
+                <p class="bio-text-body">He cultivates emotional intelligence and shows his feelings with sincerity. He loves animals, loves nature, loves the beach - and in the sea he finds his compass, his inspiration and his serenity. The piano, his instrument of choice, is where whatever does not fit into words fits into music.</p>
+
+                <p class="bio-text-body">Novelist, poet and essayist, he shares his voice across several anthologies, in Portugal and abroad. He is a member of the Portuguese Writers’ Association (APE), the Portuguese Poets’ Association and NALAP.</p>
+
+                <p class="bio-text-body">He has wandered across four continents, through more than 67 countries and 128 cities. He has seen worlds, lived cultures, kept people close. Every place made him wiser. Kinder. More discerning. And his journey seems not yet to have ended.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-poetry" id="textos">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Extracts from the Literary Works</span>
+            <h2 class="bio-title">Texts, Reflections and Free Verse.</h2>
+            <p style="color: var(--text-muted);">Dive into my night-time silences, where poetry lays bare the cracks in the human condition.</p>
+        </div>
+
+        <div class="poetry-book">
+            <figure class="poetry-book-cover reveal">
+                <img src="../assets/images/impedidos-de-amar.jpg" alt="Cover of the book Impedidos de Amar" loading="lazy" width="565" height="850">
+                <figcaption>Impedidos de Amar</figcaption>
+            </figure>
+
+            <div class="poetry-grid">
+                <div class="poetry-card reveal">
+                    <h3>At the beach...</h3>
+                    <div class="text-scroll-container">
+                        <p>Elisabete’s face shone with joy. She longed to see her beach again and to step away from the hospital routine and a disguised house arrest. So she woke early on the first day and set the whole household in a flurry. She demanded that breakfast be made and that we leave for the beach. She barely ate, so eager was she to feel the fine sand. In the car, all the way there, no one could get a word in, so overwhelming was her lively voice.</p>
+                        <p>She wavered between debating the colour of the beach flag and whether the scenery had changed. As we neared the car park, the gleam in her eyes was plain to see. At last, her beach was there. Right before her eyes, full of emotion.</p>
+                    </div>
+                </div>
+
+                <div class="poetry-card reveal" style="transition-delay: 0.1s;">
+                    <h3>Disenchantment</h3>
+                    <div class="text-scroll-container">
+                        <p>The days are mere counters of minutes, queues with no grounded purpose. Jumbled routines in which we subtract leisure and pleasure, and divide duty and need, or deprivation. They are fractions with no unknown, impossible equations. The clocks have stopped and the calendars stay fixed on the same day and the same month. They are ballads for a sad piano, without assonance.</p>
+                        <p>We accept the throbbing of the wind and the transparency of the rain, and we shelter from the sunlight. The dew becomes part of daily life in our neglected garden. Yes, we eat. Whatever is to hand and ready to taste. Cobwebs gather on the recipe books, and on the will to make an effort. The bath is a mere gush of water to soothe the conscience that the body’s grime is slowly washing away.</p>
+                    </div>
+                </div>
+
+                <div class="poetry-card reveal" style="transition-delay: 0.2s;">
+                    <h3>The book</h3>
+                    <div class="text-scroll-container">
+                        <p>This book is just that: proof that love withstands time, illness, distance, fate. Proof that a life can be so intense that it goes on beating even after the last breath.</p>
+                        <p>Proof that death does not strip us of everything — because what is true remains.</p>
+                        <p>And so this story ends: not with silence, but with eternity.<br>
+                        Not with an ending, but with memory. Not with loss, but with legacy.</p>
+                        <p>Elisabete lives — in the pages, in the family, in the gestures, in the courage, in the longing. She lives because those who love like this never leave entirely. She lives because those who inspire like this never stop shining. She lives because those who fight like this never stop teaching.</p>
+                        <p>This is the summary. This is the close. This is the curtain falling — but the light that keeps glimmering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="poetry-book">
+            <figure class="poetry-book-cover reveal">
+                <img src="../assets/images/capa-de-redeas-soltas.jpg" alt="Cover of the book De Rédeas Soltas" loading="lazy" width="610" height="952">
+                <figcaption>De Rédeas Soltas</figcaption>
+            </figure>
+
+        <div class="poetry-grid">
+            <div class="poetry-card reveal">
+                <h3>These Are the Nights</h3>
+                <div class="text-scroll-container">
+                    <p>On the eaves of the house a fine rain was throbbing. Like loosened, frightened notes that cannot be heard, that only bewitch the sheet music forgotten in some drawer. Longing embraced the deceitful glass of the nameless liqueur, which lay motionless. From the fireplace an angry flame flooded the living room with warmth, where, on a strategically placed sofa, I rest the weary skeleton of this life of toil. I do not know what I was thinking, nor what I might long for. I was simply drifting through senseless stretches of time. I regretted some unusual paths and sketched a smile at the more coherent decisions.</p>
+                    <p>It is crucial to lose ourselves in time and space, to reflect on the path we have walked and trampled with steps so often taken without reason, without awareness, without thought. A purpose of gruelling self-analysis that helps to correct flights of fancy drawn at random. That changes nothing in the past but questions the future. I need to know whether I did well. I owe myself that commitment. To err is human, but I am not. I am a perfectionist and always seek the finest point beyond borders. I do not know if the sacrifice will be worth it, but it runs in my blood. And it is this weariness that consumes me. That wears down my will and steals my peaceful sleep.</p>
+                    <p>I doubt the uncertainties and question the truths I do not master. I turn the whole scene over and examine every detail in the hope that it will assure me that yes, I acted well. I do not want the approval of humans, so often disguised as traps to ensnare. Of poisoned compliments, or ones bewitched by morbid or restraining desires. I want to embrace peace. I want the comfort of a mind at ease with every gesture, every decision. I drift, I question, and I keep sipping that liqueur I do not know. It tastes of something elusive, but it is sweet. It feeds the thirst for answers. The crackling of the wood invites me to settle into the sofa. I lie down without losing sight of the fire. It warms the room, the soul and the body. In the glass, the liquid can be seen running down the side, recalling the rain that lingers on the eaves.</p>
+                    <p>I call upon everything on these nights. My late father, my sister who dwells with the Most High, or even God in his heavenly kingdom. I do not beg for answers, only for the right discernment. I need that certainty. Yes, I am different. I am not content to be one more frenzied photocopy of so many others lavishly planted in someone’s life. I am a man of virtue and of character. Of freedom and of passion. Of daring and of struggle without hesitation. Of humility and friendship. Of compassion and teaching. I am a man of complex paths and firm ideas. Neither better nor worse. Just me. With all the doubts and certainties that lead me to nights squandered in a setting carved by the need for perfection. Most of the time I find peace without noticing. I sleep, lost at this crossroads of emotions sprinkled with a prudent dose of anxiety. I almost always wake with the answers I seek. As if they had been stealthily pushed along by the breeze of a new day and had settled freely into the numbness of my night’s rest. This is the way. These are the nights. This is me.</p>
+                </div>
+            </div>
+
+            <div class="poetry-card reveal" style="transition-delay: 0.1s;">
+                <h3>Let There Be Light</h3>
+                <div class="text-scroll-container">
+                    <p>Let there be light.<br>
+                    In the darkness of your fearless words<br>
+                    Whether honeyed or likewise macabre<br>
+                    In the ambiguity of your doubtful gestures<br>
+                    In the steps with which you sail on, and which are sure<br>
+                    But also in those that force you to retreat<br>
+                    And long for a judgement, fruitful or adverse<br>
+                    In chimeras hidden away and scorned<br>
+                    And in customs like insane crusades<br>
+                    In the outpouring that was cruelly torn apart<br>
+                    And without decree raised up a prostrate soul<br><br>
+                    Let there be light.<br>
+                    In the muzzling of the feelings you keep silent<br>
+                    And of the fear that renders your speech mute<br>
+                    In the clouded gaze fixed on some uncertain place<br>
+                    In the idling along a path that is deserted<br>
+                    In the stones scattered in an ill-fated direction<br>
+                    That shamelessly cloak you in solitude<br>
+                    And in the reviling of a soul without will<br>
+                    Flooded by an eternal and morbid longing<br>
+                    That turns life into a dismal fable<br>
+                    Where you appear like a decaying puppet<br><br>
+                    Let there be light.<br>
+                    In the embrace you long for, but which is on the run<br>
+                    Like an impostor whose consent is feigned<br>
+                    And goes on stinging with a merciful sentence<br>
+                    In a world apart that is demented<br>
+                    In that simple love that cannot be found<br>
+                    That, in the winning of fortune, is an affront<br>
+                    And in the child who was never conceived in a womb<br>
+                    Imposed upon by a body that, being ill,<br>
+                    Subdues like a giant a mere dwarf<br>
+                    And breaks life without plausible reason<br><br>
+                    Let there be light.<br>
+                    Upon the waking of each new day<br>
+                    The listless gaze that keeps watch from the face<br>
+                    On the days that die of sheer inaction<br>
+                    Like a silent anniversary with no chosen song<br>
+                    On the arid meadows, once a restful haven<br>
+                    Plundered by bitterness, without their green<br>
+                    And upon the freshness of the simple act of breathing<br>
+                    So that a new story may then take root<br>
+                    And a seductive smile be carried on the wind<br>
+                    To restore to the soul its blessed breath</p>
+                </div>
+            </div>
+
+            <div class="poetry-card reveal" style="transition-delay: 0.2s;">
+                <h3>Writing for Love</h3>
+                <div class="text-scroll-container">
+                    <p>Line upon line of words poured out<br>
+                    They may be wicked, but they are never feigned<br>
+                    Written in outcry by daring authors<br>
+                    Who tell of fears or of simple loves<br>
+                    Stubborn sketches of joy or of melancholy<br>
+                    Living proof of mercy or of sheer tyranny<br>
+                    Line upon line of compassionate words<br>
+                    Silent decrees waiting to be read<br>
+                    Angry roars at an iniquitous community<br>
+                    That flatters the futile and scorns the truth<br>
+                    That hides from tenderness and embraces the immoral<br>
+                    And builds its deadly sin upon deceit<br>
+                    Line upon line of feelings lived<br>
+                    Carried over whole, with no filters for sale<br>
+                    Honest judgements of impartial nobility<br>
+                    Free of greed or of mere privilege<br>
+                    Eloquent cries calling out for reflection<br>
+                    Restless cautions of such fair forewarning<br>
+                    Line upon line of love freely given<br>
+                    In the hope of mending a painful fate<br>
+                    Bursts of courage in bewildered souls<br>
+                    Diligent answers at those crossroads<br>
+                    Distant embraces of secret devotion<br>
+                    When a cherished pen is not always near</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="section-portfolio" id="obras">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Original Works</span>
+            <h2 class="bio-title">Synopses from the Literary Universe.</h2>
+        </div>
+
+        <div class="masonry-grid">
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">Published</span>
+                    <img src="../assets/images/capa-de-redeas-soltas.jpg" alt="Cover of the book De Rédeas Soltas" class="book-cover-img" loading="lazy" width="610" height="952">
+                </picture>
+                <span class="book-category">Thought and Poetry</span>
+                <h3>De Rédeas Soltas</h3>
+                <p>We live on a tight rein.</p>
+                <p>Bound to the money we worship like a god, to the golden masks we wear to be accepted, to the likes we beg for like alms, to the loves that cripple us instead of setting us free.</p>
+                <p>In this book of philosophical poetic prose, Gabriel Ethan Paz rides, without asking permission, through everything that imprisons us: money, social hypocrisy, fear, love left unfulfilled.</p>
+                <p>And he shows what that prison costs us.</p>
+                <p>It costs the longing that cannot be explained. The sacrifice of a whole life at sea that no one wants to make any more. The weight of being a father and having to raise children in a world without values. The temptation that circles us, the illusion of love it sells us, the summer loves that stay on the skin and the ended love that leaves its sentence. It costs the sea that is no longer an altar, but a road. The winter that no one respects any more. The swallowed grief, the watchful memories, the time that slips away, the missing embrace, hunger, fatigue, death made banal and war made normal.</p>
+                <p>Because the values missing from society are not a distant subject — they are the air we breathe. And every text in this book is a portrait of what we breathe today.</p>
+                <p>From the woods where he takes refuge to the seashore where he finds peace again, from the cruel portrait in “Seres Humanos” (Human Beings) to the indictment in “Pecúnia Venerada” (Worshipped Money), every text is an act of liberation.</p>
+                <p>I write because I have the freedom to choose the path on which to fight.</p>
+                <p>And this book is an invitation: let loose your reins too.</p>
+            </div>
+
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">In Editing</span>
+                    <img src="../assets/images/capa-da-simplicidade-de-um-monte.jpg" alt="Cover of the book Da Simplicidade de um Monte" class="book-cover-img" loading="lazy" width="427" height="640">
+                </picture>
+                <span class="book-category">Novel</span>
+                <h3>Da Simplicidade de um Monte</h3>
+                <p>“Da Simplicidade de um Monte” tells the life of a man and a woman born in a remote village, lost in space and time, where knowledge arrived late and life taught early. They grew up amid limitations, hunger, scarcity and a harsh daily life that shaped their character and wounded their spirit. The hardness of rural life — domestic violence, abandonment, the relentlessness of the days — tattooed their skin and their souls, forcing them to live the film of their own existence intensely. United in marriage, they faced a turmoil of events that tested their resilience, their faith, their love and their capacity to fight.</p>
+                <p>They raised two children, seven years apart, and dared to pass on to them the pure, heartfelt values of those who grew up on an inhospitable hillside, where dignity was a daily conquest. Union and disunion walked side by side; so did harmony and discord. Violence and divorce even spent the night together. Even so, they never lost sight of the dream of seeing their children rise with the dignity they had always longed for. They faced struggles of every kind — even illnesses such as cancer — and resisted with daring and courage, surprising everyone with a strength that only those who know the hardness of the land can cultivate. This is the story of two lives that, though born into an environment lacking in everything, never accepted that this should stop them from learning, teaching and passing on the noblest values that can guide a human being. A work that inspires, motivates and lights the flame in those facing similar battles and looking for the strength to carry on.</p>
+            </div>
+
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">Pre-launch</span>
+                    <img src="../assets/images/impedidos-de-amar.jpg" alt="Cover of the book Impedidos de Amar" class="book-cover-img" loading="lazy" width="565" height="850">
+                </picture>
+                <span class="book-category">Novel</span>
+                <h3>Impedidos de Amar</h3>
+                <p>“Impedidos de Amar” is a procession of raw emotions, built on the true story of my family.</p>
+                <p>March 2020. The country shuts down. The streets empty. It is in that state of emergency that my sister Elisabete receives a cancer diagnosis.</p>
+                <p>Confined and deprived of the support of her loved ones, she lived through what no human being should have to bear. The risk of contagion raised walls between her and the love of her parents, her brother, her son. We were so close... and hopelessly far. No kiss. No embrace. Prevented from loving.</p>
+                <p>From the window, which became our altar of adoration, we waved from the pavement. At her bedside, photos of her son were her only comfort. During chemotherapy, a brutal allergic reaction forced her into 11 days of compulsory hospitalisation, which would leave marks that time will not dare to erase.</p>
+                <p>This is not a book about cancer. It is a book about what love was able to do when it was prevented from touching. And about the sentence I have never forgotten: “I will always be fine as long as I know you are alive.”</p>
+            </div>
+
+            <div class="masonry-item reveal">
+                <picture class="picture-wrapper">
+                    <span class="status-badge">In Editing</span>
+                    <img src="../assets/images/capa-a-ultima-transgressao.jpg" alt="Cover of the book A Última Transgressão" class="book-cover-img" loading="lazy" width="427" height="640">
+                </picture>
+                <span class="book-category">Novel</span>
+                <h3>A Última Transgressão</h3>
+                <p>“A Última Transgressão” is born from the inevitable shadow of mortality — that silent presence we all avoid until the day it imposes itself with brutality. When a brilliant young man sees his future shatter under the weight of a terminal illness, an intimate and devastating journey to the limits of human existence begins. Between sterile hospital corridors, emotional isolation and a writing that becomes both refuge and scream, he confronts the fragility of life, the injustice of fate and the urgency of leaving a mark before time runs out. Stripped of the illusions of youth, the protagonist reinvents himself in a territory where morality, despair and freedom intertwine.</p>
+                <p>Illness becomes the catalyst for a fierce rebellion: an unlikely hacker, a digital Robin Hood who, faced with imminent death, decides to subvert systems and redistribute wealth to those the world has forgotten. What is crime to some is redemption to others — and the book challenges the reader to question where justice ends and transgression begins. This is not just the story of a cybercrime, nor a medical drama. It is a meditation on identity, finitude and purpose. An exploration of the grey areas where pain turns into creation, where nihilism brushes against altruism, where loneliness becomes a disruptive force. In his final act — daring, controversial and deeply human — the protagonist leaves a legacy that echoes beyond his own death, forcing us to rethink what it means to live intensely when the end is no longer an abstraction, but an imminent certainty. “A Última Transgressão” is an invitation to reflect on mortality, justice and legacy. A story that unsettles, inspires and endures — like the indomitable spirit of those who, even on the edge of the abyss, dare to reinvent the meaning of life.</p>
+            </div>
+        </div>
+
+        <div class="anthology-section reveal">
+            <span class="section-tag" style="justify-content: center;">Co-authorship & Contributions</span>
+            <h3 class="anthology-title">Anthologies and Collaborations</h3>
+            <ul class="anthology-list">
+                <li>
+                    <strong>Antologia pela Paz</strong>
+                    8th World Poetry Event, 6 volumes; Fundação Amazoníca Produtiva, Poetas Intergalácticos.
+                    <small>ISBN: 9798266212992</small>
+                </li>
+                <li>
+                    <strong>Antologia Tema Livre</strong>
+                    9th World Poetry Event – Fundación Amazoníca Productiva, Poetas Intergalácticos.
+                </li>
+                <li>
+                    <strong>Antologia Tema Livre</strong>
+                    10th World Poetry Event – Fundación Amazoníca Productiva, Poetas Intergalácticos.
+                </li>
+                <li>
+                    <strong>Antologia - Entre Linhas de Amor</strong>
+                    Metáfora Editora.
+                </li>
+                <li>
+                    <strong>Antologia - O canto das folhas</strong>
+                    Editora Reticências.
+                </li>
+                <li>
+                    <strong>Antologia - Do sono ao sonho</strong>
+                    Editora Chiado Books.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-gallery" id="galeria">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Photo Stories</span>
+            <h2 class="bio-title">Photo Gallery</h2>
+            <p style="color: var(--text-muted);">Moments captured along the author’s path, encounters with free verse and inspirations from around the world.</p>
+        </div>
+
+        <div class="gallery-carousels">
+            <div class="gallery-carousel reveal">
+                <div class="carousel-header">
+                    <h3 class="carousel-title" id="galeria-momentos">The Author’s Moments</h3>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-btn hover-target" data-dir="-1" aria-label="Previous photos">&#8592;</button>
+                        <button type="button" class="carousel-btn hover-target" data-dir="1" aria-label="Next photos">&#8594;</button>
+                    </div>
+                </div>
+                <div class="carousel-track" tabindex="0" aria-labelledby="galeria-momentos">
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-01.jpg" alt="Gabriel Ethan Paz on horseback on the beach at sunset" class="gallery-photo-img" style="object-position: left center;" loading="lazy">
+                        <figcaption class="gallery-caption">On horseback</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-02.jpg" alt="Gabriel Ethan Paz seen from behind, sitting in a chair facing the sea at sunset" class="gallery-photo-img" style="object-position: center 80%;" loading="lazy">
+                        <figcaption class="gallery-caption">Facing the sea</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-03.jpg" alt="Gabriel Ethan Paz walking on the beach" class="gallery-photo-img" style="object-position: center bottom;" loading="lazy">
+                        <figcaption class="gallery-caption">Walking</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-04.jpg" alt="Gabriel Ethan Paz standing on the sand, in profile, facing the sea" class="gallery-photo-img" style="object-position: 30% center;" loading="lazy">
+                        <figcaption class="gallery-caption">By the sea</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-05.jpg" alt="Silhouette of Gabriel Ethan Paz holding an open book in the wind, facing the sea" class="gallery-photo-img" style="object-position: 30% center;" loading="lazy">
+                        <figcaption class="gallery-caption">Book in the wind</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-06.jpg" alt="The hands of Gabriel Ethan Paz writing in an open book next to a laptop" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Writing</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-07.jpg" alt="Gabriel Ethan Paz standing on the beach, gazing at the sea" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Contemplating</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-momentos-08.jpg" alt="Gabriel Ethan Paz sitting in a chair on the beach, gazing at the horizon" class="gallery-photo-img" style="object-position: 80% center;" loading="lazy">
+                        <figcaption class="gallery-caption">Sitting on the beach</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="gallery-carousel reveal">
+                <div class="carousel-header">
+                    <h3 class="carousel-title" id="galeria-eventos">Literary Events</h3>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-btn hover-target" data-dir="-1" aria-label="Previous photos">&#8592;</button>
+                        <button type="button" class="carousel-btn hover-target" data-dir="1" aria-label="Next photos">&#8594;</button>
+                    </div>
+                </div>
+                <div class="carousel-track" tabindex="0" aria-labelledby="galeria-eventos">
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-01.jpg" alt="Gabriel Ethan Paz with two guests and the book De Rédeas Soltas" class="gallery-photo-img" style="object-position: center 70%;" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-02.jpg" alt="Guests in conversation, one of them holding a book" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-03.jpg" alt="Guests talking and smiling in the exhibition room" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-04.jpg" alt="Gabriel Ethan Paz talking with guests, all smiles" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-05.jpg" alt="Gabriel Ethan Paz in conversation with guests" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-06.jpg" alt="View of the room with guests mingling around a table" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-07.jpg" alt="Gabriel Ethan Paz hugging a guest in a green jacket" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-eventos-08.jpg" alt="Gabriel Ethan Paz with guests by the reception table" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
+                        <figcaption class="gallery-caption">Literary events</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="gallery-carousel reveal">
+                <div class="carousel-header">
+                    <h3 class="carousel-title" id="galeria-apresentacoes">Literary Presentations</h3>
+                    <div class="carousel-controls">
+                        <button type="button" class="carousel-btn hover-target" data-dir="-1" aria-label="Previous photos">&#8592;</button>
+                        <button type="button" class="carousel-btn hover-target" data-dir="1" aria-label="Next photos">&#8594;</button>
+                    </div>
+                </div>
+                <div class="carousel-track" tabindex="0" aria-labelledby="galeria-apresentacoes">
+                    <figure class="gallery-photo-card gallery-photo-wide">
+                        <img src="../assets/images/galeria-apresentacoes-01.jpg" alt="Panel of four speakers at a literary presentation by Gabriel Ethan Paz" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-apresentacoes-02.jpg" alt="Gabriel Ethan Paz before the audience, with the slide “Escrever Por Amor” on screen" class="gallery-photo-img" style="object-position: 80% center;" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-apresentacoes-03.jpg" alt="Audience at a literary presentation, with the book De Rédeas Soltas in the background" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-apresentacoes-04.jpg" alt="A reading in front of the speakers’ table at the launch of the 2nd edition of De Rédeas Soltas" class="gallery-photo-img" style="object-position: left center;" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-apresentacoes-05.jpg" alt="A reading beside Gabriel Ethan Paz, next to the poster and the book De Rédeas Soltas" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-apresentacoes-06.jpg" alt="Gabriel Ethan Paz addressing the audience, with the slide “Seres Humanos” on screen" class="gallery-photo-img" style="object-position: right center;" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-apresentacoes-07.jpg" alt="Two seated guests looking at a text, with a man taking photos in the background" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                    <figure class="gallery-photo-card">
+                        <img src="../assets/images/galeria-apresentacoes-08.jpg" alt="Gabriel Ethan Paz signing a book for a reader in a black cap" class="gallery-photo-img" loading="lazy">
+                        <figcaption class="gallery-caption">Literary presentations</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-videos" id="videos">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">Videos</span>
+            <h2 class="bio-title">Moving Images</h2>
+            <p style="color: var(--text-muted);">Trailers for the works of Gabriel Ethan Paz.</p>
+        </div>
+
+        <div class="video-showcase">
+            <div class="video-grid">
+                <figure class="video-item reveal">
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/nr5YSl_LyeQ" title="De Rédeas Soltas trailer" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>De Rédeas Soltas trailer</figcaption>
+                </figure>
+                <figure class="video-item reveal" style="transition-delay: 0.1s;">
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/J3xnRTjEbvk" title="Impedidos de Amar trailer" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Impedidos de Amar trailer</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-press" id="press">
+        <div class="press-container">
+            <div class="press-content reveal-left">
+                <div class="press-header">
+                    <span class="section-tag" style="color: var(--accent-light);">Press</span>
+                    <h2 class="press-title">Official Media Kit</h2>
+                    <p class="press-subtitle">Complete official material for the press, events, interviews and promotion.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>Literary Mission</h4>
+                    <p>My mission is born in the instant when the soul loses its bearings and leaves me at the mercy of emotions that assail me, wound me or save me. There are moments when everything stops — the world, the body, time — and only my hands carry on, surrendered to an impulse I do not control. That is when the reins come loose and I find myself.</p>
+                    <p>I write because I cannot silence what runs through me. Because words, when they burst out, are truer than any gesture. They run wild on the page, they search for meaning, they search for me. They are my way of breathing when my chest tightens, my way of existing when life weighs heavy, my way of loving when silence is no longer enough.</p>
+                    <p>I write because I do. I write because I need to. I write because, when I surrender to words, I find again the freedom I so often lack. I write out of love — for what I feel, for who I am, for what I am still searching for.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>Long Biography</h4>
+                    <p>Gabriel Ethan Paz is the pen name of a Portuguese citizen, born in Almada, who built a career in the pharmaceutical industry, rising to General Manager of a company based in the Caribbean.</p>
+                    <p>A graduate in Marketing Management from IPAM, with a postgraduate degree in Strategic Marketing in Brussels, he traded the MBA for a notebook to devote himself to writing.</p>
+                    <p>Gabriel Ethan Paz does not write. He sculpts. He turns emotion into words, silence into sentences. His writing is bare, visceral, human. He does not tell stories - he confesses them. He does not invent characters - he breathes them. And redeems them. Every line is a wave from the pavement. Every chapter, a handkerchief he does not keep for himself. From Almada to the world, his work is an atlas of soul and memory, where the unspeakable finally learns to speak.</p>
+                    <p>He cultivates emotional intelligence and shows his feelings with sincerity. He loves animals, loves nature, loves the beach - and in the sea he finds his compass, his inspiration and his serenity. The piano, his instrument of choice, is where whatever does not fit into words fits into music.</p>
+                    <p>Novelist, poet and essayist, he shares his voice across several anthologies, in Portugal and abroad. He is a member of the Portuguese Writers’ Association (APE), the Portuguese Poets’ Association and NALAP.</p>
+                    <p>He has wandered across four continents, through more than 67 countries and 128 cities. He has seen worlds, lived cultures, kept people close. Every place made him wiser. Kinder. More discerning. And his journey seems not yet to have ended.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>His Works (10 in Total)</h4>
+                    <ul class="press-list">
+                        <li><strong>De Rédeas Soltas</strong> – 2nd Edition, Metáfora Editora – Poetry and Thought</li>
+                        <li><strong>Impedidos de Amar</strong> – In-Finita Editorial, Novel</li>
+                        <li><strong>Da Simplicidade de um Monte</strong> – Novel</li>
+                        <li><strong>A Última Transgressão</strong> – Novel</li>
+                        <li>Contributions to 6 national and international anthologies (details in the Portfolio).</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-style: italic; font-size: 0.8rem; color: var(--text-press-muted);">* Cover images and synopses are available in this site’s portfolio.</p>
+                </div>
+            </div>
+
+            <div class="press-sidebar reveal-right">
+                <img src="../assets/images/gabriel-autor.jpg" alt="Official portrait of Gabriel Ethan Paz" class="press-photo">
+                
+                <div class="press-block">
+                    <h4>Short Biography</h4>
+                    <p>Gabriel Ethan Paz, the pen name of a Portuguese citizen born in Almada, built a career in the pharmaceutical industry, rising to General Manager in the Caribbean.</p>
+                    <p>A Marketing graduate from IPAM with postgraduate studies in Brussels, he traded the MBA for a notebook. He does not write, he sculpts: bare, visceral, human writing.</p>
+                    <p>He does not tell stories - he confesses them. He does not invent characters - he breathes them. And redeems them. Every line a wave from the pavement, every chapter a handkerchief.</p>
+                    <p>Novelist, poet and essayist, member of APE, AP Poetas and NALAP. He has wandered through 67 countries and 128 cities. He has seen worlds, lived cultures, kept people close. His journey has not ended.</p>
+                </div>
+
+                <div class="press-block">
+                    <h4>Press Highlights</h4>
+                    <ul class="press-list">
+                        <li>Literary events and public presentations</li>
+                        <li>Interviews and conversations</li>
+                        <li>Press articles and mentions</li>
+                        <li>Upcoming appearances</li>
+                        <li>Selected quotes</li>
+                    </ul>
+                </div>
+
+                <div class="press-block press-contact">
+                    <h4>Official Contacts</h4>
+                    <a href="mailto:gabriel.ethan.paz@protonmail.com" class="hover-target">gabriel.ethan.paz@protonmail.com</a>
+                    <a href="https://gabrielethanpaz.com" target="_blank" rel="noopener noreferrer" class="hover-target">gabrielethanpaz.com</a>
+                    <a href="https://gabrielethanpaz.substack.com" target="_blank" rel="noopener noreferrer" class="hover-target">Substack Newsletter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-interviews" id="entrevistas">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="section-tag" style="justify-content: center;">In the Press</span>
+            <h2 class="bio-title">Interviews</h2>
+            <p style="color: var(--text-muted);">Conversations about the author’s writing, works and journey.</p>
+        </div>
+
+        <div class="interview-grid">
+            <article class="interview-card reveal">
+                <span class="interview-type">Written interview</span>
+                <h3>Interview with Gabriel Ethan Paz, author of Impedidos de Amar</h3>
+                <p class="interview-source">Revista Conexão Literatura</p>
+                <p>A conversation about the true story behind Impedidos de Amar, the impact of the pandemic on families, writing as a way of setting one’s voice free, and upcoming literary projects.</p>
+                <a href="https://revistaconexaoliteratura.com.br/entrevista-com-gabriel-ethan-paz-autor-do-livro-impedidos-de-amar/" target="_blank" rel="noopener noreferrer" class="btn-secondary hover-target">Read the full interview (in Portuguese)</a>
+            </article>
+            <article class="interview-card interview-card--soon reveal" style="transition-delay: 0.1s;">
+                <span class="interview-type">Audio interviews</span>
+                <h3>Coming soon</h3>
+                <p>Audio interviews, including radio appearances, will be made available here.</p>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>Gabriel Ethan Paz.</h2>
+                <p>Writing is my gesture of freedom — the instant I let loose the reins of the mind and allow emotion, bare and untamed, to find the page.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#apresentacao" class="hover-target">Home</a></li>
+                    <li><a href="#biografia" class="hover-target">Biography</a></li>
+                    <li><a href="#textos" class="hover-target">Texts and Poems</a></li>
+                    <li><a href="#obras" class="hover-target">Synopses and Portfolio</a></li>
+                    <li><a href="#galeria" class="hover-target">Gallery</a></li>
+                    <li><a href="#videos" class="hover-target">Videos</a></li>
+                    <li><a href="#entrevistas" class="hover-target">Interviews</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Social Media</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/escritorgabrielethanpaz/" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571446910672" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabrielethanpaz/" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@gabrielethanpaz" target="_blank" rel="noopener noreferrer" class="social-link hover-target" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copy">
+                &copy; 2026 Gabriel Ethan Paz. All rights reserved.
+            </div>
+            <div class="footer-credit">
+                Digital engineering by Emerson
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* LOADER LOGIC */
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 1000);
+            }, 3000);
+
+            /* CUSTOM CURSOR LOGIC */
+            const cursorDot = document.getElementById('cursor-dot');
+            const cursorOutline = document.getElementById('cursor-outline');
+            const hoverTargets = document.querySelectorAll('.hover-target, a, button');
+
+            if (window.matchMedia("(pointer: fine)").matches) {
+                window.addEventListener('mousemove', (e) => {
+                    const posX = e.clientX;
+                    const posY = e.clientY;
+                    cursorDot.style.left = `${posX}px`;
+                    cursorDot.style.top = `${posY}px`;
+                    cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+                });
+
+                hoverTargets.forEach(target => {
+                    target.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+                    target.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+                });
+            } else {
+                cursorDot.style.display = 'none';
+                cursorOutline.style.display = 'none';
+                document.body.style.cursor = 'auto';
+                hoverTargets.forEach(target => target.style.cursor = 'pointer');
+            }
+
+            /* SCROLL HEADER E OBSERVER DE ANIMAÇÕES */
+            const header = document.getElementById('main-header');
+            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                revealOnScroll.observe(el);
+            });
+
+            /* MENU MÓVEL */
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const setMenu = open => {
+                mobileNav.classList.toggle('open', open);
+                menuToggle.setAttribute('aria-expanded', String(open));
+                menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+                if (open) header.classList.add('scrolled');
+            };
+            menuToggle.addEventListener('click', () => setMenu(!mobileNav.classList.contains('open')));
+            mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+            /* CARROSSÉIS DA GALERIA */
+            document.querySelectorAll('.gallery-carousel').forEach(carousel => {
+                const track = carousel.querySelector('.carousel-track');
+                const buttons = carousel.querySelectorAll('.carousel-btn');
+                const updateButtons = () => {
+                    const maxScroll = track.scrollWidth - track.clientWidth - 2;
+                    buttons[0].disabled = track.scrollLeft <= 2;
+                    buttons[1].disabled = track.scrollLeft >= maxScroll;
+                };
+                buttons.forEach(btn => btn.addEventListener('click', () => {
+                    track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth, behavior: 'smooth' });
+                }));
+                track.addEventListener('scroll', updateButtons, { passive: true });
+                window.addEventListener('resize', updateButtons);
+                updateButtons();
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            }, { passive: true });
+
+            /* DARK / LIGHT MODE PERSISTENTE */
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+            
+            const iconMoon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            const iconSun = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+
+            const savedTheme = localStorage.getItem('gep-theme') || 'light';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeIcon.innerHTML = savedTheme === 'dark' ? iconSun : iconMoon;
+
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('gep-theme', newTheme);
+                
+                themeToggleBtn.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    themeIcon.innerHTML = newTheme === 'dark' ? iconSun : iconMoon;
+                    themeToggleBtn.style.transform = 'rotate(0deg)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
