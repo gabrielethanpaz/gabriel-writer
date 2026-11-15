@@ -1,0 +1,103 @@
+# Admin page (Sveltia CMS). Saving commits to content/*.json on main; the
+# "Build site from CMS content" workflow then rebuilds index.html and en/index.html.
+backend:
+  name: github
+  repo: gabrielethanpaz/gabriel-writer
+  branch: main
+  # sign in with a GitHub access token; "oauth" would need a separate login service
+  auth_methods: [token]
+
+site_url: https://gabrielethanpaz.com
+display_url: https://gabrielethanpaz.com
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
+
+i18n:
+  structure: single_file
+  locales: [pt, en]
+  default_locale: pt
+
+collections:
+  - name: site
+    label: Textos do site
+    format: json
+    i18n: true
+    files:
+      - name: inicio
+        label: Início (apresentação e números)
+        file: content/inicio.json
+        i18n: true
+        fields:
+          - name: titulo
+            label: Título principal
+            widget: string
+            i18n: true
+            hint: O texto entre *asteriscos* aparece destacado a dourado.
+          - { name: descricao, label: Texto de apresentação, widget: text, i18n: true }
+          - { name: selo, label: Selo por baixo do vídeo, widget: string, i18n: true }
+          - { name: lancamento, label: Frase de lançamento, widget: string, i18n: true }
+          - name: numeros
+            label: Números
+            widget: list
+            i18n: true
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: '{{fields.numero}} {{fields.legenda}}'
+            fields:
+              - { name: numero, label: Número, widget: string, i18n: duplicate }
+              - { name: legenda, label: Legenda, widget: string, i18n: true }
+
+      - name: biografia
+        label: Biografia
+        file: content/biografia.json
+        i18n: true
+        fields:
+          - { name: introducao, label: Introdução (em destaque), widget: text, i18n: true }
+          - name: texto
+            label: Texto
+            widget: text
+            i18n: true
+            hint: Cada linha é um parágrafo. Use **asteriscos duplos** para negrito.
+
+      - name: obras
+        label: Obras e antologias
+        file: content/obras.json
+        i18n: true
+        fields:
+          - name: livros
+            label: Livros
+            widget: list
+            i18n: true
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: '{{fields.titulo}} · {{fields.estado}}'
+            fields:
+              - { name: titulo, label: Título, widget: string, i18n: duplicate }
+              - name: estado
+                label: Estado
+                widget: string
+                i18n: true
+                required: false
+                hint: Por exemplo Publicado, Pré-lançamento, Em Progresso. Deixe vazio para não mostrar.
+              - { name: categoria, label: Categoria, widget: string, i18n: true }
+              - name: sinopse
+                label: Sinopse
+                widget: text
+                i18n: true
+                hint: Cada linha é um parágrafo. Use **asteriscos duplos** para negrito e *asteriscos* para itálico.
+              - { name: capa, label: Capa, widget: hidden, i18n: duplicate }
+              - { name: capa_alt, label: Descrição da capa, widget: hidden, i18n: true }
+              - { name: capa_largura, label: Largura da capa, widget: hidden, i18n: duplicate }
+              - { name: capa_altura, label: Altura da capa, widget: hidden, i18n: duplicate }
+          - name: antologias
+            label: Antologias e colaborações
+            widget: list
+            i18n: true
+            summary: '{{fields.nome}}'
+            hint: Ao adicionar ou remover uma antologia, faça-o também na versão em inglês.
+            fields:
+              - { name: nome, label: Nome, widget: string, i18n: true }
+              - { name: descricao, label: Descrição, widget: string, i18n: true }
+              - { name: nota, label: Nota (por exemplo ISBN), widget: string, i18n: true, required: false }

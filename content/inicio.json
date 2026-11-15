@@ -1,0 +1,42 @@
+{
+  "pt": {
+    "titulo": "A arquitetura da emoção nas *rédeas soltas* da vida.",
+    "descricao": "Gabriel Ethan Paz não apenas escreve — ele esculpe emoções em palavras. De Almada ao mundo, a sua jornada é um atlas de alma e memória, onde cada país visitado se converte em verso, conto ou romance que liberta o indizível. As suas obras não se leem: respiram, confessam, e redimem.",
+    "selo": "Sócio da AP Escritores Nº 1584",
+    "lancamento": "Brevemente disponível no mercado",
+    "numeros": [
+      {
+        "numero": "67",
+        "legenda": "Países Visitados"
+      },
+      {
+        "numero": "128",
+        "legenda": "Cidades Exploradas"
+      },
+      {
+        "numero": "10",
+        "legenda": "Obras e Antologias"
+      }
+    ]
+  },
+  "en": {
+    "titulo": "The architecture of emotion, with life’s *reins let loose*.",
+    "descricao": "Gabriel Ethan Paz does not merely write — he sculpts emotions into words. From Almada to the world, his journey is an atlas of soul and memory, where every country visited becomes verse, story or novel that sets the unspeakable free. His works are not simply read: they breathe, they confess, they redeem.",
+    "selo": "Member No. 1584, Portuguese Writers’ Association",
+    "lancamento": "Coming soon to bookshops",
+    "numeros": [
+      {
+        "numero": "67",
+        "legenda": "Countries Visited"
+      },
+      {
+        "numero": "128",
+        "legenda": "Cities Explored"
+      },
+      {
+        "numero": "10",
+        "legenda": "Works and Anthologies"
+      }
+    ]
+  }
+}
