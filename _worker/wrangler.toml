@@ -6,11 +6,11 @@ compatibility_date = "2026-10-01"
 [vars]
 ALLOWED_ORIGINS = "https://gabrielethanpaz.com,https://www.gabrielethanpaz.com"
 
-# Users (SQLite); create with: npx wrangler@4.156.0 d1 create gabriel-cms, then set database_id
+# Users (SQLite); tables in schema.sql
 [[d1_databases]]
 binding = "DB"
 database_name = "gabriel-cms"
-database_id = "REPLACE_WITH_DATABASE_ID"
+database_id = "675eb7ee-da0c-44bd-aaea-f46ce2f8179f"
 
 # Limits login attempts per IP address
 [[ratelimits]]
