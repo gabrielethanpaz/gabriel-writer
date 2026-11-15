@@ -5,6 +5,9 @@ compatibility_date = "2026-10-01"
 
 [vars]
 ALLOWED_ORIGINS = "https://gabrielethanpaz.com,https://www.gabrielethanpaz.com"
+# the GitHub App that saves the site's content (its private key is the secret GITHUB_APP_PRIVATE_KEY)
+GITHUB_APP_ID = "5774044"
+GITHUB_REPO = "gabrielethanpaz/gabriel-writer"
 
 # Users (SQLite); tables in schema.sql
 [[d1_databases]]

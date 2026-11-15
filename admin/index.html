@@ -120,8 +120,9 @@
     </main>
 
     <script>
-        // Login: the email and password go to the login service, which returns the key the
-        // editor (Sveltia CMS) uses to save; the editor is then opened already signed in.
+        // Login: the email and password go to the login service, which returns a session key;
+        // the editor (Sveltia CMS) is then opened already signed in, and sends its GitHub
+        // requests to the login service (api_root in config.yml) with that key.
         const SERVICE_URL = 'https://gabriel-cms-login.gabrielethanpaz.workers.dev';
         const CMS_SCRIPT = 'https://unpkg.com/@sveltia/cms@0.256.1/dist/sveltia-cms.js';
         const USER_KEY = 'sveltia-cms.user'; // where the editor keeps its signed-in user
@@ -139,9 +140,10 @@
             setInterval(() => { if (!storedToken()) location.reload(); }, 1000);
         }
 
+        // the key is a session of the login service (12 hours); checks it is still valid
         async function tokenWorks(token) {
             try {
-                const r = await fetch('https://api.github.com/user', { headers: { Authorization: `Bearer ${token}` } });
+                const r = await fetch(SERVICE_URL + '/github/api/v3/user', { headers: { Authorization: `token ${token}` } });
                 return r.ok;
             } catch { return true; } // offline: let the editor show its own message
         }
