@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Demonstração · Gabriel Ethan Paz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- the real editor configuration, with saving switched to the browser, and today's texts as the starting point -->
+    <link rel="cms-config-url" href="/admin/config.yml" type="application/yaml">
+    <link rel="cms-config-url" href="/admin/demo/config.yml" type="application/yaml">
+    <link rel="cms-seed-url" href="/demo-seed.json">
+    <style>
+        :root {
+            --bg: #faf8f5;
+            --card: #ffffff;
+            --text: #2d2d2d;
+            --muted: #6b6b6b;
+            --line: #e4ddd0;
+            --accent: #9a7e5a;
+            --accent-hover: #7a6345;
+            --on-accent: #ffffff;
+            --error: #b3261e;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --card: #121212;
+                --text: #f0f0f0;
+                --muted: #a3a3a3;
+                --line: #2a2a2a;
+                --accent: #c4a77d;
+                --accent-hover: #d4bc9a;
+                --on-accent: #0a0a0a;
+                --error: #f2b8b5;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .login {
+            width: 100%;
+            max-width: 380px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 36px 28px;
+        }
+        .login h1 {
+            margin: 0 0 4px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            font-size: 1.75rem;
+        }
+        .login p.sub { margin: 0 0 28px; color: var(--muted); font-size: 0.9rem; }
+        label { display: block; font-size: 0.8rem; font-weight: 600; margin: 0 0 6px; }
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            margin: 0 0 18px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--bg);
+            color: var(--text);
+            font: inherit;
+        }
+        input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+        button {
+            width: 100%;
+            padding: 13px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--accent);
+            color: var(--on-accent);
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover { background: var(--accent-hover); }
+        button:disabled { opacity: 0.6; cursor: wait; }
+        .error { min-height: 1.3em; margin: 14px 0 0; color: var(--error); font-size: 0.85rem; text-align: center; }
+        .error.ok { color: var(--accent); }
+        .demo-note { margin: 0 0 22px; padding: 10px 12px; border-radius: 10px; background: var(--bg); border: 1px dashed var(--accent); font-size: 0.8rem; line-height: 1.5; }
+        .demo-banner { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 2147483647; padding: 6px 14px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font: 600 12px/1.4 'Inter', system-ui, sans-serif; pointer-events: none; text-align: center; max-width: calc(100% - 32px); }
+        .back { display: block; margin-top: 22px; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <main class="login" id="login" hidden>
+        <h1>Gabriel Ethan Paz</h1>
+        <p class="sub">Área de administração · demonstração</p>
+        <p class="demo-note">Versão de demonstração: pode experimentar à vontade. As alterações ficam só neste navegador e não mudam o site.</p>
+        <form id="login-form">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="username" required>
+            <label for="password">Palavra-passe</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+            <button type="submit">Entrar</button>
+            <p class="error" role="alert"></p>
+        </form>
+        <a class="back" href="/">← Voltar ao site</a>
+    </main>
+
+    <script>
+        // Demo only: the login is checked here in the page, and the editor saves to the
+        // browser's own storage (test-repo backend), so nothing reaches the site.
+        const DEMO_EMAIL = 'demo@gabrielethanpaz.com';
+        const DEMO_PASSWORD = 'Gabriel2026';
+        const CMS_SCRIPT = 'https://unpkg.com/@sveltia/cms@0.256.1/dist/sveltia-cms.js';
+        const USER_KEY = 'sveltia-cms.user'; // where the editor keeps its signed-in user
+
+        const signedIn = () => {
+            try { return JSON.parse(localStorage.getItem(USER_KEY) || '{}').backendName === 'test-repo'; } catch { return false; }
+        };
+
+        function openEditor() {
+            document.getElementById('login').remove();
+            const s = document.createElement('script');
+            s.src = CMS_SCRIPT;
+            document.body.append(s);
+            const banner = document.createElement('div');
+            banner.className = 'demo-banner';
+            banner.textContent = 'Demonstração: as alterações não mudam o site';
+            document.body.append(banner);
+            // when the editor signs out it clears its user: come back to this login page
+            setInterval(() => { if (!signedIn()) location.reload(); }, 1000);
+        }
+
+        if (signedIn()) openEditor();
+        else {
+            document.getElementById('login').hidden = false;
+            document.getElementById('email').focus();
+        }
+
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const f = e.target;
+            if (f.email.value.trim().toLowerCase() === DEMO_EMAIL && f.password.value === DEMO_PASSWORD) {
+                localStorage.setItem(USER_KEY, JSON.stringify({ backendName: 'test-repo', token: 'demo' }));
+                openEditor();
+            } else {
+                f.querySelector('.error').textContent = 'Email ou palavra-passe incorretos.';
+            }
+        });
+    </script>
+</body>
+</html>

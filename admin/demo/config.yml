@@ -1,0 +1,3 @@
+# Demo of the admin page: same editor and fields, but saving only in the browser (test-repo)
+backend:
+  name: test-repo
