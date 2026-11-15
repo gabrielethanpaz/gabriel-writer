@@ -5,9 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <title>Administração · Gabriel Ethan Paz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf8f5;
+            --card: #ffffff;
+            --text: #2d2d2d;
+            --muted: #6b6b6b;
+            --line: #e4ddd0;
+            --accent: #9a7e5a;
+            --accent-hover: #7a6345;
+            --on-accent: #ffffff;
+            --error: #b3261e;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0a;
+                --card: #121212;
+                --text: #f0f0f0;
+                --muted: #a3a3a3;
+                --line: #2a2a2a;
+                --accent: #c4a77d;
+                --accent-hover: #d4bc9a;
+                --on-accent: #0a0a0a;
+                --error: #f2b8b5;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .login {
+            width: 100%;
+            max-width: 380px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 36px 28px;
+        }
+        .login h1 {
+            margin: 0 0 4px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            font-size: 1.75rem;
+        }
+        .login p.sub { margin: 0 0 28px; color: var(--muted); font-size: 0.9rem; }
+        label { display: block; font-size: 0.8rem; font-weight: 600; margin: 0 0 6px; }
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            margin: 0 0 18px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--bg);
+            color: var(--text);
+            font: inherit;
+        }
+        input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+        button {
+            width: 100%;
+            padding: 13px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--accent);
+            color: var(--on-accent);
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover { background: var(--accent-hover); }
+        button:disabled { opacity: 0.6; cursor: wait; }
+        .error { min-height: 1.3em; margin: 14px 0 0; color: var(--error); font-size: 0.85rem; text-align: center; }
+        .back { display: block; margin-top: 22px; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    </style>
 </head>
 <body>
-    <!-- Sveltia CMS: edits the files in content/; scripts/build-content.mjs turns them into the pages -->
-    <script src="https://unpkg.com/@sveltia/cms@0.256.1/dist/sveltia-cms.js"></script>
+    <main class="login" id="login" hidden>
+        <h1>Gabriel Ethan Paz</h1>
+        <p class="sub">Área de administração do site</p>
+        <form id="login-form">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="username" required>
+            <label for="password">Palavra-passe</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+            <button type="submit" id="submit">Entrar</button>
+            <p class="error" id="error" role="alert"></p>
+        </form>
+        <a class="back" href="/">← Voltar ao site</a>
+    </main>
+
+    <script>
+        // Login: the email and password go to the login service, which returns the key the
+        // editor (Sveltia CMS) uses to save; the editor is then opened already signed in.
+        const LOGIN_URL = 'https://gabriel-cms-login.REPLACE.workers.dev/login';
+        const CMS_SCRIPT = 'https://unpkg.com/@sveltia/cms@0.256.1/dist/sveltia-cms.js';
+        const USER_KEY = 'sveltia-cms.user'; // where the editor keeps its signed-in user
+
+        const storedToken = () => {
+            try { return JSON.parse(localStorage.getItem(USER_KEY) || '{}').token || ''; } catch { return ''; }
+        };
+
+        function openEditor() {
+            document.getElementById('login').remove();
+            const s = document.createElement('script');
+            s.src = CMS_SCRIPT;
+            document.body.append(s);
+            // when the editor signs out it clears the key: come back to this login page
+            setInterval(() => { if (!storedToken()) location.reload(); }, 1000);
+        }
+
+        async function tokenWorks(token) {
+            try {
+                const r = await fetch('https://api.github.com/user', { headers: { Authorization: `Bearer ${token}` } });
+                return r.ok;
+            } catch { return true; } // offline: let the editor show its own message
+        }
+
+        (async () => {
+            const token = storedToken();
+            if (token && await tokenWorks(token)) return openEditor();
+            try { localStorage.removeItem(USER_KEY); } catch {}
+            document.getElementById('login').hidden = false;
+            document.getElementById('email').focus();
+        })();
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const error = document.getElementById('error');
+            const button = document.getElementById('submit');
+            error.textContent = '';
+            button.disabled = true;
+            button.textContent = 'A entrar…';
+            try {
+                const r = await fetch(LOGIN_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: e.target.email.value, password: e.target.password.value }),
+                });
+                const data = await r.json().catch(() => ({}));
+                if (r.ok && data.token) {
+                    localStorage.setItem(USER_KEY, JSON.stringify({ backendName: 'github', token: data.token }));
+                    return openEditor();
+                }
+                error.textContent = r.status === 401 ? 'Email ou palavra-passe incorretos.'
+                    : r.status === 429 ? 'Demasiadas tentativas. Aguarde um minuto e tente de novo.'
+                    : 'Não foi possível entrar. Tente de novo dentro de alguns minutos.';
+            } catch {
+                error.textContent = 'Sem ligação ao servidor. Verifique a internet e tente de novo.';
+            }
+            button.disabled = false;
+            button.textContent = 'Entrar';
+        });
+    </script>
 </body>
 </html>

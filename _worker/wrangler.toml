@@ -1,0 +1,16 @@
+# Login service for the admin page. Deploy from this folder: npx wrangler deploy
+name = "gabriel-cms-login"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://gabrielethanpaz.com,https://www.gabrielethanpaz.com"
+
+# Limits login attempts per IP address
+[[ratelimits]]
+name = "LOGIN_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 10
+  period = 60
