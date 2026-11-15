@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
+    <style id="login-style">
         :root {
             --bg: #faf8f5;
             --card: #ffffff;
@@ -132,7 +132,9 @@
         };
 
         function openEditor() {
+            // the login page's styles (centred body, padding) would squeeze the editor's layout
             document.getElementById('login').remove();
+            document.getElementById('login-style').remove();
             const s = document.createElement('script');
             s.src = CMS_SCRIPT;
             document.body.append(s);
