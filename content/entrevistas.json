@@ -1,0 +1,36 @@
+{
+  "etiqueta_pt": "Na Imprensa",
+  "etiqueta_en": "In the Press",
+  "titulo_pt": "Entrevistas",
+  "titulo_en": "Interviews",
+  "subtitulo_pt": "Conversas sobre a escrita, as obras e o percurso do autor.",
+  "subtitulo_en": "Conversations about the author’s writing, works and journey.",
+  "entrevistas": [
+    {
+      "tipo_pt": "Entrevista escrita",
+      "tipo_en": "Written interview",
+      "titulo_pt": "Entrevista com Gabriel Ethan Paz, autor do livro Impedidos de Amar",
+      "titulo_en": "Interview with Gabriel Ethan Paz, author of Impedidos de Amar",
+      "fonte_pt": "Revista Conexão Literatura",
+      "fonte_en": "Revista Conexão Literatura",
+      "resumo_pt": "Uma conversa sobre a história verídica que deu origem a Impedidos de Amar, o impacto da pandemia nas famílias, a escrita como forma de libertar a voz e os próximos projetos literários.",
+      "resumo_en": "A conversation about the true story behind Impedidos de Amar, the impact of the pandemic on families, writing as a way of setting one’s voice free, and upcoming literary projects.",
+      "link": "https://revistaconexaoliteratura.com.br/entrevista-com-gabriel-ethan-paz-autor-do-livro-impedidos-de-amar/",
+      "botao_pt": "Ler entrevista completa",
+      "botao_en": "Read the full interview (in Portuguese)"
+    },
+    {
+      "tipo_pt": "Entrevistas em áudio",
+      "tipo_en": "Audio interviews",
+      "titulo_pt": "Brevemente",
+      "titulo_en": "Coming soon",
+      "fonte_pt": "",
+      "fonte_en": "",
+      "resumo_pt": "As entrevistas em áudio, incluindo participações na rádio, serão disponibilizadas neste espaço.",
+      "resumo_en": "Audio interviews, including radio appearances, will be made available here.",
+      "link": "",
+      "botao_pt": "",
+      "botao_en": ""
+    }
+  ]
+}

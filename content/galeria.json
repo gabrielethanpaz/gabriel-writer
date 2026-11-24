@@ -1,0 +1,244 @@
+{
+  "etiqueta_pt": "Reportagens Fotográficas",
+  "etiqueta_en": "Photo Stories",
+  "titulo_pt": "Galeria de Fotos",
+  "titulo_en": "Photo Gallery",
+  "subtitulo_pt": "Momentos eternizados do percurso autoral, contatos com a poesia livre e inspirações pelo mundo.",
+  "subtitulo_en": "Moments captured along the author’s path, encounters with free verse and inspirations from around the world.",
+  "galerias": [
+    {
+      "titulo_pt": "Momentos do Autor",
+      "titulo_en": "The Author’s Moments",
+      "fotos": [
+        {
+          "imagem": "assets/images/galeria-momentos-01.jpg",
+          "descricao_pt": "Gabriel Ethan Paz a cavalo na praia ao pôr do sol",
+          "descricao_en": "Gabriel Ethan Paz on horseback on the beach at sunset",
+          "legenda_pt": "A cavalo",
+          "legenda_en": "On horseback",
+          "enquadramento": "left center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-momentos-02.jpg",
+          "descricao_pt": "Gabriel Ethan Paz de costas, sentado numa cadeira frente ao mar ao pôr do sol",
+          "descricao_en": "Gabriel Ethan Paz seen from behind, sitting in a chair facing the sea at sunset",
+          "legenda_pt": "Frente ao mar",
+          "legenda_en": "Facing the sea",
+          "enquadramento": "center 80%",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-momentos-03.jpg",
+          "descricao_pt": "Gabriel Ethan Paz a caminhar na praia",
+          "descricao_en": "Gabriel Ethan Paz walking on the beach",
+          "legenda_pt": "Caminhando",
+          "legenda_en": "Walking",
+          "enquadramento": "center bottom",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-momentos-04.jpg",
+          "descricao_pt": "Gabriel Ethan Paz de pé na areia, de perfil, frente ao mar",
+          "descricao_en": "Gabriel Ethan Paz standing on the sand, in profile, facing the sea",
+          "legenda_pt": "À beira-mar",
+          "legenda_en": "By the sea",
+          "enquadramento": "30% center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-momentos-05.jpg",
+          "descricao_pt": "Silhueta de Gabriel Ethan Paz com um livro aberto ao vento, frente ao mar",
+          "descricao_en": "Silhouette of Gabriel Ethan Paz holding an open book in the wind, facing the sea",
+          "legenda_pt": "Livro ao vento",
+          "legenda_en": "Book in the wind",
+          "enquadramento": "30% center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-momentos-06.jpg",
+          "descricao_pt": "Mãos de Gabriel Ethan Paz a escrever num livro aberto, junto a um computador portátil",
+          "descricao_en": "The hands of Gabriel Ethan Paz writing in an open book next to a laptop",
+          "legenda_pt": "A escrever",
+          "legenda_en": "Writing",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-momentos-07.jpg",
+          "descricao_pt": "Gabriel Ethan Paz de pé na praia, a contemplar o mar",
+          "descricao_en": "Gabriel Ethan Paz standing on the beach, gazing at the sea",
+          "legenda_pt": "Contemplando",
+          "legenda_en": "Contemplating",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-momentos-08.jpg",
+          "descricao_pt": "Gabriel Ethan Paz sentado numa cadeira na praia, a contemplar o horizonte",
+          "descricao_en": "Gabriel Ethan Paz sitting in a chair on the beach, gazing at the horizon",
+          "legenda_pt": "Sentado na praia",
+          "legenda_en": "Sitting on the beach",
+          "enquadramento": "80% center",
+          "larga": false
+        }
+      ]
+    },
+    {
+      "titulo_pt": "Eventos Literários",
+      "titulo_en": "Literary Events",
+      "fotos": [
+        {
+          "imagem": "assets/images/galeria-eventos-01.jpg",
+          "descricao_pt": "Gabriel Ethan Paz com duas convidadas e o livro De Rédeas Soltas",
+          "descricao_en": "Gabriel Ethan Paz with two guests and the book De Rédeas Soltas",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "center 70%",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-eventos-02.jpg",
+          "descricao_pt": "Convidados em conversa, um deles com um livro na mão",
+          "descricao_en": "Guests in conversation, one of them holding a book",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "right center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-eventos-03.jpg",
+          "descricao_pt": "Convidados a conversar e a sorrir na sala de exposição",
+          "descricao_en": "Guests talking and smiling in the exhibition room",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-eventos-04.jpg",
+          "descricao_pt": "Gabriel Ethan Paz a conversar com convidados, entre sorrisos",
+          "descricao_en": "Gabriel Ethan Paz talking with guests, all smiles",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-eventos-05.jpg",
+          "descricao_pt": "Gabriel Ethan Paz em conversa com convidados",
+          "descricao_en": "Gabriel Ethan Paz in conversation with guests",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-eventos-06.jpg",
+          "descricao_pt": "Vista da sala com convidados em convívio junto a uma mesa",
+          "descricao_en": "View of the room with guests mingling around a table",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-eventos-07.jpg",
+          "descricao_pt": "Gabriel Ethan Paz a abraçar uma convidada de casaco verde",
+          "descricao_en": "Gabriel Ethan Paz hugging a guest in a green jacket",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "right center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-eventos-08.jpg",
+          "descricao_pt": "Gabriel Ethan Paz com convidados junto à mesa do convívio",
+          "descricao_en": "Gabriel Ethan Paz with guests by the reception table",
+          "legenda_pt": "Eventos literários",
+          "legenda_en": "Literary events",
+          "enquadramento": "right center",
+          "larga": false
+        }
+      ]
+    },
+    {
+      "titulo_pt": "Apresentações Literárias",
+      "titulo_en": "Literary Presentations",
+      "fotos": [
+        {
+          "imagem": "assets/images/galeria-apresentacoes-01.jpg",
+          "descricao_pt": "Mesa com quatro oradores numa apresentação literária de Gabriel Ethan Paz",
+          "descricao_en": "Panel of four speakers at a literary presentation by Gabriel Ethan Paz",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "",
+          "larga": true
+        },
+        {
+          "imagem": "assets/images/galeria-apresentacoes-02.jpg",
+          "descricao_pt": "Gabriel Ethan Paz perante o público, com o diapositivo «Escrever Por Amor» no ecrã",
+          "descricao_en": "Gabriel Ethan Paz before the audience, with the slide “Escrever Por Amor” on screen",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "80% center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-apresentacoes-03.jpg",
+          "descricao_pt": "Público a assistir a uma apresentação literária, com o livro De Rédeas Soltas ao fundo",
+          "descricao_en": "Audience at a literary presentation, with the book De Rédeas Soltas in the background",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-apresentacoes-04.jpg",
+          "descricao_pt": "Leitura de um texto perante a mesa de oradores no lançamento da 2.ª edição de De Rédeas Soltas",
+          "descricao_en": "A reading in front of the speakers’ table at the launch of the 2nd edition of De Rédeas Soltas",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "left center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-apresentacoes-05.jpg",
+          "descricao_pt": "Leitura de um texto ao lado de Gabriel Ethan Paz, junto ao cartaz e ao livro De Rédeas Soltas",
+          "descricao_en": "A reading beside Gabriel Ethan Paz, next to the poster and the book De Rédeas Soltas",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-apresentacoes-06.jpg",
+          "descricao_pt": "Gabriel Ethan Paz a falar ao público, com o diapositivo «Seres Humanos» no ecrã",
+          "descricao_en": "Gabriel Ethan Paz addressing the audience, with the slide “Seres Humanos” on screen",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "right center",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-apresentacoes-07.jpg",
+          "descricao_pt": "Duas convidadas sentadas a consultar um texto, com um homem a fotografar ao fundo",
+          "descricao_en": "Two seated guests looking at a text, with a man taking photos in the background",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "",
+          "larga": false
+        },
+        {
+          "imagem": "assets/images/galeria-apresentacoes-08.jpg",
+          "descricao_pt": "Gabriel Ethan Paz a autografar um livro junto a um leitor de boina preta",
+          "descricao_en": "Gabriel Ethan Paz signing a book for a reader in a black cap",
+          "legenda_pt": "Apresentações literárias",
+          "legenda_en": "Literary presentations",
+          "enquadramento": "",
+          "larga": false
+        }
+      ]
+    }
+  ]
+}

@@ -13,6 +13,18 @@ site_url: https://gabrielethanpaz.com
 display_url: https://gabrielethanpaz.com
 media_folder: assets/images/uploads
 public_folder: /assets/images/uploads
+# uploaded photos are made smaller (WebP, at most 1600 px) so the site stays fast
+media_libraries:
+  default:
+    config:
+      max_file_size: 20000000
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1600
+          height: 1600
 
 i18n:
   structure: single_file
@@ -62,6 +74,45 @@ collections:
             i18n: true
             hint: Cada linha é um parágrafo. Use **asteriscos duplos** para negrito.
 
+      # The sections below keep both languages side by side (fields ending in "(PT)" and "(EN)"),
+      # so a photo, video or interview is added once for both versions of the site.
+      - name: textos
+        label: Textos e poemas
+        file: content/textos.json
+        i18n: false
+        fields:
+          - &etiqueta_pt { name: etiqueta_pt, label: Etiqueta por cima do título (PT), widget: string }
+          - &etiqueta_en { name: etiqueta_en, label: Etiqueta por cima do título (EN), widget: string }
+          - &titulo_pt { name: titulo_pt, label: Título da secção (PT), widget: string }
+          - &titulo_en { name: titulo_en, label: Título da secção (EN), widget: string }
+          - &subtitulo_pt { name: subtitulo_pt, label: Frase por baixo do título (PT), widget: text }
+          - &subtitulo_en { name: subtitulo_en, label: Frase por baixo do título (EN), widget: text }
+          - name: livros
+            label: Livros
+            label_singular: Livro
+            widget: list
+            summary: '{{fields.livro}}'
+            fields:
+              - { name: livro, label: Nome do livro, widget: string }
+              - { name: capa, label: Capa, widget: image }
+              - { name: capa_alt_pt, label: Descrição da capa (PT), widget: string, hint: Para leitores de ecrã e Google. }
+              - { name: capa_alt_en, label: Descrição da capa (EN), widget: string }
+              - { name: capa_largura, label: Largura da capa, widget: hidden }
+              - { name: capa_altura, label: Altura da capa, widget: hidden }
+              - name: textos
+                label: Textos
+                label_singular: Texto
+                widget: list
+                summary: '{{fields.titulo_pt}}'
+                fields:
+                  - { name: titulo_pt, label: Título (PT), widget: string }
+                  - { name: titulo_en, label: Título (EN), widget: string }
+                  - name: texto_pt
+                    label: Texto (PT)
+                    widget: text
+                    hint: Separe os parágrafos com uma linha vazia. Nos poemas, escreva cada verso numa linha.
+                  - { name: texto_en, label: Texto (EN), widget: text }
+
       - name: obras
         label: Obras e antologias
         file: content/obras.json
@@ -103,3 +154,156 @@ collections:
               - { name: nome, label: Nome, widget: string, i18n: true }
               - { name: descricao, label: Descrição, widget: string, i18n: true }
               - { name: nota, label: Nota (por exemplo ISBN), widget: string, i18n: true, required: false }
+
+      - name: galeria
+        label: Galeria de fotos
+        file: content/galeria.json
+        i18n: false
+        fields:
+          - *etiqueta_pt
+          - *etiqueta_en
+          - *titulo_pt
+          - *titulo_en
+          - *subtitulo_pt
+          - *subtitulo_en
+          - name: galerias
+            label: Galerias
+            label_singular: Galeria
+            widget: list
+            summary: '{{fields.titulo_pt}}'
+            fields:
+              - { name: titulo_pt, label: Nome da galeria (PT), widget: string }
+              - { name: titulo_en, label: Nome da galeria (EN), widget: string }
+              - name: fotos
+                label: Fotografias
+                label_singular: Fotografia
+                widget: list
+                summary: '{{fields.legenda_pt}}'
+                hint: Arraste as fotografias para mudar a ordem.
+                fields:
+                  - { name: imagem, label: Fotografia, widget: image }
+                  - { name: legenda_pt, label: Legenda (PT), widget: string }
+                  - { name: legenda_en, label: Legenda (EN), widget: string }
+                  - { name: descricao_pt, label: Descrição da fotografia (PT), widget: string, hint: O que se vê na fotografia. Para leitores de ecrã e Google. }
+                  - { name: descricao_en, label: Descrição da fotografia (EN), widget: string }
+                  - name: enquadramento
+                    label: Parte da fotografia a mostrar
+                    widget: select
+                    required: false
+                    default: ''
+                    hint: Se a fotografia aparecer cortada no sítio errado, escolha a parte que deve ficar visível.
+                    options:
+                      - { label: Centro, value: '' }
+                      - { label: Esquerda, value: left center }
+                      - { label: Um pouco à esquerda, value: 30% center }
+                      - { label: Um pouco à direita, value: 80% center }
+                      - { label: Direita, value: right center }
+                      - { label: Cima, value: center top }
+                      - { label: Um pouco abaixo do centro, value: center 70% }
+                      - { label: Mais abaixo, value: center 80% }
+                      - { label: Baixo, value: center bottom }
+                  - { name: larga, label: Fotografia larga (ocupa o dobro do espaço), widget: boolean, default: false, required: false }
+
+      - name: videos
+        label: Vídeos
+        file: content/videos.json
+        i18n: false
+        fields:
+          - *etiqueta_pt
+          - *etiqueta_en
+          - *titulo_pt
+          - *titulo_en
+          - *subtitulo_pt
+          - *subtitulo_en
+          - name: videos
+            label: Vídeos
+            label_singular: Vídeo
+            widget: list
+            summary: '{{fields.titulo_pt}}'
+            fields:
+              - { name: titulo_pt, label: Título (PT), widget: string }
+              - { name: titulo_en, label: Título (EN), widget: string }
+              - name: youtube
+                label: Link do YouTube
+                widget: string
+                hint: Copie o endereço do vídeo no YouTube (por exemplo https://www.youtube.com/watch?v=...) e cole-o aqui.
+                pattern: ['(youtube\.com|youtu\.be)/|^[\w-]{11}$', 'Cole um link do YouTube.']
+
+      - name: imprensa
+        label: Media Kit (imprensa)
+        file: content/imprensa.json
+        i18n: false
+        fields:
+          - { name: etiqueta_pt, label: Etiqueta por cima do título (PT), widget: string }
+          - { name: etiqueta_en, label: Etiqueta por cima do título (EN), widget: string }
+          - { name: titulo_pt, label: Título (PT), widget: string }
+          - { name: titulo_en, label: Título (EN), widget: string }
+          - { name: subtitulo_pt, label: Frase por baixo do título (PT), widget: text }
+          - { name: subtitulo_en, label: Frase por baixo do título (EN), widget: text }
+          - { name: missao_titulo_pt, label: Missão – título (PT), widget: string }
+          - { name: missao_titulo_en, label: Missão – título (EN), widget: string }
+          - { name: missao_pt, label: Missão – texto (PT), widget: text, hint: Cada linha é um parágrafo. Use **asteriscos duplos** para negrito. }
+          - { name: missao_en, label: Missão – texto (EN), widget: text }
+          - { name: bio_longa_titulo_pt, label: Biografia longa – título (PT), widget: string }
+          - { name: bio_longa_titulo_en, label: Biografia longa – título (EN), widget: string }
+          - { name: bio_longa_pt, label: Biografia longa – texto (PT), widget: text, hint: Cada linha é um parágrafo. }
+          - { name: bio_longa_en, label: Biografia longa – texto (EN), widget: text }
+          - { name: obras_titulo_pt, label: Obras – título (PT), widget: string }
+          - { name: obras_titulo_en, label: Obras – título (EN), widget: string }
+          - { name: obras_pt, label: Obras – lista (PT), widget: text, hint: Uma obra por linha. Use **asteriscos duplos** para o título a negrito. }
+          - { name: obras_en, label: Obras – lista (EN), widget: text }
+          - { name: obras_nota_pt, label: Obras – nota (PT), widget: string, required: false }
+          - { name: obras_nota_en, label: Obras – nota (EN), widget: string, required: false }
+          - { name: foto, label: Fotografia oficial, widget: image }
+          - { name: foto_alt_pt, label: Descrição da fotografia (PT), widget: string }
+          - { name: foto_alt_en, label: Descrição da fotografia (EN), widget: string }
+          - { name: bio_curta_titulo_pt, label: Biografia curta – título (PT), widget: string }
+          - { name: bio_curta_titulo_en, label: Biografia curta – título (EN), widget: string }
+          - { name: bio_curta_pt, label: Biografia curta – texto (PT), widget: text, hint: Cada linha é um parágrafo. }
+          - { name: bio_curta_en, label: Biografia curta – texto (EN), widget: text }
+          - { name: destaques_titulo_pt, label: Destaques – título (PT), widget: string }
+          - { name: destaques_titulo_en, label: Destaques – título (EN), widget: string }
+          - { name: destaques_pt, label: Destaques – lista (PT), widget: text, hint: Um destaque por linha. }
+          - { name: destaques_en, label: Destaques – lista (EN), widget: text }
+          - { name: contactos_titulo_pt, label: Contactos – título (PT), widget: string }
+          - { name: contactos_titulo_en, label: Contactos – título (EN), widget: string }
+          - { name: email, label: Email de contacto, widget: string, required: false }
+          - name: links
+            label: Links de contacto
+            label_singular: Link
+            widget: list
+            summary: '{{fields.texto_pt}}'
+            fields:
+              - { name: texto_pt, label: Texto do link (PT), widget: string }
+              - { name: texto_en, label: Texto do link (EN), widget: string }
+              - { name: url, label: "Endereço (https://...)", widget: string }
+
+      - name: entrevistas
+        label: Entrevistas
+        file: content/entrevistas.json
+        i18n: false
+        fields:
+          - *etiqueta_pt
+          - *etiqueta_en
+          - *titulo_pt
+          - *titulo_en
+          - *subtitulo_pt
+          - *subtitulo_en
+          - name: entrevistas
+            label: Entrevistas
+            label_singular: Entrevista
+            widget: list
+            summary: '{{fields.titulo_pt}}'
+            hint: Uma entrevista sem link aparece como «Brevemente».
+            fields:
+              - { name: tipo_pt, label: Tipo (PT), widget: string, hint: "Por exemplo Entrevista escrita, Entrevista em áudio, Rádio." }
+              - { name: tipo_en, label: Tipo (EN), widget: string }
+              - { name: titulo_pt, label: Título (PT), widget: string }
+              - { name: titulo_en, label: Título (EN), widget: string }
+              - { name: fonte_pt, label: "Jornal, revista ou rádio (PT)", widget: string, required: false }
+              - { name: fonte_en, label: "Jornal, revista ou rádio (EN)", widget: string, required: false }
+              - { name: resumo_pt, label: Resumo (PT), widget: text, hint: Cada linha é um parágrafo. }
+              - { name: resumo_en, label: Resumo (EN), widget: text }
+              - { name: link, label: Link da entrevista, widget: string, required: false }
+              - { name: botao_pt, label: Texto do botão (PT), widget: string, required: false, hint: Por exemplo Ler entrevista completa. }
+              - { name: botao_en, label: Texto do botão (EN), widget: string, required: false }

@@ -1,0 +1,20 @@
+{
+  "etiqueta_pt": "Vídeos",
+  "etiqueta_en": "Videos",
+  "titulo_pt": "Imagens em Movimento",
+  "titulo_en": "Moving Images",
+  "subtitulo_pt": "Os trailers das obras de Gabriel Ethan Paz.",
+  "subtitulo_en": "Trailers for the works of Gabriel Ethan Paz.",
+  "videos": [
+    {
+      "titulo_pt": "Trailer De Rédeas Soltas",
+      "titulo_en": "De Rédeas Soltas trailer",
+      "youtube": "https://www.youtube.com/watch?v=nr5YSl_LyeQ"
+    },
+    {
+      "titulo_pt": "Trailer Impedidos de Amar",
+      "titulo_en": "Impedidos de Amar trailer",
+      "youtube": "https://www.youtube.com/watch?v=J3xnRTjEbvk"
+    }
+  ]
+}

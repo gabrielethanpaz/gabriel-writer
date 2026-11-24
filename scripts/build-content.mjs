@@ -2,7 +2,11 @@
 // which the admin page (/admin/) edits. Run with --check to only verify the pages are up to date.
 //
 // Text fields: each line becomes a paragraph; **bold** and *italic* are allowed
-// (in the hero title, *text* is the highlighted part).
+// (in the hero title, *text* is the highlighted part). In the texts and poems, paragraphs are
+// separated by an empty line and each line of a paragraph is a line of verse.
+//
+// inicio, biografia and obras have a "pt" and an "en" part; the other files keep both languages
+// in one place, as fields ending in _pt and _en (so a photo or video is added once for both).
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -11,6 +15,7 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const read = (f) => readFileSync(root + f, 'utf8').replace(/\r\n/g, '\n');
 const crlf = (f) => readFileSync(root + f, 'utf8').includes('\r\n');
 const content = Object.fromEntries(['inicio', 'biografia', 'obras'].map((n) => [n, JSON.parse(read(`content/${n}.json`))]));
+const shared = Object.fromEntries(['textos', 'galeria', 'videos', 'imprensa', 'entrevistas'].map((n) => [n, JSON.parse(read(`content/${n}.json`))]));
 
 const pages = [
   { lang: 'pt', file: 'index.html', base: '' },
@@ -32,6 +37,45 @@ function needParagraphs(value, what) {
   const ps = paragraphs(value);
   if (!ps.length) throw new Error(`Missing ${what}`);
   return ps;
+}
+
+// the _pt or _en version of a field
+const tr = (o, field, l) => o?.[`${field}_${l}`];
+const has = (v) => String(v ?? '').trim() !== '';
+// an image path from the editor ("/assets/...") or written by hand ("assets/..."), for the page at base
+const src = (path, base) => escape(base + String(path).trim().replace(/^\/+/, ''));
+const delay = (i) => (i ? ` style="transition-delay: ${(i / 10).toFixed(1)}s;"` : '');
+
+// texts and poems: paragraphs separated by empty lines, each line of a paragraph on its own line;
+// stanzas of verse that follow one another stay in one paragraph, separated by an empty line
+function verse(value, what, pad) {
+  const chunks = String(value ?? '').replace(/\r/g, '').split(/\n\s*\n/)
+    .map((ch) => ch.split('\n').map((s) => s.trim()).filter(Boolean)).filter((ch) => ch.length);
+  if (!chunks.length) throw new Error(`Missing ${what}`);
+  const groups = [];
+  for (const ch of chunks) {
+    const last = groups.at(-1);
+    if (ch.length > 1 && last && last.at(-1).length > 1) last.push(ch);
+    else groups.push([ch]);
+  }
+  return groups.map((g) => `${pad}<p>${g.map((ch) => ch.map(inline).join(`<br>\n${pad}`)).join(`<br><br>\n${pad}`)}</p>`).join('\n');
+}
+
+// the centred heading most sections start with
+const intro = (o, l, what) => [
+  `        <div style="text-align: center; max-width: 800px; margin: 0 auto;">`,
+  `            <span class="section-tag" style="justify-content: center;">${inline(need(tr(o, 'etiqueta', l), `${l} ${what} label`))}</span>`,
+  `            <h2 class="bio-title">${inline(need(tr(o, 'titulo', l), `${l} ${what} title`))}</h2>`,
+  `            <p style="color: var(--text-muted);">${inline(need(tr(o, 'subtitulo', l), `${l} ${what} subtitle`))}</p>`,
+  `        </div>`,
+].join('\n');
+
+// a YouTube video id from a link (youtube.com/watch?v=, youtu.be/, /embed/, /shorts/) or the id itself
+function youtubeId(value, what) {
+  const v = need(value, what).trim();
+  const id = /^[\w-]{11}$/.test(v) ? v : v.match(/(?:[?&]v=|youtu\.be\/|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/)?.[1];
+  if (!id) throw new Error(`Not a YouTube link: ${what} (${v})`);
+  return id;
 }
 
 // Single elements, found by their opening tag: [opening tag, closing tag, render(lang data)]
@@ -92,6 +136,180 @@ const blocks = {
     lines.push(`                </li>`);
     return lines.join('\n');
   }).join('\n'),
+
+  // excerpts of the books ("Textos, Reflexões e Versos Livres")
+  textos: (c, l, base) => {
+    const s = shared.textos;
+    const books = s.livros ?? [];
+    if (!books.length) throw new Error('Missing books with texts');
+    return [intro(s, l, 'texts section'), ...books.map((b) => {
+      const name = need(b.livro, 'book of the texts');
+      const [width, height] = [b.capa_largura, b.capa_altura].map(Number);
+      const size = width > 0 && height > 0 ? ` width="${width}" height="${height}"` : '';
+      const texts = b.textos ?? [];
+      if (!texts.length) throw new Error(`Missing texts of ${name}`);
+      return [
+        '',
+        `        <div class="poetry-book">`,
+        `            <figure class="poetry-book-cover reveal">`,
+        `                <img src="${src(need(b.capa, `cover of ${name}`), base)}" alt="${escape(need(tr(b, 'capa_alt', l), `${l} cover text of ${name}`))}" loading="lazy"${size}>`,
+        `                <figcaption>${inline(name)}</figcaption>`,
+        `            </figure>`,
+        '',
+        `            <div class="poetry-grid">`,
+        texts.map((t, i) => {
+          const title = need(tr(t, 'titulo', l), `${l} title of a text of ${name}`);
+          return [
+            `                <div class="poetry-card reveal"${delay(i)}>`,
+            `                    <h3>${inline(title)}</h3>`,
+            `                    <div class="text-scroll-container">`,
+            verse(tr(t, 'texto', l), `${l} text of "${title}"`, '                        '),
+            `                    </div>`,
+            `                </div>`,
+          ].join('\n');
+        }).join('\n\n'),
+        `            </div>`,
+        `        </div>`,
+      ].join('\n');
+    })].join('\n');
+  },
+
+  // photo galleries, each a carousel
+  galeria: (c, l, base) => {
+    const s = shared.galeria;
+    const galleries = s.galerias ?? [];
+    if (!galleries.length) throw new Error('Missing galleries');
+    return [intro(s, l, 'gallery section'), '', `        <div class="gallery-carousels">`, galleries.map((g, gi) => {
+      const title = need(tr(g, 'titulo', l), `${l} gallery title`);
+      const id = `galeria-${gi + 1}`;
+      const photos = g.fotos ?? [];
+      if (!photos.length) throw new Error(`Missing photos in the gallery "${title}"`);
+      return [
+        `            <div class="gallery-carousel reveal">`,
+        `                <div class="carousel-header">`,
+        `                    <h3 class="carousel-title" id="${id}">${inline(title)}</h3>`,
+        `                    <div class="carousel-controls">`,
+        `                        <button type="button" class="carousel-btn hover-target" data-dir="-1" aria-label="${l === 'en' ? 'Previous photos' : 'Fotografias anteriores'}">&#8592;</button>`,
+        `                        <button type="button" class="carousel-btn hover-target" data-dir="1" aria-label="${l === 'en' ? 'Next photos' : 'Fotografias seguintes'}">&#8594;</button>`,
+        `                    </div>`,
+        `                </div>`,
+        `                <div class="carousel-track" tabindex="0" aria-labelledby="${id}">`,
+        ...photos.map((p) => {
+          const caption = need(tr(p, 'legenda', l), `${l} caption of a photo in "${title}"`);
+          const position = has(p.enquadramento) ? ` style="object-position: ${escape(p.enquadramento.trim())};"` : '';
+          return [
+            `                    <figure class="gallery-photo-card${p.larga ? ' gallery-photo-wide' : ''}">`,
+            `                        <img src="${src(need(p.imagem, `photo "${caption}"`), base)}" alt="${escape(need(tr(p, 'descricao', l), `${l} description of the photo "${caption}"`))}" class="gallery-photo-img"${position} loading="lazy">`,
+            `                        <figcaption class="gallery-caption">${inline(caption)}</figcaption>`,
+            `                    </figure>`,
+          ].join('\n');
+        }),
+        `                </div>`,
+        `            </div>`,
+      ].join('\n');
+    }).join('\n\n'), `        </div>`].join('\n');
+  },
+
+  // YouTube videos
+  videos: (c, l) => {
+    const s = shared.videos;
+    const videos = s.videos ?? [];
+    if (!videos.length) throw new Error('Missing videos');
+    return [intro(s, l, 'videos section'), '', `        <div class="video-showcase">`, `            <div class="video-grid">`, ...videos.map((v, i) => {
+      const title = need(tr(v, 'titulo', l), `${l} video title`);
+      return [
+        `                <figure class="video-item reveal"${delay(i)}>`,
+        `                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${youtubeId(v.youtube, `video "${title}"`)}" title="${escape(title)}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`,
+        `                    <figcaption>${inline(title)}</figcaption>`,
+        `                </figure>`,
+      ].join('\n');
+    }), `            </div>`, `        </div>`].join('\n');
+  },
+
+  // Media Kit (press)
+  imprensa: (c, l, base) => {
+    const s = shared.imprensa;
+    const f = (field, what) => need(tr(s, field, l), `${l} Media Kit ${what}`);
+    const ps = (field, what, pad) => needParagraphs(tr(s, field, l), `${l} Media Kit ${what}`).map((p) => `${pad}<p>${inline(p)}</p>`);
+    const list = (field, what, pad) => needParagraphs(tr(s, field, l), `${l} Media Kit ${what}`).map((p) => `${pad}<li>${inline(p)}</li>`);
+    const links = (s.links ?? []).map((k) => {
+      const url = need(k.url, 'Media Kit link address').trim();
+      return `                    <a href="${escape(url)}" target="_blank" rel="noopener noreferrer" class="hover-target">${inline(need(tr(k, 'texto', l), `${l} Media Kit link text`))}</a>`;
+    });
+    const p20 = '                    ';
+    return [
+      `        <div class="press-container">`,
+      `            <div class="press-content reveal-left">`,
+      `                <div class="press-header">`,
+      `                    <span class="section-tag" style="color: var(--accent-light);">${inline(f('etiqueta', 'label'))}</span>`,
+      `                    <h2 class="press-title">${inline(f('titulo', 'title'))}</h2>`,
+      `                    <p class="press-subtitle">${inline(f('subtitulo', 'subtitle'))}</p>`,
+      `                </div>`,
+      '',
+      `                <div class="press-block">`,
+      `                    <h4>${inline(f('missao_titulo', 'mission title'))}</h4>`,
+      ...ps('missao', 'mission text', p20),
+      `                </div>`,
+      '',
+      `                <div class="press-block">`,
+      `                    <h4>${inline(f('bio_longa_titulo', 'long biography title'))}</h4>`,
+      ...ps('bio_longa', 'long biography', p20),
+      `                </div>`,
+      '',
+      `                <div class="press-block">`,
+      `                    <h4>${inline(f('obras_titulo', 'works title'))}</h4>`,
+      `                    <ul class="press-list">`,
+      ...list('obras', 'works', '                        '),
+      `                    </ul>`,
+      ...(has(tr(s, 'obras_nota', l)) ? [`                    <p style="margin-top: 10px; font-style: italic; font-size: 0.8rem; color: var(--text-press-muted);">${inline(tr(s, 'obras_nota', l))}</p>`] : []),
+      `                </div>`,
+      `            </div>`,
+      '',
+      `            <div class="press-sidebar reveal-right">`,
+      `                <img src="${src(need(s.foto, 'Media Kit photo'), base)}" alt="${escape(f('foto_alt', 'photo description'))}" class="press-photo">`,
+      '',
+      `                <div class="press-block">`,
+      `                    <h4>${inline(f('bio_curta_titulo', 'short biography title'))}</h4>`,
+      ...ps('bio_curta', 'short biography', p20),
+      `                </div>`,
+      '',
+      `                <div class="press-block">`,
+      `                    <h4>${inline(f('destaques_titulo', 'highlights title'))}</h4>`,
+      `                    <ul class="press-list">`,
+      ...list('destaques', 'highlights', '                        '),
+      `                    </ul>`,
+      `                </div>`,
+      '',
+      `                <div class="press-block press-contact">`,
+      `                    <h4>${inline(f('contactos_titulo', 'contacts title'))}</h4>`,
+      ...(has(s.email) ? [`                    <a href="mailto:${escape(s.email.trim())}" class="hover-target">${escape(s.email.trim())}</a>`] : []),
+      ...links,
+      `                </div>`,
+      `            </div>`,
+      `        </div>`,
+    ].join('\n');
+  },
+
+  // interviews; one without a link is shown as "coming soon"
+  entrevistas: (c, l) => {
+    const s = shared.entrevistas;
+    const items = s.entrevistas ?? [];
+    if (!items.length) throw new Error('Missing interviews');
+    return [intro(s, l, 'interviews section'), '', `        <div class="interview-grid">`, ...items.map((e, i) => {
+      const title = need(tr(e, 'titulo', l), `${l} interview title`);
+      const link = String(e.link ?? '').trim();
+      const lines = [
+        `            <article class="interview-card${link ? '' : ' interview-card--soon'} reveal"${delay(i)}>`,
+        `                <span class="interview-type">${inline(need(tr(e, 'tipo', l), `${l} type of "${title}"`))}</span>`,
+        `                <h3>${inline(title)}</h3>`,
+      ];
+      if (has(tr(e, 'fonte', l))) lines.push(`                <p class="interview-source">${inline(tr(e, 'fonte', l))}</p>`);
+      lines.push(...needParagraphs(tr(e, 'resumo', l), `${l} summary of "${title}"`).map((p) => `                <p>${inline(p)}</p>`));
+      if (link) lines.push(`                <a href="${escape(link)}" target="_blank" rel="noopener noreferrer" class="btn-secondary hover-target">${inline(need(tr(e, 'botao', l), `${l} button text of "${title}"`))}</a>`);
+      lines.push(`            </article>`);
+      return lines.join('\n');
+    }), `        </div>`].join('\n');
+  },
 };
 
 function build({ lang, file, base }) {
