@@ -39,6 +39,34 @@ function needParagraphs(value, what) {
   return ps;
 }
 
+// [width, height] of a JPEG, PNG or WebP image in the repository, or null if it can't be read,
+// so a new cover uploaded in the editor gets its real proportions on the page
+function imageSize(path) {
+  let b;
+  try { b = readFileSync(root + String(path).trim().replace(/^\/+/, '')); } catch { return null; }
+  if (b.length > 24 && b.readUInt32BE(0) === 0x89504e47) return [b.readUInt32BE(16), b.readUInt32BE(20)];
+  if (b.length > 30 && b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP') {
+    const kind = b.toString('ascii', 12, 16);
+    if (kind === 'VP8X') return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
+    if (kind === 'VP8 ') return [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
+    if (kind === 'VP8L') { const n = b.readUInt32LE(21); return [(n & 0x3fff) + 1, ((n >> 14) & 0x3fff) + 1]; }
+  }
+  if (b.length > 4 && b[0] === 0xff && b[1] === 0xd8) {
+    for (let i = 2; i + 9 < b.length;) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const marker = b[i + 1];
+      if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) return [b.readUInt16BE(i + 7), b.readUInt16BE(i + 5)];
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  return null;
+}
+// the size attributes of a cover: its real size, or the one written in the content file
+function coverSize(o) {
+  const [width, height] = imageSize(o.capa) ?? [o.capa_largura, o.capa_altura].map(Number);
+  return width > 0 && height > 0 ? { width, height } : null;
+}
+
 // the _pt or _en version of a field
 const tr = (o, field, l) => o?.[`${field}_${l}`];
 const has = (v) => String(v ?? '').trim() !== '';
@@ -88,6 +116,12 @@ const elements = [
 
 // Blocks between <!-- cms:name --> and <!-- /cms:name --> lines
 const blocks = {
+  destaque: (c, l, base) => {
+    const path = need(c.inicio.capa_completa, `${l} hero cover`);
+    const size = imageSize(path);
+    if (!size) throw new Error(`Cannot read the size of the hero cover (${path})`);
+    return `                <img src="${src(path, base)}" alt="${escape(need(c.inicio.capa_completa_alt, `${l} hero cover text`))}" class="hero-cover-full hover-target" width="${size[0]}" height="${size[1]}">`;
+  },
   numeros: (c, l) => {
     const items = c.inicio.numeros ?? [];
     if (!items.length) throw new Error(`Missing ${l} stats`);
@@ -111,12 +145,13 @@ const blocks = {
     if (!books.length) throw new Error(`Missing ${l} books`);
     return books.map((b) => {
       const title = need(b.titulo, `${l} book title`);
-      const [width, height] = [b.capa_largura, b.capa_altura].map(Number);
-      if (!(width > 0 && height > 0)) throw new Error(`Missing cover size of ${title}`);
+      const size = coverSize(b);
+      if (!size) throw new Error(`Missing cover size of ${title}`);
+      const { width, height } = size;
       const lines = [`            <div class="masonry-item reveal">`, `                <picture class="picture-wrapper">`];
       if (String(b.estado ?? '').trim()) lines.push(`                    <span class="status-badge">${inline(b.estado)}</span>`);
       lines.push(
-        `                    <img src="${escape(base + need(b.capa, `cover of ${title}`))}" alt="${escape(need(b.capa_alt, `cover text of ${title}`))}" class="book-cover-img" loading="lazy" width="${width}" height="${height}">`,
+        `                    <img src="${src(need(b.capa, `cover of ${title}`), base)}" alt="${escape(need(b.capa_alt, `cover text of ${title}`))}" class="book-cover-img" loading="lazy" width="${width}" height="${height}">`,
         `                </picture>`,
         `                <span class="book-category">${inline(need(b.categoria, `${l} category of ${title}`))}</span>`,
         `                <h3>${inline(title)}</h3>`,
@@ -144,8 +179,8 @@ const blocks = {
     if (!books.length) throw new Error('Missing books with texts');
     return [intro(s, l, 'texts section'), ...books.map((b) => {
       const name = need(b.livro, 'book of the texts');
-      const [width, height] = [b.capa_largura, b.capa_altura].map(Number);
-      const size = width > 0 && height > 0 ? ` width="${width}" height="${height}"` : '';
+      const dims = coverSize(b);
+      const size = dims ? ` width="${dims.width}" height="${dims.height}"` : '';
       const texts = b.textos ?? [];
       if (!texts.length) throw new Error(`Missing texts of ${name}`);
       return [

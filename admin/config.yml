@@ -50,6 +50,12 @@ collections:
           - { name: descricao, label: Texto de apresentação, widget: text, i18n: true }
           - { name: selo, label: Selo por baixo do vídeo, widget: string, i18n: true }
           - { name: lancamento, label: Frase de lançamento, widget: string, i18n: true }
+          - name: capa_completa
+            label: Capa completa em destaque (por baixo da frase de lançamento)
+            widget: image
+            i18n: duplicate
+            hint: Aqui usa-se a capa completa aberta (contracapa, lombada e frente numa só imagem, na horizontal).
+          - { name: capa_completa_alt, label: Descrição da capa completa (para leitores de ecrã), widget: string, i18n: true }
           - name: numeros
             label: Números
             widget: list
@@ -94,7 +100,7 @@ collections:
             summary: '{{fields.livro}}'
             fields:
               - { name: livro, label: Nome do livro, widget: string }
-              - { name: capa, label: Capa, widget: image }
+              - { name: capa, label: Capa, widget: image, hint: "Use apenas a frente da capa (a imagem vertical), não a capa completa aberta." }
               - { name: capa_alt_pt, label: Descrição da capa (PT), widget: string, hint: Para leitores de ecrã e Google. }
               - { name: capa_alt_en, label: Descrição da capa (EN), widget: string }
               - { name: capa_largura, label: Largura da capa, widget: hidden }
@@ -140,8 +146,12 @@ collections:
                 widget: text
                 i18n: true
                 hint: Cada linha é um parágrafo. Use **asteriscos duplos** para negrito e *asteriscos* para itálico.
-              - { name: capa, label: Capa, widget: hidden, i18n: duplicate }
-              - { name: capa_alt, label: Descrição da capa, widget: hidden, i18n: true }
+              - name: capa
+                label: Capa
+                widget: image
+                i18n: duplicate
+                hint: Use apenas a frente da capa (a imagem vertical), não a capa completa aberta.
+              - { name: capa_alt, label: Descrição da capa, widget: string, i18n: true, hint: Para leitores de ecrã e Google. }
               - { name: capa_largura, label: Largura da capa, widget: hidden, i18n: duplicate }
               - { name: capa_altura, label: Altura da capa, widget: hidden, i18n: duplicate }
           - name: antologias
